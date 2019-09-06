@@ -21,3 +21,7 @@
 
 ../include/AmoebaOpenMMCWrapper.h
 
+-library MeldOpenMM
+
+../include/MeldOpenMMCWrapper.h
+
