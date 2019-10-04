@@ -29,7 +29,7 @@
         <website.repo>file:website</website.repo>
         <snapshot.repo>file:lib</snapshot.repo>
         <release.repo>file:release</release.repo>
-        <maven.javadoc.skip>false</maven.javadoc.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <build>
         <defaultGoal>deploy</defaultGoal>
