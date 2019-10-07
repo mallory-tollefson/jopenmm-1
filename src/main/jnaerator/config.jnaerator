@@ -21,3 +21,6 @@
 
 ../include/AmoebaOpenMMCWrapper.h
 
+-library GKNPOpenMM
+
+../include/GKNPOpenMMCWrapper.h
