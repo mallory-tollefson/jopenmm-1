@@ -12,9 +12,8 @@ import com.sun.jna.ptr.PointerByReference;
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> , <a href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  */
 public class MeldOpenMMLibrary implements Library {
-	//public static final String JNA_LIBRARY_NAME = "MeldOpenMM";
 	public static final String JNA_LIBRARY_NAME = "MeldPlugin";
-        public static final NativeLibrary JNA_NATIVE_LIB = NativeLibrary.getInstance(MeldOpenMMLibrary.JNA_LIBRARY_NAME);
+	public static final NativeLibrary JNA_NATIVE_LIB = NativeLibrary.getInstance(MeldOpenMMLibrary.JNA_LIBRARY_NAME);
 	static {
 		Native.register(MeldOpenMMLibrary.class, MeldOpenMMLibrary.JNA_NATIVE_LIB);
 	}
@@ -37,6 +36,10 @@ public class MeldOpenMMLibrary implements Library {
 	public static native int OpenMM_MeldForce_addTorsionRestraint(PointerByReference target, int atom1, int atom2, int atom3, int atom4, float phi, float deltaPhi, float forceConstant);
 	/** Original signature : <code>void OpenMM_MeldForce_modifyTorsionRestraint(OpenMM_MeldForce*, int, int, int, int, int, float, float, float)</code> */
 	public static native void OpenMM_MeldForce_modifyTorsionRestraint(PointerByReference target, int index, int atom1, int atom2, int atom3, int atom4, float phi, float deltaPhi, float forceConstant);
+	/** Original signature : <code>int OpenMM_MeldForce_addGroup(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code> */
+	public static native int OpenMM_MeldForce_addGroup(PointerByReference target, PointerByReference restraint_indices, int n_active);
+	/** Original signature : <code>int OpenMM_MeldForce_addCollection(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code> */
+	public static native int OpenMM_MeldForce_addCollection(PointerByReference target, PointerByReference group_indices, int n_active);
 	public static class OpenMM_MeldForce extends PointerType {
 		public OpenMM_MeldForce(Pointer address) {
 			super(address);
