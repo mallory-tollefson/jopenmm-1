@@ -24,8 +24,8 @@ public class MeldOpenMMLibrary implements Library {
 	public static native PointerByReference OpenMM_MeldForce_create();
 	/** Original signature : <code>void OpenMM_MeldForce_destroy(OpenMM_MeldForce*)</code> */
 	public static native void OpenMM_MeldForce_destroy(PointerByReference target);
-	/** Original signature : <code>void OpenMM_MeldForce_addDistanceRestraint(OpenMM_MeldForce*, int, int, float, float, float, float, float)</code> */
-	public static native void OpenMM_MeldForce_addDistanceRestraint(PointerByReference target, int particle1, int particle2, float r1, float r2, float r3, float r4, float force_constant);
+	/** Original signature : <code>int OpenMM_MeldForce_addDistanceRestraint(OpenMM_MeldForce*, int, int, float, float, float, float, float)</code> */
+	public static native int OpenMM_MeldForce_addDistanceRestraint(PointerByReference target, int particle1, int particle2, float r1, float r2, float r3, float r4, float force_constant);
 	/** Original signature : <code>void OpenMM_MeldForce_modifyDistanceRestraint(OpenMM_MeldForce*, int, int, int, float, float, float, float, float)</code> */
 	public static native void OpenMM_MeldForce_modifyDistanceRestraint(PointerByReference target, int index, int particle1, int particle2, float r1, float r2, float r3, float r4, float force_constant);
 	/** Original signature : <code>int OpenMM_MeldForce_addHyperbolicDistanceRestraint(OpenMM_MeldForce*, int, int, float, float, float, float, float, float)</code> */

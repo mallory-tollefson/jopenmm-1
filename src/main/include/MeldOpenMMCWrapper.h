@@ -22,7 +22,7 @@ typedef struct OpenMM_MeldForce_struct OpenMM_MeldForce;
 /* MeldForce */
 extern OPENMM_EXPORT_MELD OpenMM_MeldForce* OpenMM_MeldForce_create();
 extern OPENMM_EXPORT_MELD void OpenMM_MeldForce_destroy(OpenMM_MeldForce* target);
-extern OPENMM_EXPORT_MELD void OpenMM_MeldForce_addDistanceRestraint(OpenMM_MeldForce* target, 
+extern OPENMM_EXPORT_MELD int OpenMM_MeldForce_addDistanceRestraint(OpenMM_MeldForce* target, 
                                int particle1, int particle2, float r1, float r2, float r3, float r4, float force_constant);
 extern OPENMM_EXPORT_MELD void OpenMM_MeldForce_modifyDistanceRestraint(OpenMM_MeldForce* target,
                         int index, int particle1, int particle2, float r1, float r2, float r3, float r4, float force_constant);
