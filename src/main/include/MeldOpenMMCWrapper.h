@@ -36,6 +36,7 @@ extern OPENMM_EXPORT_MELD void OpenMM_MeldForce_modifyTorsionRestraint(OpenMM_Me
                         int index, int atom1, int atom2, int atom3, int atom4, float phi, float deltaPhi, float forceConstant);
 extern OPENMM_EXPORT_MELD int OpenMM_MeldForce_addGroup(OpenMM_MeldForce* target, OpenMM_IntArray* restraint_indices, int n_active);
 extern OPENMM_EXPORT_MELD int OpenMM_MeldForce_addCollection(OpenMM_MeldForce* target, OpenMM_IntArray* group_indices, int n_active);
+extern OPENMM_EXPORT_MELD void OpenMM_MeldForce_updateParametersInContext(OpenMM_MeldForce* target, OpenMM_Context* context);
 
 #if defined(__cplusplus)
 }

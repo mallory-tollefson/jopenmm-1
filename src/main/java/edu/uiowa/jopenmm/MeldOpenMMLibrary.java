@@ -40,6 +40,8 @@ public class MeldOpenMMLibrary implements Library {
 	public static native int OpenMM_MeldForce_addGroup(PointerByReference target, PointerByReference restraint_indices, int n_active);
 	/** Original signature : <code>int OpenMM_MeldForce_addCollection(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code> */
 	public static native int OpenMM_MeldForce_addCollection(PointerByReference target, PointerByReference group_indices, int n_active);
+	/** Original signature : <code>void OpenMM_MeldForce_updateParametersInContext(OpenMM_MeldForce*, OpenMM_Context*)</code> */
+	public static native void OpenMM_MeldForce_updateParametersInContext(PointerByReference target, PointerByReference context);
 	public static class OpenMM_MeldForce extends PointerType {
 		public OpenMM_MeldForce(Pointer address) {
 			super(address);
