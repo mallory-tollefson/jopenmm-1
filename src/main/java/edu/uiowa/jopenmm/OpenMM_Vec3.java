@@ -14,16 +14,17 @@ import java.util.List;
  * href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  *
  * @author Michael J. Schnieders
- * @since 7.5.0-Tinker
  */
 public class OpenMM_Vec3 extends Structure {
   public double x;
   public double y;
   public double z;
+
   /** Constructor for OpenMM_Vec3. */
   public OpenMM_Vec3() {
     super();
   }
+
   /**
    * getFieldOrder.
    *
@@ -32,6 +33,7 @@ public class OpenMM_Vec3 extends Structure {
   protected List<?> getFieldOrder() {
     return Arrays.asList("x", "y", "z");
   }
+
   /**
    * Constructor for OpenMM_Vec3.
    *
@@ -45,6 +47,7 @@ public class OpenMM_Vec3 extends Structure {
     this.y = y;
     this.z = z;
   }
+
   /**
    * Constructor for OpenMM_Vec3.
    *

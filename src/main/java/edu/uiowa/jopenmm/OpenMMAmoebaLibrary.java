@@ -45,12 +45,6 @@ public class OpenMMAmoebaLibrary implements Library {
     public static final int OpenMM_AmoebaVdwForce_Annihilate = 2;
   };
   /** enum values */
-  public static interface OpenMM_AmoebaGKCavitationForce_NonbondedMethod {
-    public static final int OpenMM_AmoebaGKCavitationForce_NoCutoff = 0;
-    public static final int OpenMM_AmoebaGKCavitationForce_CutoffNonPeriodic = 1;
-    public static final int OpenMM_AmoebaGKCavitationForce_CutoffPeriodic = 2;
-  };
-  /** enum values */
   public static interface OpenMM_HippoNonbondedForce_NonbondedMethod {
     public static final int OpenMM_HippoNonbondedForce_NoCutoff = 0;
     public static final int OpenMM_HippoNonbondedForce_PME = 1;
@@ -97,8 +91,15 @@ public class OpenMMAmoebaLibrary implements Library {
     public static final int OpenMM_AmoebaMultipoleForce_PolarizationCovalent14 = 7;
     public static final int OpenMM_AmoebaMultipoleForce_CovalentEnd = 8;
   };
+  /** enum values */
+  public static interface OpenMM_AmoebaGKCavitationForce_NonbondedMethod {
+    public static final int OpenMM_AmoebaGKCavitationForce_NoCutoff = 0;
+    public static final int OpenMM_AmoebaGKCavitationForce_CutoffNonPeriodic = 1;
+    public static final int OpenMM_AmoebaGKCavitationForce_CutoffPeriodic = 2;
+  };
   /** Global Constants */
   public static final double OpenMM_NmPerAngstrom = 0.1;
+
   /** Constant <code>OpenMM_AngstromsPerNm=10.0</code> */
   public static final double OpenMM_AngstromsPerNm = 10.0;
   /** Constant <code>OpenMM_PsPerFs=0.001</code> */
@@ -144,224 +145,6 @@ public class OpenMMAmoebaLibrary implements Library {
    * @param array a {@link com.sun.jna.ptr.PointerByReference} object.
    */
   public static native void OpenMM_3D_DoubleArray_destroy(PointerByReference array);
-  /**
-   * AmoebaOutOfPlaneBendForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaOutOfPlaneBendForce* OpenMM_AmoebaOutOfPlaneBendForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaOutOfPlaneBendForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_destroy(OpenMM_AmoebaOutOfPlaneBendForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param cubicK a double.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param quarticK a double.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param penticK a double.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(
-      PointerByReference target, double penticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param sexticK a double.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(
-      PointerByReference target, double sexticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(OpenMM_AmoebaOutOfPlaneBendForce*, int, int, int, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param k a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce*, int, int*, int*, int*, int*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param particle4 a {@link java.nio.IntBuffer} object.
-   * @param k a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      DoubleBuffer k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce*, int, int*, int*, int*, int*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      DoubleByReference k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(OpenMM_AmoebaOutOfPlaneBendForce*, int, int, int, int, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param k a double.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(OpenMM_AmoebaOutOfPlaneBendForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaOutOfPlaneBendForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaOutOfPlaneBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
   /**
    * Original signature : <code>OpenMM_AmoebaVdwForce* OpenMM_AmoebaVdwForce_create()</code>
    *
@@ -693,983 +476,6 @@ public class OpenMMAmoebaLibrary implements Library {
    */
   public static native int OpenMM_AmoebaVdwForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
-  /**
-   * AmoebaStretchTorsionForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaStretchTorsionForce* OpenMM_AmoebaStretchTorsionForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaStretchTorsionForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchTorsionForce_destroy(OpenMM_AmoebaStretchTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaStretchTorsionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaStretchTorsionForce_getNumStretchTorsions(const OpenMM_AmoebaStretchTorsionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaStretchTorsionForce_getNumStretchTorsions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaStretchTorsionForce_addStretchTorsion(OpenMM_AmoebaStretchTorsionForce*, int, int, int, int, double, double, double, double, double, double, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param lengthBA a double.
-   * @param lengthCB a double.
-   * @param lengthDC a double.
-   * @param k1 a double.
-   * @param k2 a double.
-   * @param k3 a double.
-   * @param k4 a double.
-   * @param k5 a double.
-   * @param k6 a double.
-   * @param k7 a double.
-   * @param k8 a double.
-   * @param k9 a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaStretchTorsionForce_addStretchTorsion(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double lengthBA,
-      double lengthCB,
-      double lengthDC,
-      double k1,
-      double k2,
-      double k3,
-      double k4,
-      double k5,
-      double k6,
-      double k7,
-      double k8,
-      double k9);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(const OpenMM_AmoebaStretchTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param particle4 a {@link java.nio.IntBuffer} object.
-   * @param lengthBA a {@link java.nio.DoubleBuffer} object.
-   * @param lengthCB a {@link java.nio.DoubleBuffer} object.
-   * @param lengthDC a {@link java.nio.DoubleBuffer} object.
-   * @param k1 a {@link java.nio.DoubleBuffer} object.
-   * @param k2 a {@link java.nio.DoubleBuffer} object.
-   * @param k3 a {@link java.nio.DoubleBuffer} object.
-   * @param k4 a {@link java.nio.DoubleBuffer} object.
-   * @param k5 a {@link java.nio.DoubleBuffer} object.
-   * @param k6 a {@link java.nio.DoubleBuffer} object.
-   * @param k7 a {@link java.nio.DoubleBuffer} object.
-   * @param k8 a {@link java.nio.DoubleBuffer} object.
-   * @param k9 a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      DoubleBuffer lengthBA,
-      DoubleBuffer lengthCB,
-      DoubleBuffer lengthDC,
-      DoubleBuffer k1,
-      DoubleBuffer k2,
-      DoubleBuffer k3,
-      DoubleBuffer k4,
-      DoubleBuffer k5,
-      DoubleBuffer k6,
-      DoubleBuffer k7,
-      DoubleBuffer k8,
-      DoubleBuffer k9);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(const OpenMM_AmoebaStretchTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param lengthBA a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param lengthCB a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param lengthDC a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k1 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k2 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k3 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k4 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k5 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k6 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k7 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k8 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k9 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      DoubleByReference lengthBA,
-      DoubleByReference lengthCB,
-      DoubleByReference lengthDC,
-      DoubleByReference k1,
-      DoubleByReference k2,
-      DoubleByReference k3,
-      DoubleByReference k4,
-      DoubleByReference k5,
-      DoubleByReference k6,
-      DoubleByReference k7,
-      DoubleByReference k8,
-      DoubleByReference k9);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchTorsionForce_setStretchTorsionParameters(OpenMM_AmoebaStretchTorsionForce*, int, int, int, int, int, double, double, double, double, double, double, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param lengthBA a double.
-   * @param lengthCB a double.
-   * @param lengthDC a double.
-   * @param k1 a double.
-   * @param k2 a double.
-   * @param k3 a double.
-   * @param k4 a double.
-   * @param k5 a double.
-   * @param k6 a double.
-   * @param k7 a double.
-   * @param k8 a double.
-   * @param k9 a double.
-   */
-  public static native void OpenMM_AmoebaStretchTorsionForce_setStretchTorsionParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double lengthBA,
-      double lengthCB,
-      double lengthDC,
-      double k1,
-      double k2,
-      double k3,
-      double k4,
-      double k5,
-      double k6,
-      double k7,
-      double k8,
-      double k9);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchTorsionForce_updateParametersInContext(OpenMM_AmoebaStretchTorsionForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaStretchTorsionForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaStretchTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchTorsionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaStretchTorsionForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaBondForce<br>
-   * Original signature : <code>OpenMM_AmoebaBondForce* OpenMM_AmoebaBondForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaBondForce_create();
-  /**
-   * Original signature : <code>void OpenMM_AmoebaBondForce_destroy(OpenMM_AmoebaBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaBondForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaBondForce_getNumBonds(const OpenMM_AmoebaBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaBondForce_getNumBonds(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(OpenMM_AmoebaBondForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param cubicK a double.
-   */
-  public static native void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(const OpenMM_AmoebaBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(OpenMM_AmoebaBondForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param quarticK a double.
-   */
-  public static native void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(const OpenMM_AmoebaBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaBondForce_addBond(OpenMM_AmoebaBondForce*, int, int, double, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param length a double.
-   * @param quadraticK a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaBondForce_addBond(
-      PointerByReference target, int particle1, int particle2, double length, double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce*, int, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param length a {@link java.nio.DoubleBuffer} object.
-   * @param quadraticK a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaBondForce_getBondParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      DoubleBuffer length,
-      DoubleBuffer quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce*, int, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param length a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param quadraticK a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaBondForce_getBondParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      DoubleByReference length,
-      DoubleByReference quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setBondParameters(OpenMM_AmoebaBondForce*, int, int, int, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param length a double.
-   * @param quadraticK a double.
-   */
-  public static native void OpenMM_AmoebaBondForce_setBondParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_updateParametersInContext(OpenMM_AmoebaBondForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaBondForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaBondForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaBondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaAngleForce<br>
-   * Original signature : <code>OpenMM_AmoebaAngleForce* OpenMM_AmoebaAngleForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaAngleForce_create();
-  /**
-   * Original signature : <code>void OpenMM_AmoebaAngleForce_destroy(OpenMM_AmoebaAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaAngleForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaAngleForce_getNumAngles(const OpenMM_AmoebaAngleForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaAngleForce_getNumAngles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(OpenMM_AmoebaAngleForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param cubicK a double.
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(
-      PointerByReference target, double cubicK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(const OpenMM_AmoebaAngleForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(OpenMM_AmoebaAngleForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param quarticK a double.
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(
-      PointerByReference target, double quarticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(OpenMM_AmoebaAngleForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param penticK a double.
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(
-      PointerByReference target, double penticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(OpenMM_AmoebaAngleForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param sexticK a double.
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(
-      PointerByReference target, double sexticK);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaAngleForce_addAngle(OpenMM_AmoebaAngleForce*, int, int, int, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param length a double.
-   * @param quadraticK a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaAngleForce_addAngle(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce*, int, int*, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param length a {@link java.nio.DoubleBuffer} object.
-   * @param quadraticK a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      DoubleBuffer length,
-      DoubleBuffer quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce*, int, int*, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param length a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param quadraticK a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      DoubleByReference length,
-      DoubleByReference quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setAngleParameters(OpenMM_AmoebaAngleForce*, int, int, int, int, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param length a double.
-   * @param quadraticK a double.
-   */
-  public static native void OpenMM_AmoebaAngleForce_setAngleParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      double length,
-      double quadraticK);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_updateParametersInContext(OpenMM_AmoebaAngleForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaAngleForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaAngleForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaWcaDispersionForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaWcaDispersionForce* OpenMM_AmoebaWcaDispersionForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaWcaDispersionForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_destroy(OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaWcaDispersionForce_getNumParticles(const OpenMM_AmoebaWcaDispersionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaWcaDispersionForce_getNumParticles(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(OpenMM_AmoebaWcaDispersionForce*, int, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particleIndex a int.
-   * @param radius a double.
-   * @param epsilon a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(
-      PointerByReference target, int particleIndex, double radius, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particleIndex a int.
-   * @param radius a {@link java.nio.DoubleBuffer} object.
-   * @param epsilon a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
-      PointerByReference target, int particleIndex, DoubleBuffer radius, DoubleBuffer epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particleIndex a int.
-   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param epsilon a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
-      PointerByReference target,
-      int particleIndex,
-      DoubleByReference radius,
-      DoubleByReference epsilon);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaWcaDispersionForce_addParticle(OpenMM_AmoebaWcaDispersionForce*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param radius a double.
-   * @param epsilon a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaWcaDispersionForce_addParticle(
-      PointerByReference target, double radius, double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(OpenMM_AmoebaWcaDispersionForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getEpso(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getEpso(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getEpsh(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getEpsh(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getRmino(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getRmino(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getRminh(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getRminh(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getAwater(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getAwater(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getShctd(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getShctd(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getDispoff(const OpenMM_AmoebaWcaDispersionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getDispoff(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaWcaDispersionForce_getSlevy(const OpenMM_AmoebaWcaDispersionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaWcaDispersionForce_getSlevy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setEpso(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setEpso(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setEpsh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setEpsh(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setRmino(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setRmino(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setRminh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setRminh(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setAwater(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setAwater(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setShctd(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setShctd(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setDispoff(OpenMM_AmoebaWcaDispersionForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setDispoff(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaWcaDispersionForce_setSlevy(OpenMM_AmoebaWcaDispersionForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param inputValue a double.
-   */
-  public static native void OpenMM_AmoebaWcaDispersionForce_setSlevy(
-      PointerByReference target, double inputValue);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaWcaDispersionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaGKCavitationForce* OpenMM_AmoebaGKCavitationForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaGKCavitationForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_destroy(OpenMM_AmoebaGKCavitationForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGKCavitationForce_addParticle(OpenMM_AmoebaGKCavitationForce*, double, double, double, double, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param radius a double.
-   * @param gamma a double.
-   * @param vdw_alpha a double.
-   * @param charge a double.
-   * @param ishydrogen a int.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGKCavitationForce_addParticle(
-      PointerByReference target,
-      double radius,
-      double gamma,
-      double vdw_alpha,
-      double charge,
-      int ishydrogen);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_setParticleParameters(OpenMM_AmoebaGKCavitationForce*, int, double, double, double, double, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param radius a double.
-   * @param gamma a double.
-   * @param vdw_alpha a double.
-   * @param charge a double.
-   * @param ishydrogen a int.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_setParticleParameters(
-      PointerByReference target,
-      int index,
-      double radius,
-      double gamma,
-      double vdw_alpha,
-      double charge,
-      int ishydrogen);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, double*, double*, OpenMM_Boolean*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param radius a {@link java.nio.DoubleBuffer} object.
-   * @param gamma a {@link java.nio.DoubleBuffer} object.
-   * @param vdw_alpha a {@link java.nio.DoubleBuffer} object.
-   * @param charge a {@link java.nio.DoubleBuffer} object.
-   * @param ishydrogen a {@link java.nio.IntBuffer} object.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleBuffer radius,
-      DoubleBuffer gamma,
-      DoubleBuffer vdw_alpha,
-      DoubleBuffer charge,
-      IntBuffer ishydrogen);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, double*, double*, OpenMM_Boolean*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param gamma a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param vdw_alpha a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param charge a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ishydrogen a {@link com.sun.jna.ptr.IntByReference} object.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleByReference radius,
-      DoubleByReference gamma,
-      DoubleByReference vdw_alpha,
-      DoubleByReference charge,
-      IntByReference ishydrogen);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGKCavitationForce_getNumParticles(const OpenMM_AmoebaGKCavitationForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGKCavitationForce_getNumParticles(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_AmoebaGKCavitationForce_NonbondedMethod OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(const OpenMM_AmoebaGKCavitationForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(OpenMM_AmoebaGKCavitationForce*, OpenMM_AmoebaGKCavitationForce_NonbondedMethod)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param method a int.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(const OpenMM_AmoebaGKCavitationForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(OpenMM_AmoebaGKCavitationForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param distance a double.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(OpenMM_AmoebaGKCavitationForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
   /**
    * AmoebaPiTorsionForce<br>
    * Original signature : <code>OpenMM_AmoebaPiTorsionForce* OpenMM_AmoebaPiTorsionForce_create()
@@ -2434,375 +1240,6 @@ public class OpenMMAmoebaLibrary implements Library {
   public static native int OpenMM_HippoNonbondedForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * AmoebaStretchBendForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaStretchBendForce* OpenMM_AmoebaStretchBendForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaStretchBendForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_destroy(OpenMM_AmoebaStretchBendForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaStretchBendForce_getNumStretchBends(const OpenMM_AmoebaStretchBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaStretchBendForce_getNumStretchBends(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaStretchBendForce_addStretchBend(OpenMM_AmoebaStretchBendForce*, int, int, int, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param lengthAB a double.
-   * @param lengthCB a double.
-   * @param angle a double.
-   * @param k1 a double.
-   * @param k2 a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaStretchBendForce_addStretchBend(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      double lengthAB,
-      double lengthCB,
-      double angle,
-      double k1,
-      double k2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce*, int, int*, int*, int*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param lengthAB a {@link java.nio.DoubleBuffer} object.
-   * @param lengthCB a {@link java.nio.DoubleBuffer} object.
-   * @param angle a {@link java.nio.DoubleBuffer} object.
-   * @param k1 a {@link java.nio.DoubleBuffer} object.
-   * @param k2 a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      DoubleBuffer lengthAB,
-      DoubleBuffer lengthCB,
-      DoubleBuffer angle,
-      DoubleBuffer k1,
-      DoubleBuffer k2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce*, int, int*, int*, int*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param lengthAB a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param lengthCB a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param angle a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k1 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k2 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      DoubleByReference lengthAB,
-      DoubleByReference lengthCB,
-      DoubleByReference angle,
-      DoubleByReference k1,
-      DoubleByReference k2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(OpenMM_AmoebaStretchBendForce*, int, int, int, int, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param lengthAB a double.
-   * @param lengthCB a double.
-   * @param angle a double.
-   * @param k1 a double.
-   * @param k2 a double.
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      double lengthAB,
-      double lengthCB,
-      double angle,
-      double k1,
-      double k2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_updateParametersInContext(OpenMM_AmoebaStretchBendForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaStretchBendForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchBendForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AmoebaGeneralizedKirkwoodForce<br>
-   * Original signature : <code>
-   * OpenMM_AmoebaGeneralizedKirkwoodForce* OpenMM_AmoebaGeneralizedKirkwoodForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AmoebaGeneralizedKirkwoodForce_create();
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_destroy(OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_destroy(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGeneralizedKirkwoodForce_getNumParticles(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_getNumParticles(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGeneralizedKirkwoodForce_addParticle(OpenMM_AmoebaGeneralizedKirkwoodForce*, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param charge a double.
-   * @param radius a double.
-   * @param scalingFactor a double.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_addParticle(
-      PointerByReference target, double charge, double radius, double scalingFactor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param charge a {@link java.nio.DoubleBuffer} object.
-   * @param radius a {@link java.nio.DoubleBuffer} object.
-   * @param scalingFactor a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleBuffer charge,
-      DoubleBuffer radius,
-      DoubleBuffer scalingFactor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param charge a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param scalingFactor a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleByReference charge,
-      DoubleByReference radius,
-      DoubleByReference scalingFactor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters(OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param charge a double.
-   * @param radius a double.
-   * @param scalingFactor a double.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters(
-      PointerByReference target, int index, double charge, double radius, double scalingFactor);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSolventDielectric(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getSolventDielectric(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setSolventDielectric(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param dielectric a double.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSolventDielectric(
-      PointerByReference target, double dielectric);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSoluteDielectric(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getSoluteDielectric(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setSoluteDielectric(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param dielectric a double.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSoluteDielectric(
-      PointerByReference target, double dielectric);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AmoebaGeneralizedKirkwoodForce_getIncludeCavityTerm(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_getIncludeCavityTerm(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setIncludeCavityTerm(OpenMM_AmoebaGeneralizedKirkwoodForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param includeCavityTerm a int.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setIncludeCavityTerm(
-      PointerByReference target, int includeCavityTerm);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getProbeRadius(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getProbeRadius(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setProbeRadius(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param probeRadius a double.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setProbeRadius(
-      PointerByReference target, double probeRadius);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSurfaceAreaFactor(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getSurfaceAreaFactor(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setSurfaceAreaFactor(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param surfaceAreaFactor a double.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSurfaceAreaFactor(
-      PointerByReference target, double surfaceAreaFactor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AmoebaGeneralizedKirkwoodForce_updateParametersInContext(OpenMM_AmoebaGeneralizedKirkwoodForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaGeneralizedKirkwoodForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
    * AmoebaInPlaneAngleForce<br>
    * Original signature : <code>
    * OpenMM_AmoebaInPlaneAngleForce* OpenMM_AmoebaInPlaneAngleForce_create()</code>
@@ -3025,6 +1462,767 @@ public class OpenMMAmoebaLibrary implements Library {
    * @return a int.
    */
   public static native int OpenMM_AmoebaInPlaneAngleForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaAngleForce<br>
+   * Original signature : <code>OpenMM_AmoebaAngleForce* OpenMM_AmoebaAngleForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaAngleForce_create();
+  /**
+   * Original signature : <code>void OpenMM_AmoebaAngleForce_destroy(OpenMM_AmoebaAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaAngleForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaAngleForce_getNumAngles(const OpenMM_AmoebaAngleForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaAngleForce_getNumAngles(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(OpenMM_AmoebaAngleForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param cubicK a double.
+   */
+  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(
+      PointerByReference target, double cubicK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(const OpenMM_AmoebaAngleForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(OpenMM_AmoebaAngleForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param quarticK a double.
+   */
+  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(
+      PointerByReference target, double quarticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(const OpenMM_AmoebaAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(OpenMM_AmoebaAngleForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param penticK a double.
+   */
+  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(
+      PointerByReference target, double penticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(const OpenMM_AmoebaAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(OpenMM_AmoebaAngleForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param sexticK a double.
+   */
+  public static native void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(
+      PointerByReference target, double sexticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(const OpenMM_AmoebaAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaAngleForce_addAngle(OpenMM_AmoebaAngleForce*, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param length a double.
+   * @param quadraticK a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaAngleForce_addAngle(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      int particle3,
+      double length,
+      double quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce*, int, int*, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
+   * @param length a {@link java.nio.DoubleBuffer} object.
+   * @param quadraticK a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaAngleForce_getAngleParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
+      DoubleBuffer length,
+      DoubleBuffer quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce*, int, int*, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param length a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param quadraticK a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaAngleForce_getAngleParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      DoubleByReference length,
+      DoubleByReference quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_setAngleParameters(OpenMM_AmoebaAngleForce*, int, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param length a double.
+   * @param quadraticK a double.
+   */
+  public static native void OpenMM_AmoebaAngleForce_setAngleParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      int particle3,
+      double length,
+      double quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_updateParametersInContext(OpenMM_AmoebaAngleForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaAngleForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaAngleForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaAngleTorsionForce<br>
+   * Original signature : <code>
+   * OpenMM_AmoebaAngleTorsionForce* OpenMM_AmoebaAngleTorsionForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaAngleTorsionForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleTorsionForce_destroy(OpenMM_AmoebaAngleTorsionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaAngleTorsionForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaAngleTorsionForce_getNumAngleTorsions(const OpenMM_AmoebaAngleTorsionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaAngleTorsionForce_getNumAngleTorsions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaAngleTorsionForce_addAngleTorsion(OpenMM_AmoebaAngleTorsionForce*, int, int, int, int, double, double, double, double, double, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param particle4 a int.
+   * @param angleCBA a double.
+   * @param angleDCB a double.
+   * @param k1 a double.
+   * @param k2 a double.
+   * @param k3 a double.
+   * @param k4 a double.
+   * @param k5 a double.
+   * @param k6 a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaAngleTorsionForce_addAngleTorsion(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      int particle3,
+      int particle4,
+      double angleCBA,
+      double angleDCB,
+      double k1,
+      double k2,
+      double k3,
+      double k4,
+      double k5,
+      double k6);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(const OpenMM_AmoebaAngleTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
+   * @param particle4 a {@link java.nio.IntBuffer} object.
+   * @param angleCBA a {@link java.nio.DoubleBuffer} object.
+   * @param angleDCB a {@link java.nio.DoubleBuffer} object.
+   * @param k1 a {@link java.nio.DoubleBuffer} object.
+   * @param k2 a {@link java.nio.DoubleBuffer} object.
+   * @param k3 a {@link java.nio.DoubleBuffer} object.
+   * @param k4 a {@link java.nio.DoubleBuffer} object.
+   * @param k5 a {@link java.nio.DoubleBuffer} object.
+   * @param k6 a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
+      IntBuffer particle4,
+      DoubleBuffer angleCBA,
+      DoubleBuffer angleDCB,
+      DoubleBuffer k1,
+      DoubleBuffer k2,
+      DoubleBuffer k3,
+      DoubleBuffer k4,
+      DoubleBuffer k5,
+      DoubleBuffer k6);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(const OpenMM_AmoebaAngleTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param angleCBA a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param angleDCB a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k1 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k2 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k3 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k4 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k5 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k6 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      IntByReference particle4,
+      DoubleByReference angleCBA,
+      DoubleByReference angleDCB,
+      DoubleByReference k1,
+      DoubleByReference k2,
+      DoubleByReference k3,
+      DoubleByReference k4,
+      DoubleByReference k5,
+      DoubleByReference k6);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleTorsionForce_setAngleTorsionParameters(OpenMM_AmoebaAngleTorsionForce*, int, int, int, int, int, double, double, double, double, double, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param particle4 a int.
+   * @param angleCBA a double.
+   * @param angleDCB a double.
+   * @param k1 a double.
+   * @param k2 a double.
+   * @param k3 a double.
+   * @param k4 a double.
+   * @param k5 a double.
+   * @param k6 a double.
+   */
+  public static native void OpenMM_AmoebaAngleTorsionForce_setAngleTorsionParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      int particle3,
+      int particle4,
+      double angleCBA,
+      double angleDCB,
+      double k1,
+      double k2,
+      double k3,
+      double k4,
+      double k5,
+      double k6);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaAngleTorsionForce_updateParametersInContext(OpenMM_AmoebaAngleTorsionForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaAngleTorsionForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaAngleTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleTorsionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaAngleTorsionForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaBondForce<br>
+   * Original signature : <code>OpenMM_AmoebaBondForce* OpenMM_AmoebaBondForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaBondForce_create();
+  /**
+   * Original signature : <code>void OpenMM_AmoebaBondForce_destroy(OpenMM_AmoebaBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaBondForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaBondForce_getNumBonds(const OpenMM_AmoebaBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaBondForce_getNumBonds(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(OpenMM_AmoebaBondForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param cubicK a double.
+   */
+  public static native void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(
+      PointerByReference target, double cubicK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(const OpenMM_AmoebaBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(OpenMM_AmoebaBondForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param quarticK a double.
+   */
+  public static native void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(
+      PointerByReference target, double quarticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(const OpenMM_AmoebaBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaBondForce_addBond(OpenMM_AmoebaBondForce*, int, int, double, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param length a double.
+   * @param quadraticK a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaBondForce_addBond(
+      PointerByReference target, int particle1, int particle2, double length, double quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce*, int, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param length a {@link java.nio.DoubleBuffer} object.
+   * @param quadraticK a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaBondForce_getBondParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      DoubleBuffer length,
+      DoubleBuffer quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce*, int, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param length a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param quadraticK a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaBondForce_getBondParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      DoubleByReference length,
+      DoubleByReference quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_setBondParameters(OpenMM_AmoebaBondForce*, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param length a double.
+   * @param quadraticK a double.
+   */
+  public static native void OpenMM_AmoebaBondForce_setBondParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      double length,
+      double quadraticK);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_updateParametersInContext(OpenMM_AmoebaBondForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaBondForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaBondForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaGeneralizedKirkwoodForce<br>
+   * Original signature : <code>
+   * OpenMM_AmoebaGeneralizedKirkwoodForce* OpenMM_AmoebaGeneralizedKirkwoodForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaGeneralizedKirkwoodForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_destroy(OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_destroy(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGeneralizedKirkwoodForce_getNumParticles(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_getNumParticles(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGeneralizedKirkwoodForce_addParticle(OpenMM_AmoebaGeneralizedKirkwoodForce*, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param charge a double.
+   * @param radius a double.
+   * @param scalingFactor a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_addParticle(
+      PointerByReference target, double charge, double radius, double scalingFactor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param charge a {@link java.nio.DoubleBuffer} object.
+   * @param radius a {@link java.nio.DoubleBuffer} object.
+   * @param scalingFactor a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleBuffer charge,
+      DoubleBuffer radius,
+      DoubleBuffer scalingFactor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(const OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param charge a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param scalingFactor a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleByReference charge,
+      DoubleByReference radius,
+      DoubleByReference scalingFactor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters(OpenMM_AmoebaGeneralizedKirkwoodForce*, int, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param charge a double.
+   * @param radius a double.
+   * @param scalingFactor a double.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setParticleParameters(
+      PointerByReference target, int index, double charge, double radius, double scalingFactor);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSolventDielectric(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getSolventDielectric(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setSolventDielectric(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param dielectric a double.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSolventDielectric(
+      PointerByReference target, double dielectric);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSoluteDielectric(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getSoluteDielectric(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setSoluteDielectric(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param dielectric a double.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSoluteDielectric(
+      PointerByReference target, double dielectric);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGeneralizedKirkwoodForce_getIncludeCavityTerm(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_getIncludeCavityTerm(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setIncludeCavityTerm(OpenMM_AmoebaGeneralizedKirkwoodForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param includeCavityTerm a int.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setIncludeCavityTerm(
+      PointerByReference target, int includeCavityTerm);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getProbeRadius(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getProbeRadius(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setProbeRadius(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param probeRadius a double.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setProbeRadius(
+      PointerByReference target, double probeRadius);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaGeneralizedKirkwoodForce_getSurfaceAreaFactor(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaGeneralizedKirkwoodForce_getSurfaceAreaFactor(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_setSurfaceAreaFactor(OpenMM_AmoebaGeneralizedKirkwoodForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param surfaceAreaFactor a double.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_setSurfaceAreaFactor(
+      PointerByReference target, double surfaceAreaFactor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGeneralizedKirkwoodForce_updateParametersInContext(OpenMM_AmoebaGeneralizedKirkwoodForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaGeneralizedKirkwoodForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaGeneralizedKirkwoodForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaGeneralizedKirkwoodForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGeneralizedKirkwoodForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
    * Original signature : <code>OpenMM_AmoebaMultipoleForce* OpenMM_AmoebaMultipoleForce_create()
@@ -3553,6 +2751,559 @@ public class OpenMMAmoebaLibrary implements Library {
   public static native int OpenMM_AmoebaMultipoleForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
+   * AmoebaWcaDispersionForce<br>
+   * Original signature : <code>
+   * OpenMM_AmoebaWcaDispersionForce* OpenMM_AmoebaWcaDispersionForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaWcaDispersionForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_destroy(OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaWcaDispersionForce_getNumParticles(const OpenMM_AmoebaWcaDispersionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaWcaDispersionForce_getNumParticles(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(OpenMM_AmoebaWcaDispersionForce*, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particleIndex a int.
+   * @param radius a double.
+   * @param epsilon a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(
+      PointerByReference target, int particleIndex, double radius, double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particleIndex a int.
+   * @param radius a {@link java.nio.DoubleBuffer} object.
+   * @param epsilon a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
+      PointerByReference target, int particleIndex, DoubleBuffer radius, DoubleBuffer epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce*, int, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particleIndex a int.
+   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param epsilon a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(
+      PointerByReference target,
+      int particleIndex,
+      DoubleByReference radius,
+      DoubleByReference epsilon);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaWcaDispersionForce_addParticle(OpenMM_AmoebaWcaDispersionForce*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param radius a double.
+   * @param epsilon a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaWcaDispersionForce_addParticle(
+      PointerByReference target, double radius, double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(OpenMM_AmoebaWcaDispersionForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getEpso(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getEpso(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getEpsh(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getEpsh(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getRmino(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getRmino(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getRminh(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getRminh(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getAwater(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getAwater(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getShctd(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getShctd(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getDispoff(const OpenMM_AmoebaWcaDispersionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getDispoff(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaWcaDispersionForce_getSlevy(const OpenMM_AmoebaWcaDispersionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaWcaDispersionForce_getSlevy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setEpso(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setEpso(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setEpsh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setEpsh(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setRmino(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setRmino(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setRminh(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setRminh(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setAwater(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setAwater(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setShctd(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setShctd(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setDispoff(OpenMM_AmoebaWcaDispersionForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setDispoff(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaWcaDispersionForce_setSlevy(OpenMM_AmoebaWcaDispersionForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param inputValue a double.
+   */
+  public static native void OpenMM_AmoebaWcaDispersionForce_setSlevy(
+      PointerByReference target, double inputValue);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaWcaDispersionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaStretchBendForce<br>
+   * Original signature : <code>
+   * OpenMM_AmoebaStretchBendForce* OpenMM_AmoebaStretchBendForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaStretchBendForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaStretchBendForce_destroy(OpenMM_AmoebaStretchBendForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaStretchBendForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaStretchBendForce_getNumStretchBends(const OpenMM_AmoebaStretchBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaStretchBendForce_getNumStretchBends(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaStretchBendForce_addStretchBend(OpenMM_AmoebaStretchBendForce*, int, int, int, double, double, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param lengthAB a double.
+   * @param lengthCB a double.
+   * @param angle a double.
+   * @param k1 a double.
+   * @param k2 a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaStretchBendForce_addStretchBend(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      int particle3,
+      double lengthAB,
+      double lengthCB,
+      double angle,
+      double k1,
+      double k2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce*, int, int*, int*, int*, double*, double*, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
+   * @param lengthAB a {@link java.nio.DoubleBuffer} object.
+   * @param lengthCB a {@link java.nio.DoubleBuffer} object.
+   * @param angle a {@link java.nio.DoubleBuffer} object.
+   * @param k1 a {@link java.nio.DoubleBuffer} object.
+   * @param k2 a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
+      DoubleBuffer lengthAB,
+      DoubleBuffer lengthCB,
+      DoubleBuffer angle,
+      DoubleBuffer k1,
+      DoubleBuffer k2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce*, int, int*, int*, int*, double*, double*, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param lengthAB a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param lengthCB a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param angle a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k1 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k2 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      DoubleByReference lengthAB,
+      DoubleByReference lengthCB,
+      DoubleByReference angle,
+      DoubleByReference k1,
+      DoubleByReference k2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(OpenMM_AmoebaStretchBendForce*, int, int, int, int, double, double, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param lengthAB a double.
+   * @param lengthCB a double.
+   * @param angle a double.
+   * @param k1 a double.
+   * @param k2 a double.
+   */
+  public static native void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      int particle3,
+      double lengthAB,
+      double lengthCB,
+      double angle,
+      double k1,
+      double k2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaStretchBendForce_updateParametersInContext(OpenMM_AmoebaStretchBendForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaStretchBendForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaStretchBendForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_AmoebaGKCavitationForce* OpenMM_AmoebaGKCavitationForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaGKCavitationForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_destroy(OpenMM_AmoebaGKCavitationForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGKCavitationForce_addParticle(OpenMM_AmoebaGKCavitationForce*, double, double, double, double, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param radius a double.
+   * @param gamma a double.
+   * @param vdw_alpha a double.
+   * @param charge a double.
+   * @param ishydrogen a int.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGKCavitationForce_addParticle(
+      PointerByReference target,
+      double radius,
+      double gamma,
+      double vdw_alpha,
+      double charge,
+      int ishydrogen);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_setParticleParameters(OpenMM_AmoebaGKCavitationForce*, int, double, double, double, double, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param radius a double.
+   * @param gamma a double.
+   * @param vdw_alpha a double.
+   * @param charge a double.
+   * @param ishydrogen a int.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_setParticleParameters(
+      PointerByReference target,
+      int index,
+      double radius,
+      double gamma,
+      double vdw_alpha,
+      double charge,
+      int ishydrogen);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, double*, double*, OpenMM_Boolean*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param radius a {@link java.nio.DoubleBuffer} object.
+   * @param gamma a {@link java.nio.DoubleBuffer} object.
+   * @param vdw_alpha a {@link java.nio.DoubleBuffer} object.
+   * @param charge a {@link java.nio.DoubleBuffer} object.
+   * @param ishydrogen a {@link java.nio.IntBuffer} object.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleBuffer radius,
+      DoubleBuffer gamma,
+      DoubleBuffer vdw_alpha,
+      DoubleBuffer charge,
+      IntBuffer ishydrogen);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce*, int, double*, double*, double*, double*, OpenMM_Boolean*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param gamma a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param vdw_alpha a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param charge a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ishydrogen a {@link com.sun.jna.ptr.IntByReference} object.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleByReference radius,
+      DoubleByReference gamma,
+      DoubleByReference vdw_alpha,
+      DoubleByReference charge,
+      IntByReference ishydrogen);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaGKCavitationForce_getNumParticles(const OpenMM_AmoebaGKCavitationForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGKCavitationForce_getNumParticles(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_AmoebaGKCavitationForce_NonbondedMethod OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(const OpenMM_AmoebaGKCavitationForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(OpenMM_AmoebaGKCavitationForce*, OpenMM_AmoebaGKCavitationForce_NonbondedMethod)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param method a int.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(
+      PointerByReference target, int method);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(const OpenMM_AmoebaGKCavitationForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(OpenMM_AmoebaGKCavitationForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param distance a double.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(
+      PointerByReference target, double distance);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(OpenMM_AmoebaGKCavitationForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
    * AmoebaTorsionTorsionForce<br>
    * Original signature : <code>
    * OpenMM_AmoebaTorsionTorsionForce* OpenMM_AmoebaTorsionTorsionForce_create()</code>
@@ -3729,33 +3480,33 @@ public class OpenMMAmoebaLibrary implements Library {
   public static native int OpenMM_AmoebaTorsionTorsionForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * AmoebaAngleTorsionForce<br>
+   * AmoebaStretchTorsionForce<br>
    * Original signature : <code>
-   * OpenMM_AmoebaAngleTorsionForce* OpenMM_AmoebaAngleTorsionForce_create()</code>
+   * OpenMM_AmoebaStretchTorsionForce* OpenMM_AmoebaStretchTorsionForce_create()</code>
    *
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_AmoebaAngleTorsionForce_create();
+  public static native PointerByReference OpenMM_AmoebaStretchTorsionForce_create();
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaAngleTorsionForce_destroy(OpenMM_AmoebaAngleTorsionForce*)</code>
+   * void OpenMM_AmoebaStretchTorsionForce_destroy(OpenMM_AmoebaStretchTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_AmoebaAngleTorsionForce_destroy(PointerByReference target);
+  public static native void OpenMM_AmoebaStretchTorsionForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaAngleTorsionForce_getNumAngleTorsions(const OpenMM_AmoebaAngleTorsionForce*)
+   * int OpenMM_AmoebaStretchTorsionForce_getNumStretchTorsions(const OpenMM_AmoebaStretchTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_AmoebaAngleTorsionForce_getNumAngleTorsions(
+  public static native int OpenMM_AmoebaStretchTorsionForce_getNumStretchTorsions(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_AmoebaAngleTorsionForce_addAngleTorsion(OpenMM_AmoebaAngleTorsionForce*, int, int, int, int, double, double, double, double, double, double, double, double)
+   * int OpenMM_AmoebaStretchTorsionForce_addStretchTorsion(OpenMM_AmoebaStretchTorsionForce*, int, int, int, int, double, double, double, double, double, double, double, double, double, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -3763,33 +3514,41 @@ public class OpenMMAmoebaLibrary implements Library {
    * @param particle2 a int.
    * @param particle3 a int.
    * @param particle4 a int.
-   * @param angleCBA a double.
-   * @param angleDCB a double.
+   * @param lengthBA a double.
+   * @param lengthCB a double.
+   * @param lengthDC a double.
    * @param k1 a double.
    * @param k2 a double.
    * @param k3 a double.
    * @param k4 a double.
    * @param k5 a double.
    * @param k6 a double.
+   * @param k7 a double.
+   * @param k8 a double.
+   * @param k9 a double.
    * @return a int.
    */
-  public static native int OpenMM_AmoebaAngleTorsionForce_addAngleTorsion(
+  public static native int OpenMM_AmoebaStretchTorsionForce_addStretchTorsion(
       PointerByReference target,
       int particle1,
       int particle2,
       int particle3,
       int particle4,
-      double angleCBA,
-      double angleDCB,
+      double lengthBA,
+      double lengthCB,
+      double lengthDC,
       double k1,
       double k2,
       double k3,
       double k4,
       double k5,
-      double k6);
+      double k6,
+      double k7,
+      double k8,
+      double k9);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(const OpenMM_AmoebaAngleTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*)
+   * void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(const OpenMM_AmoebaStretchTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -3798,33 +3557,41 @@ public class OpenMMAmoebaLibrary implements Library {
    * @param particle2 a {@link java.nio.IntBuffer} object.
    * @param particle3 a {@link java.nio.IntBuffer} object.
    * @param particle4 a {@link java.nio.IntBuffer} object.
-   * @param angleCBA a {@link java.nio.DoubleBuffer} object.
-   * @param angleDCB a {@link java.nio.DoubleBuffer} object.
+   * @param lengthBA a {@link java.nio.DoubleBuffer} object.
+   * @param lengthCB a {@link java.nio.DoubleBuffer} object.
+   * @param lengthDC a {@link java.nio.DoubleBuffer} object.
    * @param k1 a {@link java.nio.DoubleBuffer} object.
    * @param k2 a {@link java.nio.DoubleBuffer} object.
    * @param k3 a {@link java.nio.DoubleBuffer} object.
    * @param k4 a {@link java.nio.DoubleBuffer} object.
    * @param k5 a {@link java.nio.DoubleBuffer} object.
    * @param k6 a {@link java.nio.DoubleBuffer} object.
+   * @param k7 a {@link java.nio.DoubleBuffer} object.
+   * @param k8 a {@link java.nio.DoubleBuffer} object.
+   * @param k9 a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(
+  public static native void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(
       PointerByReference target,
       int index,
       IntBuffer particle1,
       IntBuffer particle2,
       IntBuffer particle3,
       IntBuffer particle4,
-      DoubleBuffer angleCBA,
-      DoubleBuffer angleDCB,
+      DoubleBuffer lengthBA,
+      DoubleBuffer lengthCB,
+      DoubleBuffer lengthDC,
       DoubleBuffer k1,
       DoubleBuffer k2,
       DoubleBuffer k3,
       DoubleBuffer k4,
       DoubleBuffer k5,
-      DoubleBuffer k6);
+      DoubleBuffer k6,
+      DoubleBuffer k7,
+      DoubleBuffer k8,
+      DoubleBuffer k9);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(const OpenMM_AmoebaAngleTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*)
+   * void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(const OpenMM_AmoebaStretchTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -3833,33 +3600,41 @@ public class OpenMMAmoebaLibrary implements Library {
    * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param angleCBA a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param angleDCB a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param lengthBA a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param lengthCB a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param lengthDC a {@link com.sun.jna.ptr.DoubleByReference} object.
    * @param k1 a {@link com.sun.jna.ptr.DoubleByReference} object.
    * @param k2 a {@link com.sun.jna.ptr.DoubleByReference} object.
    * @param k3 a {@link com.sun.jna.ptr.DoubleByReference} object.
    * @param k4 a {@link com.sun.jna.ptr.DoubleByReference} object.
    * @param k5 a {@link com.sun.jna.ptr.DoubleByReference} object.
    * @param k6 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k7 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k8 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k9 a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(
+  public static native void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(
       PointerByReference target,
       int index,
       IntByReference particle1,
       IntByReference particle2,
       IntByReference particle3,
       IntByReference particle4,
-      DoubleByReference angleCBA,
-      DoubleByReference angleDCB,
+      DoubleByReference lengthBA,
+      DoubleByReference lengthCB,
+      DoubleByReference lengthDC,
       DoubleByReference k1,
       DoubleByReference k2,
       DoubleByReference k3,
       DoubleByReference k4,
       DoubleByReference k5,
-      DoubleByReference k6);
+      DoubleByReference k6,
+      DoubleByReference k7,
+      DoubleByReference k8,
+      DoubleByReference k9);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaAngleTorsionForce_setAngleTorsionParameters(OpenMM_AmoebaAngleTorsionForce*, int, int, int, int, int, double, double, double, double, double, double, double, double)
+   * void OpenMM_AmoebaStretchTorsionForce_setStretchTorsionParameters(OpenMM_AmoebaStretchTorsionForce*, int, int, int, int, int, double, double, double, double, double, double, double, double, double, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -3868,49 +3643,275 @@ public class OpenMMAmoebaLibrary implements Library {
    * @param particle2 a int.
    * @param particle3 a int.
    * @param particle4 a int.
-   * @param angleCBA a double.
-   * @param angleDCB a double.
+   * @param lengthBA a double.
+   * @param lengthCB a double.
+   * @param lengthDC a double.
    * @param k1 a double.
    * @param k2 a double.
    * @param k3 a double.
    * @param k4 a double.
    * @param k5 a double.
    * @param k6 a double.
+   * @param k7 a double.
+   * @param k8 a double.
+   * @param k9 a double.
    */
-  public static native void OpenMM_AmoebaAngleTorsionForce_setAngleTorsionParameters(
+  public static native void OpenMM_AmoebaStretchTorsionForce_setStretchTorsionParameters(
       PointerByReference target,
       int index,
       int particle1,
       int particle2,
       int particle3,
       int particle4,
-      double angleCBA,
-      double angleDCB,
+      double lengthBA,
+      double lengthCB,
+      double lengthDC,
       double k1,
       double k2,
       double k3,
       double k4,
       double k5,
-      double k6);
+      double k6,
+      double k7,
+      double k8,
+      double k9);
   /**
    * Original signature : <code>
-   * void OpenMM_AmoebaAngleTorsionForce_updateParametersInContext(OpenMM_AmoebaAngleTorsionForce*, OpenMM_Context*)
+   * void OpenMM_AmoebaStretchTorsionForce_updateParametersInContext(OpenMM_AmoebaStretchTorsionForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_AmoebaAngleTorsionForce_updateParametersInContext(
+  public static native void OpenMM_AmoebaStretchTorsionForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AmoebaAngleTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleTorsionForce*)
+   * OpenMM_Boolean OpenMM_AmoebaStretchTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_AmoebaAngleTorsionForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_AmoebaStretchTorsionForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AmoebaOutOfPlaneBendForce<br>
+   * Original signature : <code>
+   * OpenMM_AmoebaOutOfPlaneBendForce* OpenMM_AmoebaOutOfPlaneBendForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AmoebaOutOfPlaneBendForce_create();
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_destroy(OpenMM_AmoebaOutOfPlaneBendForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param cubicK a double.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(
+      PointerByReference target, double cubicK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param quarticK a double.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(
+      PointerByReference target, double quarticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param penticK a double.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(
+      PointerByReference target, double penticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(OpenMM_AmoebaOutOfPlaneBendForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param sexticK a double.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(
+      PointerByReference target, double sexticK);
+  /**
+   * Original signature : <code>
+   * double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(OpenMM_AmoebaOutOfPlaneBendForce*, int, int, int, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param particle4 a int.
+   * @param k a double.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      int particle3,
+      int particle4,
+      double k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce*, int, int*, int*, int*, int*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
+   * @param particle4 a {@link java.nio.IntBuffer} object.
+   * @param k a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
+      IntBuffer particle4,
+      DoubleBuffer k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce*, int, int*, int*, int*, int*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      IntByReference particle4,
+      DoubleByReference k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(OpenMM_AmoebaOutOfPlaneBendForce*, int, int, int, int, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param particle4 a int.
+   * @param k a double.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      int particle3,
+      int particle4,
+      double k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(OpenMM_AmoebaOutOfPlaneBendForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaOutOfPlaneBendForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaOutOfPlaneBendForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
 
   public static class OpenMM_3D_DoubleArray extends PointerType {
@@ -4023,22 +4024,22 @@ public class OpenMMAmoebaLibrary implements Library {
     }
   };
 
-  public static class OpenMM_AmoebaOutOfPlaneBendForce extends PointerType {
-    public OpenMM_AmoebaOutOfPlaneBendForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_AmoebaOutOfPlaneBendForce() {
-      super();
-    }
-  };
-
   public static class OpenMM_AmoebaAngleTorsionForce extends PointerType {
     public OpenMM_AmoebaAngleTorsionForce(Pointer address) {
       super(address);
     }
 
     public OpenMM_AmoebaAngleTorsionForce() {
+      super();
+    }
+  };
+
+  public static class OpenMM_AmoebaOutOfPlaneBendForce extends PointerType {
+    public OpenMM_AmoebaOutOfPlaneBendForce(Pointer address) {
+      super(address);
+    }
+
+    public OpenMM_AmoebaOutOfPlaneBendForce() {
       super();
     }
   };

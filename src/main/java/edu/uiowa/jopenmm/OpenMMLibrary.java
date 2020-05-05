@@ -21,7 +21,6 @@ import java.nio.IntBuffer;
  * href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  *
  * @author Michael J. Schnieders
- * @since 7.5.0-Tinker
  */
 public class OpenMMLibrary implements Library {
   /** Constant <code>JNA_LIBRARY_NAME="OpenMM"</code> */
@@ -39,33 +38,6 @@ public class OpenMMLibrary implements Library {
     public static final int OpenMM_True = 1;
   };
   /** enum values */
-  public static interface OpenMM_CustomNonbondedForce_NonbondedMethod {
-    public static final int OpenMM_CustomNonbondedForce_NoCutoff = 0;
-    public static final int OpenMM_CustomNonbondedForce_CutoffNonPeriodic = 1;
-    public static final int OpenMM_CustomNonbondedForce_CutoffPeriodic = 2;
-  };
-  /** enum values */
-  public static interface OpenMM_CustomHbondForce_NonbondedMethod {
-    public static final int OpenMM_CustomHbondForce_NoCutoff = 0;
-    public static final int OpenMM_CustomHbondForce_CutoffNonPeriodic = 1;
-    public static final int OpenMM_CustomHbondForce_CutoffPeriodic = 2;
-  };
-  /** enum values */
-  public static interface OpenMM_GayBerneForce_NonbondedMethod {
-    public static final int OpenMM_GayBerneForce_NoCutoff = 0;
-    public static final int OpenMM_GayBerneForce_CutoffNonPeriodic = 1;
-    public static final int OpenMM_GayBerneForce_CutoffPeriodic = 2;
-  };
-  /** enum values */
-  public static interface OpenMM_State_DataType {
-    public static final int OpenMM_State_Positions = 1;
-    public static final int OpenMM_State_Velocities = 2;
-    public static final int OpenMM_State_Forces = 4;
-    public static final int OpenMM_State_Energy = 8;
-    public static final int OpenMM_State_Parameters = 16;
-    public static final int OpenMM_State_ParameterDerivatives = 32;
-  };
-  /** enum values */
   public static interface OpenMM_CustomManyParticleForce_NonbondedMethod {
     public static final int OpenMM_CustomManyParticleForce_NoCutoff = 0;
     public static final int OpenMM_CustomManyParticleForce_CutoffNonPeriodic = 1;
@@ -75,26 +47,6 @@ public class OpenMMLibrary implements Library {
   public static interface OpenMM_CustomManyParticleForce_PermutationMode {
     public static final int OpenMM_CustomManyParticleForce_SinglePermutation = 0;
     public static final int OpenMM_CustomManyParticleForce_UniqueCentralParticle = 1;
-  };
-  /** enum values */
-  public static interface OpenMM_MonteCarloMembraneBarostat_XYMode {
-    public static final int OpenMM_MonteCarloMembraneBarostat_XYIsotropic = 0;
-    public static final int OpenMM_MonteCarloMembraneBarostat_XYAnisotropic = 1;
-  };
-  /** enum values */
-  public static interface OpenMM_MonteCarloMembraneBarostat_ZMode {
-    public static final int OpenMM_MonteCarloMembraneBarostat_ZFree = 0;
-    public static final int OpenMM_MonteCarloMembraneBarostat_ZFixed = 1;
-    public static final int OpenMM_MonteCarloMembraneBarostat_ConstantVolume = 2;
-  };
-  /** enum values */
-  public static interface OpenMM_NonbondedForce_NonbondedMethod {
-    public static final int OpenMM_NonbondedForce_NoCutoff = 0;
-    public static final int OpenMM_NonbondedForce_CutoffNonPeriodic = 1;
-    public static final int OpenMM_NonbondedForce_CutoffPeriodic = 2;
-    public static final int OpenMM_NonbondedForce_Ewald = 3;
-    public static final int OpenMM_NonbondedForce_PME = 4;
-    public static final int OpenMM_NonbondedForce_LJPME = 5;
   };
   /** enum values */
   public static interface OpenMM_GBSAOBCForce_NonbondedMethod {
@@ -115,6 +67,41 @@ public class OpenMMLibrary implements Library {
     public static final int OpenMM_CustomIntegrator_BlockEnd = 8;
   };
   /** enum values */
+  public static interface OpenMM_NonbondedForce_NonbondedMethod {
+    public static final int OpenMM_NonbondedForce_NoCutoff = 0;
+    public static final int OpenMM_NonbondedForce_CutoffNonPeriodic = 1;
+    public static final int OpenMM_NonbondedForce_CutoffPeriodic = 2;
+    public static final int OpenMM_NonbondedForce_Ewald = 3;
+    public static final int OpenMM_NonbondedForce_PME = 4;
+    public static final int OpenMM_NonbondedForce_LJPME = 5;
+  };
+  /** enum values */
+  public static interface OpenMM_CustomHbondForce_NonbondedMethod {
+    public static final int OpenMM_CustomHbondForce_NoCutoff = 0;
+    public static final int OpenMM_CustomHbondForce_CutoffNonPeriodic = 1;
+    public static final int OpenMM_CustomHbondForce_CutoffPeriodic = 2;
+  };
+  /** enum values */
+  public static interface OpenMM_MonteCarloMembraneBarostat_XYMode {
+    public static final int OpenMM_MonteCarloMembraneBarostat_XYIsotropic = 0;
+    public static final int OpenMM_MonteCarloMembraneBarostat_XYAnisotropic = 1;
+  };
+  /** enum values */
+  public static interface OpenMM_MonteCarloMembraneBarostat_ZMode {
+    public static final int OpenMM_MonteCarloMembraneBarostat_ZFree = 0;
+    public static final int OpenMM_MonteCarloMembraneBarostat_ZFixed = 1;
+    public static final int OpenMM_MonteCarloMembraneBarostat_ConstantVolume = 2;
+  };
+  /** enum values */
+  public static interface OpenMM_State_DataType {
+    public static final int OpenMM_State_Positions = 1;
+    public static final int OpenMM_State_Velocities = 2;
+    public static final int OpenMM_State_Forces = 4;
+    public static final int OpenMM_State_Energy = 8;
+    public static final int OpenMM_State_Parameters = 16;
+    public static final int OpenMM_State_ParameterDerivatives = 32;
+  };
+  /** enum values */
   public static interface OpenMM_CustomGBForce_NonbondedMethod {
     public static final int OpenMM_CustomGBForce_NoCutoff = 0;
     public static final int OpenMM_CustomGBForce_CutoffNonPeriodic = 1;
@@ -125,6 +112,18 @@ public class OpenMMLibrary implements Library {
     public static final int OpenMM_CustomGBForce_SingleParticle = 0;
     public static final int OpenMM_CustomGBForce_ParticlePair = 1;
     public static final int OpenMM_CustomGBForce_ParticlePairNoExclusions = 2;
+  };
+  /** enum values */
+  public static interface OpenMM_CustomNonbondedForce_NonbondedMethod {
+    public static final int OpenMM_CustomNonbondedForce_NoCutoff = 0;
+    public static final int OpenMM_CustomNonbondedForce_CutoffNonPeriodic = 1;
+    public static final int OpenMM_CustomNonbondedForce_CutoffPeriodic = 2;
+  };
+  /** enum values */
+  public static interface OpenMM_GayBerneForce_NonbondedMethod {
+    public static final int OpenMM_GayBerneForce_NoCutoff = 0;
+    public static final int OpenMM_GayBerneForce_CutoffNonPeriodic = 1;
+    public static final int OpenMM_GayBerneForce_CutoffPeriodic = 2;
   };
   /**
    * OpenMM_Vec3<br>
@@ -607,207 +606,6 @@ public class OpenMMLibrary implements Library {
    */
   public static native PointerByReference OpenMM_XmlSerializer_deserializeIntegrator(String xml);
   /**
-   * Context<br>
-   * Original signature : <code>
-   * OpenMM_Context* OpenMM_Context_create(const OpenMM_System*, OpenMM_Integrator*)</code>
-   *
-   * @param system a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_create(
-      PointerByReference system, PointerByReference integrator);
-  /**
-   * Original signature : <code>
-   * OpenMM_Context* OpenMM_Context_create_2(const OpenMM_System*, OpenMM_Integrator*, OpenMM_Platform*)
-   * </code>
-   *
-   * @param system a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param platform a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_create_2(
-      PointerByReference system, PointerByReference integrator, PointerByReference platform);
-  /**
-   * Original signature : <code>
-   * OpenMM_Context* OpenMM_Context_create_3(const OpenMM_System*, OpenMM_Integrator*, OpenMM_Platform*, const OpenMM_PropertyArray*)
-   * </code>
-   *
-   * @param system a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param platform a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param properties a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_create_3(
-      PointerByReference system,
-      PointerByReference integrator,
-      PointerByReference platform,
-      PointerByReference properties);
-  /**
-   * Original signature : <code>void OpenMM_Context_destroy(OpenMM_Context*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Context_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_System* OpenMM_Context_getSystem(const OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_getSystem(PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_Integrator* OpenMM_Context_getIntegrator(OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_getIntegrator(PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_Platform* OpenMM_Context_getPlatform(OpenMM_Context*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_getPlatform(PointerByReference target);
-  /**
-   * Original signature : <code>void OpenMM_Context_setState(OpenMM_Context*, const OpenMM_State*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param state a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Context_setState(
-      PointerByReference target, PointerByReference state);
-  /**
-   * Original signature : <code>void OpenMM_Context_setTime(OpenMM_Context*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param time a double.
-   */
-  public static native void OpenMM_Context_setTime(PointerByReference target, double time);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_setPositions(OpenMM_Context*, const OpenMM_Vec3Array*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param positions a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Context_setPositions(
-      PointerByReference target, PointerByReference positions);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_setVelocities(OpenMM_Context*, const OpenMM_Vec3Array*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param velocities a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Context_setVelocities(
-      PointerByReference target, PointerByReference velocities);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_setVelocitiesToTemperature(OpenMM_Context*, double, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @param randomSeed a int.
-   */
-  public static native void OpenMM_Context_setVelocitiesToTemperature(
-      PointerByReference target, double temperature, int randomSeed);
-  /**
-   * Original signature : <code>
-   * OpenMM_ParameterArray* OpenMM_Context_getParameters(const OpenMM_Context*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Context_getParameters(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_Context_getParameter(const OpenMM_Context*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a double.
-   */
-  public static native double OpenMM_Context_getParameter(PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * double OpenMM_Context_getParameter(const OpenMM_Context*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a double.
-   */
-  public static native double OpenMM_Context_getParameter(PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_setParameter(OpenMM_Context*, const char*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param value a double.
-   */
-  public static native void OpenMM_Context_setParameter(
-      PointerByReference target, String name, double value);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_setParameter(OpenMM_Context*, const char*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param value a double.
-   */
-  public static native void OpenMM_Context_setParameter(
-      PointerByReference target, Pointer name, double value);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_setPeriodicBoxVectors(OpenMM_Context*, const OpenMM_Vec3*, const OpenMM_Vec3*, const OpenMM_Vec3*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param a a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param b a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param c a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   */
-  public static native void OpenMM_Context_setPeriodicBoxVectors(
-      PointerByReference target, OpenMM_Vec3 a, OpenMM_Vec3 b, OpenMM_Vec3 c);
-  /**
-   * Original signature : <code>void OpenMM_Context_applyConstraints(OpenMM_Context*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tol a double.
-   */
-  public static native void OpenMM_Context_applyConstraints(PointerByReference target, double tol);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Context_applyVelocityConstraints(OpenMM_Context*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tol a double.
-   */
-  public static native void OpenMM_Context_applyVelocityConstraints(
-      PointerByReference target, double tol);
-  /**
-   * Original signature : <code>void OpenMM_Context_computeVirtualSites(OpenMM_Context*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Context_computeVirtualSites(PointerByReference target);
-  /**
-   * Original signature : <code>void OpenMM_Context_reinitialize(OpenMM_Context*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param preserveState a int.
-   */
-  public static native void OpenMM_Context_reinitialize(
-      PointerByReference target, int preserveState);
-  /**
    * TabulatedFunction<br>
    * Original signature : <code>void OpenMM_TabulatedFunction_destroy(OpenMM_TabulatedFunction*)
    * </code>
@@ -824,73 +622,138 @@ public class OpenMMLibrary implements Library {
    */
   public static native PointerByReference OpenMM_TabulatedFunction_Copy(PointerByReference target);
   /**
-   * Discrete2DFunction<br>
+   * Continuous3DFunction<br>
    * Original signature : <code>
-   * OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_create(int, int, const OpenMM_DoubleArray*)
+   * OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_create(int, int, int, const OpenMM_DoubleArray*, double, double, double, double, double, double)
    * </code>
    *
    * @param xsize a int.
    * @param ysize a int.
+   * @param zsize a int.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a double.
+   * @param xmax a double.
+   * @param ymin a double.
+   * @param ymax a double.
+   * @param zmin a double.
+   * @param zmax a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_Discrete2DFunction_create(
-      int xsize, int ysize, PointerByReference values);
+  public static native PointerByReference OpenMM_Continuous3DFunction_create(
+      int xsize,
+      int ysize,
+      int zsize,
+      PointerByReference values,
+      double xmin,
+      double xmax,
+      double ymin,
+      double ymax,
+      double zmin,
+      double zmax);
   /**
-   * Original signature : <code>void OpenMM_Discrete2DFunction_destroy(OpenMM_Discrete2DFunction*)
-   * </code>
+   * Original signature : <code>
+   * void OpenMM_Continuous3DFunction_destroy(OpenMM_Continuous3DFunction*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_Discrete2DFunction_destroy(PointerByReference target);
+  public static native void OpenMM_Continuous3DFunction_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_Discrete2DFunction_getFunctionParameters(const OpenMM_Discrete2DFunction*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_Continuous3DFunction_getFunctionParameters(const OpenMM_Continuous3DFunction*, int*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param xsize a {@link java.nio.IntBuffer} object.
    * @param ysize a {@link java.nio.IntBuffer} object.
+   * @param zsize a {@link java.nio.IntBuffer} object.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a {@link java.nio.DoubleBuffer} object.
+   * @param xmax a {@link java.nio.DoubleBuffer} object.
+   * @param ymin a {@link java.nio.DoubleBuffer} object.
+   * @param ymax a {@link java.nio.DoubleBuffer} object.
+   * @param zmin a {@link java.nio.DoubleBuffer} object.
+   * @param zmax a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_Discrete2DFunction_getFunctionParameters(
-      PointerByReference target, IntBuffer xsize, IntBuffer ysize, PointerByReference values);
+  public static native void OpenMM_Continuous3DFunction_getFunctionParameters(
+      PointerByReference target,
+      IntBuffer xsize,
+      IntBuffer ysize,
+      IntBuffer zsize,
+      PointerByReference values,
+      DoubleBuffer xmin,
+      DoubleBuffer xmax,
+      DoubleBuffer ymin,
+      DoubleBuffer ymax,
+      DoubleBuffer zmin,
+      DoubleBuffer zmax);
   /**
    * Original signature : <code>
-   * void OpenMM_Discrete2DFunction_getFunctionParameters(const OpenMM_Discrete2DFunction*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_Continuous3DFunction_getFunctionParameters(const OpenMM_Continuous3DFunction*, int*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param xsize a {@link com.sun.jna.ptr.IntByReference} object.
    * @param ysize a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param zsize a {@link com.sun.jna.ptr.IntByReference} object.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param xmax a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ymin a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ymax a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param zmin a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param zmax a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native void OpenMM_Discrete2DFunction_getFunctionParameters(
+  public static native void OpenMM_Continuous3DFunction_getFunctionParameters(
       PointerByReference target,
       IntByReference xsize,
       IntByReference ysize,
-      PointerByReference values);
+      IntByReference zsize,
+      PointerByReference values,
+      DoubleByReference xmin,
+      DoubleByReference xmax,
+      DoubleByReference ymin,
+      DoubleByReference ymax,
+      DoubleByReference zmin,
+      DoubleByReference zmax);
   /**
    * Original signature : <code>
-   * void OpenMM_Discrete2DFunction_setFunctionParameters(OpenMM_Discrete2DFunction*, int, int, const OpenMM_DoubleArray*)
+   * void OpenMM_Continuous3DFunction_setFunctionParameters(OpenMM_Continuous3DFunction*, int, int, int, const OpenMM_DoubleArray*, double, double, double, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param xsize a int.
    * @param ysize a int.
+   * @param zsize a int.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a double.
+   * @param xmax a double.
+   * @param ymin a double.
+   * @param ymax a double.
+   * @param zmin a double.
+   * @param zmax a double.
    */
-  public static native void OpenMM_Discrete2DFunction_setFunctionParameters(
-      PointerByReference target, int xsize, int ysize, PointerByReference values);
+  public static native void OpenMM_Continuous3DFunction_setFunctionParameters(
+      PointerByReference target,
+      int xsize,
+      int ysize,
+      int zsize,
+      PointerByReference values,
+      double xmin,
+      double xmax,
+      double ymin,
+      double ymax,
+      double zmin,
+      double zmax);
   /**
    * Original signature : <code>
-   * OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_Copy(const OpenMM_Discrete2DFunction*)
+   * OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_Copy(const OpenMM_Continuous3DFunction*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_Discrete2DFunction_Copy(PointerByReference target);
+  public static native PointerByReference OpenMM_Continuous3DFunction_Copy(
+      PointerByReference target);
   /**
    * Force<br>
    * Original signature : <code>void OpenMM_Force_destroy(OpenMM_Force*)</code>
@@ -921,267 +784,55 @@ public class OpenMMLibrary implements Library {
    */
   public static native int OpenMM_Force_usesPeriodicBoundaryConditions(PointerByReference target);
   /**
-   * CustomAngleForce<br>
-   * Original signature : <code>OpenMM_CustomAngleForce* OpenMM_CustomAngleForce_create(const char*)
+   * PeriodicTorsionForce<br>
+   * Original signature : <code>OpenMM_PeriodicTorsionForce* OpenMM_PeriodicTorsionForce_create()
    * </code>
    *
-   * @param energy a {@link java.lang.String} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomAngleForce_create(String energy);
+  public static native PointerByReference OpenMM_PeriodicTorsionForce_create();
   /**
-   * Original signature : <code>void OpenMM_CustomAngleForce_destroy(OpenMM_CustomAngleForce*)
-   * </code>
+   * Original signature : <code>
+   * void OpenMM_PeriodicTorsionForce_destroy(OpenMM_PeriodicTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomAngleForce_destroy(PointerByReference target);
+  public static native void OpenMM_PeriodicTorsionForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomAngleForce_getNumAngles(const OpenMM_CustomAngleForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_getNumAngles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_getNumPerAngleParameters(const OpenMM_CustomAngleForce*)</code>
+   * int OpenMM_PeriodicTorsionForce_getNumTorsions(const OpenMM_PeriodicTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomAngleForce_getNumPerAngleParameters(
-      PointerByReference target);
+  public static native int OpenMM_PeriodicTorsionForce_getNumTorsions(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomAngleForce_getNumGlobalParameters(const OpenMM_CustomAngleForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_getNumGlobalParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_getNumEnergyParameterDerivatives(const OpenMM_CustomAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_getNumEnergyParameterDerivatives(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomAngleForce_getEnergyFunction(const OpenMM_CustomAngleForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomAngleForce_getEnergyFunction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setEnergyFunction(OpenMM_CustomAngleForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomAngleForce_setEnergyFunction(
-      PointerByReference target, String energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setEnergyFunction(OpenMM_CustomAngleForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomAngleForce_setEnergyFunction(
-      PointerByReference target, Pointer energy);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_addPerAngleParameter(OpenMM_CustomAngleForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_addPerAngleParameter(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_addPerAngleParameter(OpenMM_CustomAngleForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_addPerAngleParameter(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomAngleForce_getPerAngleParameterName(const OpenMM_CustomAngleForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomAngleForce_getPerAngleParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setPerAngleParameterName(OpenMM_CustomAngleForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomAngleForce_setPerAngleParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setPerAngleParameterName(OpenMM_CustomAngleForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomAngleForce_setPerAngleParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_addGlobalParameter(OpenMM_CustomAngleForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_addGlobalParameter(
-      PointerByReference target, String name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_addGlobalParameter(OpenMM_CustomAngleForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomAngleForce_addGlobalParameter(
-      PointerByReference target, Pointer name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomAngleForce_getGlobalParameterName(const OpenMM_CustomAngleForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomAngleForce_getGlobalParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setGlobalParameterName(OpenMM_CustomAngleForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomAngleForce_setGlobalParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setGlobalParameterName(OpenMM_CustomAngleForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomAngleForce_setGlobalParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomAngleForce_getGlobalParameterDefaultValue(const OpenMM_CustomAngleForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomAngleForce_getGlobalParameterDefaultValue(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setGlobalParameterDefaultValue(OpenMM_CustomAngleForce*, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param defaultValue a double.
-   */
-  public static native void OpenMM_CustomAngleForce_setGlobalParameterDefaultValue(
-      PointerByReference target, int index, double defaultValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_addEnergyParameterDerivative(OpenMM_CustomAngleForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomAngleForce_addEnergyParameterDerivative(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomAngleForce_addEnergyParameterDerivative(OpenMM_CustomAngleForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomAngleForce_addEnergyParameterDerivative(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomAngleForce_getEnergyParameterDerivativeName(const OpenMM_CustomAngleForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomAngleForce_getEnergyParameterDerivativeName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomAngleForce_addAngle(OpenMM_CustomAngleForce*, int, int, int, const OpenMM_DoubleArray*)
+   * int OpenMM_PeriodicTorsionForce_addTorsion(OpenMM_PeriodicTorsionForce*, int, int, int, int, int, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param particle1 a int.
    * @param particle2 a int.
    * @param particle3 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle4 a int.
+   * @param periodicity a int.
+   * @param phase a double.
+   * @param k a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomAngleForce_addAngle(
+  public static native int OpenMM_PeriodicTorsionForce_addTorsion(
       PointerByReference target,
       int particle1,
       int particle2,
       int particle3,
-      PointerByReference parameters);
+      int particle4,
+      int periodicity,
+      double phase,
+      double k);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomAngleForce_getAngleParameters(const OpenMM_CustomAngleForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_PeriodicTorsionForce_getTorsionParameters(const OpenMM_PeriodicTorsionForce*, int, int*, int*, int*, int*, int*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -1189,18 +840,24 @@ public class OpenMMLibrary implements Library {
    * @param particle1 a {@link java.nio.IntBuffer} object.
    * @param particle2 a {@link java.nio.IntBuffer} object.
    * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle4 a {@link java.nio.IntBuffer} object.
+   * @param periodicity a {@link java.nio.IntBuffer} object.
+   * @param phase a {@link java.nio.DoubleBuffer} object.
+   * @param k a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_CustomAngleForce_getAngleParameters(
+  public static native void OpenMM_PeriodicTorsionForce_getTorsionParameters(
       PointerByReference target,
       int index,
       IntBuffer particle1,
       IntBuffer particle2,
       IntBuffer particle3,
-      PointerByReference parameters);
+      IntBuffer particle4,
+      IntBuffer periodicity,
+      DoubleBuffer phase,
+      DoubleBuffer k);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomAngleForce_getAngleParameters(const OpenMM_CustomAngleForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_PeriodicTorsionForce_getTorsionParameters(const OpenMM_PeriodicTorsionForce*, int, int*, int*, int*, int*, int*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -1208,18 +865,24 @@ public class OpenMMLibrary implements Library {
    * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param periodicity a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param phase a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native void OpenMM_CustomAngleForce_getAngleParameters(
+  public static native void OpenMM_PeriodicTorsionForce_getTorsionParameters(
       PointerByReference target,
       int index,
       IntByReference particle1,
       IntByReference particle2,
       IntByReference particle3,
-      PointerByReference parameters);
+      IntByReference particle4,
+      IntByReference periodicity,
+      DoubleByReference phase,
+      DoubleByReference k);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setAngleParameters(OpenMM_CustomAngleForce*, int, int, int, int, const OpenMM_DoubleArray*)
+   * void OpenMM_PeriodicTorsionForce_setTorsionParameters(OpenMM_PeriodicTorsionForce*, int, int, int, int, int, int, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -1227,329 +890,191 @@ public class OpenMMLibrary implements Library {
    * @param particle1 a int.
    * @param particle2 a int.
    * @param particle3 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle4 a int.
+   * @param periodicity a int.
+   * @param phase a double.
+   * @param k a double.
    */
-  public static native void OpenMM_CustomAngleForce_setAngleParameters(
+  public static native void OpenMM_PeriodicTorsionForce_setTorsionParameters(
       PointerByReference target,
       int index,
       int particle1,
       int particle2,
       int particle3,
-      PointerByReference parameters);
+      int particle4,
+      int periodicity,
+      double phase,
+      double k);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomAngleForce_updateParametersInContext(OpenMM_CustomAngleForce*, OpenMM_Context*)
+   * void OpenMM_PeriodicTorsionForce_updateParametersInContext(OpenMM_PeriodicTorsionForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomAngleForce_updateParametersInContext(
+  public static native void OpenMM_PeriodicTorsionForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomAngleForce*, OpenMM_Boolean)
+   * void OpenMM_PeriodicTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_PeriodicTorsionForce*, OpenMM_Boolean)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param periodic a int.
    */
-  public static native void OpenMM_CustomAngleForce_setUsesPeriodicBoundaryConditions(
+  public static native void OpenMM_PeriodicTorsionForce_setUsesPeriodicBoundaryConditions(
       PointerByReference target, int periodic);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomAngleForce_usesPeriodicBoundaryConditions(const OpenMM_CustomAngleForce*)
+   * OpenMM_Boolean OpenMM_PeriodicTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_PeriodicTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomAngleForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_PeriodicTorsionForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
+   * CustomTorsionForce<br>
    * Original signature : <code>
-   * OpenMM_CustomNonbondedForce* OpenMM_CustomNonbondedForce_create(const char*)</code>
+   * OpenMM_CustomTorsionForce* OpenMM_CustomTorsionForce_create(const char*)</code>
    *
    * @param energy a {@link java.lang.String} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomNonbondedForce_create(String energy);
+  public static native PointerByReference OpenMM_CustomTorsionForce_create(String energy);
   /**
-   * Original signature : <code>
-   * OpenMM_CustomNonbondedForce* OpenMM_CustomNonbondedForce_create_2(const OpenMM_CustomNonbondedForce*)
+   * Original signature : <code>void OpenMM_CustomTorsionForce_destroy(OpenMM_CustomTorsionForce*)
    * </code>
    *
-   * @param rhs a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomNonbondedForce_create_2(
-      PointerByReference rhs);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_destroy(OpenMM_CustomNonbondedForce*)</code>
-   *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_destroy(PointerByReference target);
+  public static native void OpenMM_CustomTorsionForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumParticles(const OpenMM_CustomNonbondedForce*)</code>
+   * int OpenMM_CustomTorsionForce_getNumTorsions(const OpenMM_CustomTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_getNumParticles(PointerByReference target);
+  public static native int OpenMM_CustomTorsionForce_getNumTorsions(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumExclusions(const OpenMM_CustomNonbondedForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getNumExclusions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumPerParticleParameters(const OpenMM_CustomNonbondedForce*)
+   * int OpenMM_CustomTorsionForce_getNumPerTorsionParameters(const OpenMM_CustomTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_getNumPerParticleParameters(
+  public static native int OpenMM_CustomTorsionForce_getNumPerTorsionParameters(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumGlobalParameters(const OpenMM_CustomNonbondedForce*)
+   * int OpenMM_CustomTorsionForce_getNumGlobalParameters(const OpenMM_CustomTorsionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomTorsionForce_getNumGlobalParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomTorsionForce_getNumEnergyParameterDerivatives(const OpenMM_CustomTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_getNumGlobalParameters(
+  public static native int OpenMM_CustomTorsionForce_getNumEnergyParameterDerivatives(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumTabulatedFunctions(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getNumTabulatedFunctions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumFunctions(const OpenMM_CustomNonbondedForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getNumFunctions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumInteractionGroups(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getNumInteractionGroups(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_getNumEnergyParameterDerivatives(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getNumEnergyParameterDerivatives(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomNonbondedForce_getEnergyFunction(const OpenMM_CustomNonbondedForce*)</code>
+   * char* OpenMM_CustomTorsionForce_getEnergyFunction(const OpenMM_CustomTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomNonbondedForce_getEnergyFunction(
+  public static native Pointer OpenMM_CustomTorsionForce_getEnergyFunction(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setEnergyFunction(OpenMM_CustomNonbondedForce*, const char*)
+   * void OpenMM_CustomTorsionForce_setEnergyFunction(OpenMM_CustomTorsionForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param energy a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_setEnergyFunction(
+  public static native void OpenMM_CustomTorsionForce_setEnergyFunction(
       PointerByReference target, String energy);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setEnergyFunction(OpenMM_CustomNonbondedForce*, const char*)
+   * void OpenMM_CustomTorsionForce_setEnergyFunction(OpenMM_CustomTorsionForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param energy a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_setEnergyFunction(
+  public static native void OpenMM_CustomTorsionForce_setEnergyFunction(
       PointerByReference target, Pointer energy);
   /**
    * Original signature : <code>
-   * OpenMM_CustomNonbondedForce_NonbondedMethod OpenMM_CustomNonbondedForce_getNonbondedMethod(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getNonbondedMethod(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setNonbondedMethod(OpenMM_CustomNonbondedForce*, OpenMM_CustomNonbondedForce_NonbondedMethod)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param method a int.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setNonbondedMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomNonbondedForce_getCutoffDistance(const OpenMM_CustomNonbondedForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomNonbondedForce_getCutoffDistance(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setCutoffDistance(OpenMM_CustomNonbondedForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param distance a double.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setCutoffDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomNonbondedForce_getUseSwitchingFunction(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getUseSwitchingFunction(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setUseSwitchingFunction(OpenMM_CustomNonbondedForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param use a int.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setUseSwitchingFunction(
-      PointerByReference target, int use);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomNonbondedForce_getSwitchingDistance(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomNonbondedForce_getSwitchingDistance(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setSwitchingDistance(OpenMM_CustomNonbondedForce*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param distance a double.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setSwitchingDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomNonbondedForce_getUseLongRangeCorrection(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_getUseLongRangeCorrection(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setUseLongRangeCorrection(OpenMM_CustomNonbondedForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param use a int.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setUseLongRangeCorrection(
-      PointerByReference target, int use);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addPerParticleParameter(OpenMM_CustomNonbondedForce*, const char*)
+   * int OpenMM_CustomTorsionForce_addPerTorsionParameter(OpenMM_CustomTorsionForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_addPerParticleParameter(
+  public static native int OpenMM_CustomTorsionForce_addPerTorsionParameter(
       PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addPerParticleParameter(OpenMM_CustomNonbondedForce*, const char*)
+   * int OpenMM_CustomTorsionForce_addPerTorsionParameter(OpenMM_CustomTorsionForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_addPerParticleParameter(
+  public static native int OpenMM_CustomTorsionForce_addPerTorsionParameter(
       PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomNonbondedForce_getPerParticleParameterName(const OpenMM_CustomNonbondedForce*, int)
+   * char* OpenMM_CustomTorsionForce_getPerTorsionParameterName(const OpenMM_CustomTorsionForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomNonbondedForce_getPerParticleParameterName(
+  public static native Pointer OpenMM_CustomTorsionForce_getPerTorsionParameterName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setPerParticleParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * void OpenMM_CustomTorsionForce_setPerTorsionParameterName(OpenMM_CustomTorsionForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_setPerParticleParameterName(
+  public static native void OpenMM_CustomTorsionForce_setPerTorsionParameterName(
       PointerByReference target, int index, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setPerParticleParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * void OpenMM_CustomTorsionForce_setPerTorsionParameterName(OpenMM_CustomTorsionForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_setPerParticleParameterName(
+  public static native void OpenMM_CustomTorsionForce_setPerTorsionParameterName(
       PointerByReference target, int index, Pointer name);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addGlobalParameter(OpenMM_CustomNonbondedForce*, const char*, double)
+   * int OpenMM_CustomTorsionForce_addGlobalParameter(OpenMM_CustomTorsionForce*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -1557,11 +1082,11 @@ public class OpenMMLibrary implements Library {
    * @param defaultValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_addGlobalParameter(
+  public static native int OpenMM_CustomTorsionForce_addGlobalParameter(
       PointerByReference target, String name, double defaultValue);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addGlobalParameter(OpenMM_CustomNonbondedForce*, const char*, double)
+   * int OpenMM_CustomTorsionForce_addGlobalParameter(OpenMM_CustomTorsionForce*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -1569,2508 +1094,480 @@ public class OpenMMLibrary implements Library {
    * @param defaultValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_addGlobalParameter(
+  public static native int OpenMM_CustomTorsionForce_addGlobalParameter(
       PointerByReference target, Pointer name, double defaultValue);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomNonbondedForce_getGlobalParameterName(const OpenMM_CustomNonbondedForce*, int)
+   * char* OpenMM_CustomTorsionForce_getGlobalParameterName(const OpenMM_CustomTorsionForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomNonbondedForce_getGlobalParameterName(
+  public static native Pointer OpenMM_CustomTorsionForce_getGlobalParameterName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setGlobalParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * void OpenMM_CustomTorsionForce_setGlobalParameterName(OpenMM_CustomTorsionForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_setGlobalParameterName(
+  public static native void OpenMM_CustomTorsionForce_setGlobalParameterName(
       PointerByReference target, int index, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setGlobalParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * void OpenMM_CustomTorsionForce_setGlobalParameterName(OpenMM_CustomTorsionForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_setGlobalParameterName(
+  public static native void OpenMM_CustomTorsionForce_setGlobalParameterName(
       PointerByReference target, int index, Pointer name);
   /**
    * Original signature : <code>
-   * double OpenMM_CustomNonbondedForce_getGlobalParameterDefaultValue(const OpenMM_CustomNonbondedForce*, int)
+   * double OpenMM_CustomTorsionForce_getGlobalParameterDefaultValue(const OpenMM_CustomTorsionForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a double.
    */
-  public static native double OpenMM_CustomNonbondedForce_getGlobalParameterDefaultValue(
+  public static native double OpenMM_CustomTorsionForce_getGlobalParameterDefaultValue(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setGlobalParameterDefaultValue(OpenMM_CustomNonbondedForce*, int, double)
+   * void OpenMM_CustomTorsionForce_setGlobalParameterDefaultValue(OpenMM_CustomTorsionForce*, int, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param defaultValue a double.
    */
-  public static native void OpenMM_CustomNonbondedForce_setGlobalParameterDefaultValue(
+  public static native void OpenMM_CustomTorsionForce_setGlobalParameterDefaultValue(
       PointerByReference target, int index, double defaultValue);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(OpenMM_CustomNonbondedForce*, const char*)
+   * void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(OpenMM_CustomTorsionForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(
+  public static native void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(
       PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(OpenMM_CustomNonbondedForce*, const char*)
+   * void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(OpenMM_CustomTorsionForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(
+  public static native void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(
       PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomNonbondedForce_getEnergyParameterDerivativeName(const OpenMM_CustomNonbondedForce*, int)
+   * char* OpenMM_CustomTorsionForce_getEnergyParameterDerivativeName(const OpenMM_CustomTorsionForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomNonbondedForce_getEnergyParameterDerivativeName(
+  public static native Pointer OpenMM_CustomTorsionForce_getEnergyParameterDerivativeName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addParticle(OpenMM_CustomNonbondedForce*, const OpenMM_DoubleArray*)
+   * int OpenMM_CustomTorsionForce_addTorsion(OpenMM_CustomTorsionForce*, int, int, int, int, const OpenMM_DoubleArray*)
    * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_addParticle(
-      PointerByReference target, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_getParticleParameters(const OpenMM_CustomNonbondedForce*, int, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_getParticleParameters(
-      PointerByReference target, int index, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setParticleParameters(OpenMM_CustomNonbondedForce*, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setParticleParameters(
-      PointerByReference target, int index, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addExclusion(OpenMM_CustomNonbondedForce*, int, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param particle1 a int.
    * @param particle2 a int.
+   * @param particle3 a int.
+   * @param particle4 a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomNonbondedForce_addExclusion(
-      PointerByReference target, int particle1, int particle2);
+  public static native int OpenMM_CustomTorsionForce_addTorsion(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      int particle3,
+      int particle4,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_getExclusionParticles(const OpenMM_CustomNonbondedForce*, int, int*, int*)
+   * void OpenMM_CustomTorsionForce_getTorsionParameters(const OpenMM_CustomTorsionForce*, int, int*, int*, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param particle1 a {@link java.nio.IntBuffer} object.
    * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
+   * @param particle4 a {@link java.nio.IntBuffer} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_getExclusionParticles(
-      PointerByReference target, int index, IntBuffer particle1, IntBuffer particle2);
+  public static native void OpenMM_CustomTorsionForce_getTorsionParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
+      IntBuffer particle4,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_getExclusionParticles(const OpenMM_CustomNonbondedForce*, int, int*, int*)
+   * void OpenMM_CustomTorsionForce_getTorsionParameters(const OpenMM_CustomTorsionForce*, int, int*, int*, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomNonbondedForce_getExclusionParticles(
-      PointerByReference target, int index, IntByReference particle1, IntByReference particle2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setExclusionParticles(OpenMM_CustomNonbondedForce*, int, int, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setExclusionParticles(
-      PointerByReference target, int index, int particle1, int particle2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_createExclusionsFromBonds(OpenMM_CustomNonbondedForce*, const OpenMM_BondArray*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param bonds a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param bondCutoff a int.
-   */
-  public static native void OpenMM_CustomNonbondedForce_createExclusionsFromBonds(
-      PointerByReference target, PointerByReference bonds, int bondCutoff);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addTabulatedFunction(OpenMM_CustomNonbondedForce*, const char*, OpenMM_TabulatedFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_addTabulatedFunction(
-      PointerByReference target, String name, PointerByReference function);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addTabulatedFunction(OpenMM_CustomNonbondedForce*, const char*, OpenMM_TabulatedFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_addTabulatedFunction(
-      PointerByReference target, Pointer name, PointerByReference function);
-  /**
-   * Original signature : <code>
-   * OpenMM_TabulatedFunction* OpenMM_CustomNonbondedForce_getTabulatedFunction(OpenMM_CustomNonbondedForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomNonbondedForce_getTabulatedFunction(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomNonbondedForce_getTabulatedFunctionName(const OpenMM_CustomNonbondedForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomNonbondedForce_getTabulatedFunctionName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addFunction(OpenMM_CustomNonbondedForce*, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_addFunction(
-      PointerByReference target, String name, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addFunction(OpenMM_CustomNonbondedForce*, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_addFunction(
-      PointerByReference target, Pointer name, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_getFunctionParameters(const OpenMM_CustomNonbondedForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link java.nio.DoubleBuffer} object.
-   * @param max a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_getFunctionParameters(
+  public static native void OpenMM_CustomTorsionForce_getTorsionParameters(
       PointerByReference target,
       int index,
-      PointerByReference name,
-      PointerByReference values,
-      DoubleBuffer min,
-      DoubleBuffer max);
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      IntByReference particle4,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_getFunctionParameters(const OpenMM_CustomNonbondedForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
+   * void OpenMM_CustomTorsionForce_setTorsionParameters(OpenMM_CustomTorsionForce*, int, int, int, int, int, const OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_getFunctionParameters(
-      PointerByReference target,
-      int index,
-      PointerByReference name,
-      PointerByReference values,
-      DoubleByReference min,
-      DoubleByReference max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setFunctionParameters(OpenMM_CustomNonbondedForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setFunctionParameters(
-      PointerByReference target,
-      int index,
-      String name,
-      PointerByReference values,
-      double min,
-      double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setFunctionParameters(OpenMM_CustomNonbondedForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setFunctionParameters(
-      PointerByReference target,
-      int index,
-      Pointer name,
-      PointerByReference values,
-      double min,
-      double max);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomNonbondedForce_addInteractionGroup(OpenMM_CustomNonbondedForce*, const OpenMM_IntSet*, const OpenMM_IntSet*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param set1 a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param set2 a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_addInteractionGroup(
-      PointerByReference target, PointerByReference set1, PointerByReference set2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_getInteractionGroupParameters(const OpenMM_CustomNonbondedForce*, int, OpenMM_IntSet*, OpenMM_IntSet*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param set1 a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param set2 a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_getInteractionGroupParameters(
-      PointerByReference target, int index, PointerByReference set1, PointerByReference set2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_setInteractionGroupParameters(OpenMM_CustomNonbondedForce*, int, const OpenMM_IntSet*, const OpenMM_IntSet*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param set1 a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param set2 a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_setInteractionGroupParameters(
-      PointerByReference target, int index, PointerByReference set1, PointerByReference set2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomNonbondedForce_updateParametersInContext(OpenMM_CustomNonbondedForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomNonbondedForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomNonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_CustomNonbondedForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomNonbondedForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * AndersenThermostat<br>
-   * Original signature : <code>
-   * OpenMM_AndersenThermostat* OpenMM_AndersenThermostat_create(double, double)</code>
-   *
-   * @param defaultTemperature a double.
-   * @param defaultCollisionFrequency a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_AndersenThermostat_create(
-      double defaultTemperature, double defaultCollisionFrequency);
-  /**
-   * Original signature : <code>void OpenMM_AndersenThermostat_destroy(OpenMM_AndersenThermostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_AndersenThermostat_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>char* OpenMM_AndersenThermostat_Temperature()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_AndersenThermostat_Temperature();
-  /**
-   * Original signature : <code>char* OpenMM_AndersenThermostat_CollisionFrequency()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_AndersenThermostat_CollisionFrequency();
-  /**
-   * Original signature : <code>
-   * double OpenMM_AndersenThermostat_getDefaultTemperature(const OpenMM_AndersenThermostat*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AndersenThermostat_getDefaultTemperature(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AndersenThermostat_setDefaultTemperature(OpenMM_AndersenThermostat*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   */
-  public static native void OpenMM_AndersenThermostat_setDefaultTemperature(
-      PointerByReference target, double temperature);
-  /**
-   * Original signature : <code>
-   * double OpenMM_AndersenThermostat_getDefaultCollisionFrequency(const OpenMM_AndersenThermostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_AndersenThermostat_getDefaultCollisionFrequency(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AndersenThermostat_setDefaultCollisionFrequency(OpenMM_AndersenThermostat*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param frequency a double.
-   */
-  public static native void OpenMM_AndersenThermostat_setDefaultCollisionFrequency(
-      PointerByReference target, double frequency);
-  /**
-   * Original signature : <code>
-   * int OpenMM_AndersenThermostat_getRandomNumberSeed(const OpenMM_AndersenThermostat*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AndersenThermostat_getRandomNumberSeed(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_AndersenThermostat_setRandomNumberSeed(OpenMM_AndersenThermostat*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_AndersenThermostat_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_AndersenThermostat_usesPeriodicBoundaryConditions(const OpenMM_AndersenThermostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_AndersenThermostat_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * VirtualSite<br>
-   * Original signature : <code>void OpenMM_VirtualSite_destroy(OpenMM_VirtualSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_VirtualSite_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>int OpenMM_VirtualSite_getNumParticles(const OpenMM_VirtualSite*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_VirtualSite_getNumParticles(PointerByReference target);
-  /**
-   * Original signature : <code>int OpenMM_VirtualSite_getParticle(const OpenMM_VirtualSite*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle a int.
-   * @return a int.
-   */
-  public static native int OpenMM_VirtualSite_getParticle(PointerByReference target, int particle);
-  /**
-   * ThreeParticleAverageSite<br>
-   * Original signature : <code>
-   * OpenMM_ThreeParticleAverageSite* OpenMM_ThreeParticleAverageSite_create(int, int, int, double, double, double)
-   * </code>
-   *
    * @param particle1 a int.
    * @param particle2 a int.
    * @param particle3 a int.
-   * @param weight1 a double.
-   * @param weight2 a double.
-   * @param weight3 a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_ThreeParticleAverageSite_create(
-      int particle1, int particle2, int particle3, double weight1, double weight2, double weight3);
-  /**
-   * Original signature : <code>
-   * void OpenMM_ThreeParticleAverageSite_destroy(OpenMM_ThreeParticleAverageSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_ThreeParticleAverageSite_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_ThreeParticleAverageSite_getWeight(const OpenMM_ThreeParticleAverageSite*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle a int.
-   * @return a double.
-   */
-  public static native double OpenMM_ThreeParticleAverageSite_getWeight(
-      PointerByReference target, int particle);
-  /**
-   * Original signature : <code>OpenMM_CustomHbondForce* OpenMM_CustomHbondForce_create(const char*)
-   * </code>
-   *
-   * @param energy a {@link java.lang.String} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomHbondForce_create(String energy);
-  /**
-   * Original signature : <code>void OpenMM_CustomHbondForce_destroy(OpenMM_CustomHbondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumDonors(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumDonors(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumAcceptors(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumAcceptors(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumExclusions(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumExclusions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumPerDonorParameters(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumPerDonorParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumPerAcceptorParameters(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumPerAcceptorParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumGlobalParameters(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumGlobalParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumTabulatedFunctions(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumTabulatedFunctions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_getNumFunctions(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNumFunctions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomHbondForce_getEnergyFunction(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomHbondForce_getEnergyFunction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setEnergyFunction(OpenMM_CustomHbondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setEnergyFunction(
-      PointerByReference target, String energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setEnergyFunction(OpenMM_CustomHbondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setEnergyFunction(
-      PointerByReference target, Pointer energy);
-  /**
-   * Original signature : <code>
-   * OpenMM_CustomHbondForce_NonbondedMethod OpenMM_CustomHbondForce_getNonbondedMethod(const OpenMM_CustomHbondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_getNonbondedMethod(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setNonbondedMethod(OpenMM_CustomHbondForce*, OpenMM_CustomHbondForce_NonbondedMethod)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param method a int.
-   */
-  public static native void OpenMM_CustomHbondForce_setNonbondedMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomHbondForce_getCutoffDistance(const OpenMM_CustomHbondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomHbondForce_getCutoffDistance(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setCutoffDistance(OpenMM_CustomHbondForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param distance a double.
-   */
-  public static native void OpenMM_CustomHbondForce_setCutoffDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addPerDonorParameter(OpenMM_CustomHbondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addPerDonorParameter(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addPerDonorParameter(OpenMM_CustomHbondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addPerDonorParameter(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomHbondForce_getPerDonorParameterName(const OpenMM_CustomHbondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomHbondForce_getPerDonorParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setPerDonorParameterName(OpenMM_CustomHbondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setPerDonorParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setPerDonorParameterName(OpenMM_CustomHbondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setPerDonorParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addPerAcceptorParameter(OpenMM_CustomHbondForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addPerAcceptorParameter(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addPerAcceptorParameter(OpenMM_CustomHbondForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addPerAcceptorParameter(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomHbondForce_getPerAcceptorParameterName(const OpenMM_CustomHbondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomHbondForce_getPerAcceptorParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setPerAcceptorParameterName(OpenMM_CustomHbondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setPerAcceptorParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setPerAcceptorParameterName(OpenMM_CustomHbondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setPerAcceptorParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addGlobalParameter(OpenMM_CustomHbondForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addGlobalParameter(
-      PointerByReference target, String name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addGlobalParameter(OpenMM_CustomHbondForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addGlobalParameter(
-      PointerByReference target, Pointer name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomHbondForce_getGlobalParameterName(const OpenMM_CustomHbondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomHbondForce_getGlobalParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setGlobalParameterName(OpenMM_CustomHbondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setGlobalParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setGlobalParameterName(OpenMM_CustomHbondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setGlobalParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomHbondForce_getGlobalParameterDefaultValue(const OpenMM_CustomHbondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomHbondForce_getGlobalParameterDefaultValue(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setGlobalParameterDefaultValue(OpenMM_CustomHbondForce*, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param defaultValue a double.
-   */
-  public static native void OpenMM_CustomHbondForce_setGlobalParameterDefaultValue(
-      PointerByReference target, int index, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addDonor(OpenMM_CustomHbondForce*, int, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param d1 a int.
-   * @param d2 a int.
-   * @param d3 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addDonor(
-      PointerByReference target, int d1, int d2, int d3, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getDonorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param d1 a {@link java.nio.IntBuffer} object.
-   * @param d2 a {@link java.nio.IntBuffer} object.
-   * @param d3 a {@link java.nio.IntBuffer} object.
+   * @param particle4 a int.
    * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomHbondForce_getDonorParameters(
+  public static native void OpenMM_CustomTorsionForce_setTorsionParameters(
       PointerByReference target,
       int index,
-      IntBuffer d1,
-      IntBuffer d2,
-      IntBuffer d3,
+      int particle1,
+      int particle2,
+      int particle3,
+      int particle4,
       PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getDonorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param d1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param d2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param d3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getDonorParameters(
-      PointerByReference target,
-      int index,
-      IntByReference d1,
-      IntByReference d2,
-      IntByReference d3,
-      PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setDonorParameters(OpenMM_CustomHbondForce*, int, int, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param d1 a int.
-   * @param d2 a int.
-   * @param d3 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setDonorParameters(
-      PointerByReference target, int index, int d1, int d2, int d3, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addAcceptor(OpenMM_CustomHbondForce*, int, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param a1 a int.
-   * @param a2 a int.
-   * @param a3 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addAcceptor(
-      PointerByReference target, int a1, int a2, int a3, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getAcceptorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param a1 a {@link java.nio.IntBuffer} object.
-   * @param a2 a {@link java.nio.IntBuffer} object.
-   * @param a3 a {@link java.nio.IntBuffer} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getAcceptorParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer a1,
-      IntBuffer a2,
-      IntBuffer a3,
-      PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getAcceptorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param a1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param a2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param a3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getAcceptorParameters(
-      PointerByReference target,
-      int index,
-      IntByReference a1,
-      IntByReference a2,
-      IntByReference a3,
-      PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setAcceptorParameters(OpenMM_CustomHbondForce*, int, int, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param a1 a int.
-   * @param a2 a int.
-   * @param a3 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_setAcceptorParameters(
-      PointerByReference target, int index, int a1, int a2, int a3, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addExclusion(OpenMM_CustomHbondForce*, int, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param donor a int.
-   * @param acceptor a int.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addExclusion(
-      PointerByReference target, int donor, int acceptor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getExclusionParticles(const OpenMM_CustomHbondForce*, int, int*, int*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param donor a {@link java.nio.IntBuffer} object.
-   * @param acceptor a {@link java.nio.IntBuffer} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getExclusionParticles(
-      PointerByReference target, int index, IntBuffer donor, IntBuffer acceptor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getExclusionParticles(const OpenMM_CustomHbondForce*, int, int*, int*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param donor a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param acceptor a {@link com.sun.jna.ptr.IntByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getExclusionParticles(
-      PointerByReference target, int index, IntByReference donor, IntByReference acceptor);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setExclusionParticles(OpenMM_CustomHbondForce*, int, int, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param donor a int.
-   * @param acceptor a int.
-   */
-  public static native void OpenMM_CustomHbondForce_setExclusionParticles(
-      PointerByReference target, int index, int donor, int acceptor);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addTabulatedFunction(OpenMM_CustomHbondForce*, const char*, OpenMM_TabulatedFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addTabulatedFunction(
-      PointerByReference target, String name, PointerByReference function);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addTabulatedFunction(OpenMM_CustomHbondForce*, const char*, OpenMM_TabulatedFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addTabulatedFunction(
-      PointerByReference target, Pointer name, PointerByReference function);
-  /**
-   * Original signature : <code>
-   * OpenMM_TabulatedFunction* OpenMM_CustomHbondForce_getTabulatedFunction(OpenMM_CustomHbondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomHbondForce_getTabulatedFunction(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomHbondForce_getTabulatedFunctionName(const OpenMM_CustomHbondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomHbondForce_getTabulatedFunctionName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addFunction(OpenMM_CustomHbondForce*, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addFunction(
-      PointerByReference target, String name, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomHbondForce_addFunction(OpenMM_CustomHbondForce*, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomHbondForce_addFunction(
-      PointerByReference target, Pointer name, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getFunctionParameters(const OpenMM_CustomHbondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link java.nio.DoubleBuffer} object.
-   * @param max a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getFunctionParameters(
-      PointerByReference target,
-      int index,
-      PointerByReference name,
-      PointerByReference values,
-      DoubleBuffer min,
-      DoubleBuffer max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_getFunctionParameters(const OpenMM_CustomHbondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_CustomHbondForce_getFunctionParameters(
-      PointerByReference target,
-      int index,
-      PointerByReference name,
-      PointerByReference values,
-      DoubleByReference min,
-      DoubleByReference max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setFunctionParameters(OpenMM_CustomHbondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_CustomHbondForce_setFunctionParameters(
-      PointerByReference target,
-      int index,
-      String name,
-      PointerByReference values,
-      double min,
-      double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_setFunctionParameters(OpenMM_CustomHbondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_CustomHbondForce_setFunctionParameters(
-      PointerByReference target,
-      int index,
-      Pointer name,
-      PointerByReference values,
-      double min,
-      double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomHbondForce_updateParametersInContext(OpenMM_CustomHbondForce*, OpenMM_Context*)
+   * void OpenMM_CustomTorsionForce_updateParametersInContext(OpenMM_CustomTorsionForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomHbondForce_updateParametersInContext(
+  public static native void OpenMM_CustomTorsionForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomHbondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomHbondForce*)
+   * void OpenMM_CustomTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomTorsionForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_CustomTorsionForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CustomTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CustomTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomHbondForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_CustomTorsionForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * Continuous1DFunction<br>
+   * Continuous2DFunction<br>
    * Original signature : <code>
-   * OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_create(const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Continuous1DFunction_create(
-      PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous1DFunction_destroy(OpenMM_Continuous1DFunction*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Continuous1DFunction_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous1DFunction_getFunctionParameters(const OpenMM_Continuous1DFunction*, OpenMM_DoubleArray*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link java.nio.DoubleBuffer} object.
-   * @param max a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_Continuous1DFunction_getFunctionParameters(
-      PointerByReference target, PointerByReference values, DoubleBuffer min, DoubleBuffer max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous1DFunction_getFunctionParameters(const OpenMM_Continuous1DFunction*, OpenMM_DoubleArray*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_Continuous1DFunction_getFunctionParameters(
-      PointerByReference target,
-      PointerByReference values,
-      DoubleByReference min,
-      DoubleByReference max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous1DFunction_setFunctionParameters(OpenMM_Continuous1DFunction*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_Continuous1DFunction_setFunctionParameters(
-      PointerByReference target, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_Copy(const OpenMM_Continuous1DFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Continuous1DFunction_Copy(
-      PointerByReference target);
-  /**
-   * Discrete3DFunction<br>
-   * Original signature : <code>
-   * OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_create(int, int, int, const OpenMM_DoubleArray*)
+   * OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_create(int, int, const OpenMM_DoubleArray*, double, double, double, double)
    * </code>
    *
    * @param xsize a int.
    * @param ysize a int.
-   * @param zsize a int.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a double.
+   * @param xmax a double.
+   * @param ymin a double.
+   * @param ymax a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_Discrete3DFunction_create(
-      int xsize, int ysize, int zsize, PointerByReference values);
+  public static native PointerByReference OpenMM_Continuous2DFunction_create(
+      int xsize,
+      int ysize,
+      PointerByReference values,
+      double xmin,
+      double xmax,
+      double ymin,
+      double ymax);
   /**
-   * Original signature : <code>void OpenMM_Discrete3DFunction_destroy(OpenMM_Discrete3DFunction*)
-   * </code>
+   * Original signature : <code>
+   * void OpenMM_Continuous2DFunction_destroy(OpenMM_Continuous2DFunction*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_Discrete3DFunction_destroy(PointerByReference target);
+  public static native void OpenMM_Continuous2DFunction_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_Discrete3DFunction_getFunctionParameters(const OpenMM_Discrete3DFunction*, int*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_Continuous2DFunction_getFunctionParameters(const OpenMM_Continuous2DFunction*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param xsize a {@link java.nio.IntBuffer} object.
    * @param ysize a {@link java.nio.IntBuffer} object.
-   * @param zsize a {@link java.nio.IntBuffer} object.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a {@link java.nio.DoubleBuffer} object.
+   * @param xmax a {@link java.nio.DoubleBuffer} object.
+   * @param ymin a {@link java.nio.DoubleBuffer} object.
+   * @param ymax a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_Discrete3DFunction_getFunctionParameters(
+  public static native void OpenMM_Continuous2DFunction_getFunctionParameters(
       PointerByReference target,
       IntBuffer xsize,
       IntBuffer ysize,
-      IntBuffer zsize,
-      PointerByReference values);
+      PointerByReference values,
+      DoubleBuffer xmin,
+      DoubleBuffer xmax,
+      DoubleBuffer ymin,
+      DoubleBuffer ymax);
   /**
    * Original signature : <code>
-   * void OpenMM_Discrete3DFunction_getFunctionParameters(const OpenMM_Discrete3DFunction*, int*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_Continuous2DFunction_getFunctionParameters(const OpenMM_Continuous2DFunction*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param xsize a {@link com.sun.jna.ptr.IntByReference} object.
    * @param ysize a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param zsize a {@link com.sun.jna.ptr.IntByReference} object.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param xmax a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ymin a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ymax a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native void OpenMM_Discrete3DFunction_getFunctionParameters(
+  public static native void OpenMM_Continuous2DFunction_getFunctionParameters(
       PointerByReference target,
       IntByReference xsize,
       IntByReference ysize,
-      IntByReference zsize,
-      PointerByReference values);
+      PointerByReference values,
+      DoubleByReference xmin,
+      DoubleByReference xmax,
+      DoubleByReference ymin,
+      DoubleByReference ymax);
   /**
    * Original signature : <code>
-   * void OpenMM_Discrete3DFunction_setFunctionParameters(OpenMM_Discrete3DFunction*, int, int, int, const OpenMM_DoubleArray*)
+   * void OpenMM_Continuous2DFunction_setFunctionParameters(OpenMM_Continuous2DFunction*, int, int, const OpenMM_DoubleArray*, double, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param xsize a int.
    * @param ysize a int.
-   * @param zsize a int.
    * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xmin a double.
+   * @param xmax a double.
+   * @param ymin a double.
+   * @param ymax a double.
    */
-  public static native void OpenMM_Discrete3DFunction_setFunctionParameters(
-      PointerByReference target, int xsize, int ysize, int zsize, PointerByReference values);
+  public static native void OpenMM_Continuous2DFunction_setFunctionParameters(
+      PointerByReference target,
+      int xsize,
+      int ysize,
+      PointerByReference values,
+      double xmin,
+      double xmax,
+      double ymin,
+      double ymax);
   /**
    * Original signature : <code>
-   * OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_Copy(const OpenMM_Discrete3DFunction*)
+   * OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_Copy(const OpenMM_Continuous2DFunction*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_Discrete3DFunction_Copy(PointerByReference target);
+  public static native PointerByReference OpenMM_Continuous2DFunction_Copy(
+      PointerByReference target);
   /**
-   * OpenMMException<br>
-   * Original signature : <code>OpenMM_OpenMMException* OpenMM_OpenMMException_create(const char*)
-   * </code>
+   * CMMotionRemover<br>
+   * Original signature : <code>OpenMM_CMMotionRemover* OpenMM_CMMotionRemover_create(int)</code>
    *
-   * @param message a {@link java.lang.String} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_OpenMMException_create(String message);
-  /**
-   * Original signature : <code>void OpenMM_OpenMMException_destroy(OpenMM_OpenMMException*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_OpenMMException_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>char* OpenMM_OpenMMException_what(const OpenMM_OpenMMException*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_OpenMMException_what(PointerByReference target);
-  /**
-   * MonteCarloBarostat<br>
-   * Original signature : <code>
-   * OpenMM_MonteCarloBarostat* OpenMM_MonteCarloBarostat_create(double, double, int)</code>
-   *
-   * @param defaultPressure a double.
-   * @param defaultTemperature a double.
    * @param frequency a int.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_MonteCarloBarostat_create(
-      double defaultPressure, double defaultTemperature, int frequency);
+  public static native PointerByReference OpenMM_CMMotionRemover_create(int frequency);
   /**
-   * Original signature : <code>void OpenMM_MonteCarloBarostat_destroy(OpenMM_MonteCarloBarostat*)
-   * </code>
+   * Original signature : <code>void OpenMM_CMMotionRemover_destroy(OpenMM_CMMotionRemover*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_MonteCarloBarostat_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloBarostat_Pressure()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloBarostat_Pressure();
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloBarostat_Temperature()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloBarostat_Temperature();
+  public static native void OpenMM_CMMotionRemover_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_MonteCarloBarostat_getDefaultPressure(const OpenMM_MonteCarloBarostat*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_MonteCarloBarostat_getDefaultPressure(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloBarostat_setDefaultPressure(OpenMM_MonteCarloBarostat*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param pressure a double.
-   */
-  public static native void OpenMM_MonteCarloBarostat_setDefaultPressure(
-      PointerByReference target, double pressure);
-  /**
-   * Original signature : <code>
-   * int OpenMM_MonteCarloBarostat_getFrequency(const OpenMM_MonteCarloBarostat*)</code>
+   * int OpenMM_CMMotionRemover_getFrequency(const OpenMM_CMMotionRemover*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_MonteCarloBarostat_getFrequency(PointerByReference target);
+  public static native int OpenMM_CMMotionRemover_getFrequency(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_MonteCarloBarostat_setFrequency(OpenMM_MonteCarloBarostat*, int)</code>
+   * void OpenMM_CMMotionRemover_setFrequency(OpenMM_CMMotionRemover*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param freq a int.
    */
-  public static native void OpenMM_MonteCarloBarostat_setFrequency(
+  public static native void OpenMM_CMMotionRemover_setFrequency(
       PointerByReference target, int freq);
   /**
    * Original signature : <code>
-   * double OpenMM_MonteCarloBarostat_getDefaultTemperature(const OpenMM_MonteCarloBarostat*)</code>
+   * OpenMM_Boolean OpenMM_CMMotionRemover_usesPeriodicBoundaryConditions(const OpenMM_CMMotionRemover*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CMMotionRemover_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * Integrator<br>
+   * Original signature : <code>void OpenMM_Integrator_destroy(OpenMM_Integrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Integrator_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>double OpenMM_Integrator_getStepSize(const OpenMM_Integrator*)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
    */
-  public static native double OpenMM_MonteCarloBarostat_getDefaultTemperature(
-      PointerByReference target);
+  public static native double OpenMM_Integrator_getStepSize(PointerByReference target);
   /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloBarostat_setDefaultTemperature(OpenMM_MonteCarloBarostat*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   */
-  public static native void OpenMM_MonteCarloBarostat_setDefaultTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * int OpenMM_MonteCarloBarostat_getRandomNumberSeed(const OpenMM_MonteCarloBarostat*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloBarostat_getRandomNumberSeed(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloBarostat_setRandomNumberSeed(OpenMM_MonteCarloBarostat*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_MonteCarloBarostat_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_MonteCarloBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloBarostat*)
+   * Original signature : <code>void OpenMM_Integrator_setStepSize(OpenMM_Integrator*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @param size a double.
    */
-  public static native int OpenMM_MonteCarloBarostat_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_GayBerneForce* OpenMM_GayBerneForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_GayBerneForce_create();
-  /**
-   * Original signature : <code>void OpenMM_GayBerneForce_destroy(OpenMM_GayBerneForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_GayBerneForce_destroy(PointerByReference target);
+  public static native void OpenMM_Integrator_setStepSize(PointerByReference target, double size);
   /**
    * Original signature : <code>
-   * int OpenMM_GayBerneForce_getNumParticles(const OpenMM_GayBerneForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_GayBerneForce_getNumParticles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_GayBerneForce_getNumExceptions(const OpenMM_GayBerneForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_GayBerneForce_getNumExceptions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_GayBerneForce_NonbondedMethod OpenMM_GayBerneForce_getNonbondedMethod(const OpenMM_GayBerneForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_GayBerneForce_getNonbondedMethod(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_setNonbondedMethod(OpenMM_GayBerneForce*, OpenMM_GayBerneForce_NonbondedMethod)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param method a int.
-   */
-  public static native void OpenMM_GayBerneForce_setNonbondedMethod(
-      PointerByReference target, int method);
-  /**
-   * Original signature : <code>
-   * double OpenMM_GayBerneForce_getCutoffDistance(const OpenMM_GayBerneForce*)</code>
+   * double OpenMM_Integrator_getConstraintTolerance(const OpenMM_Integrator*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
    */
-  public static native double OpenMM_GayBerneForce_getCutoffDistance(PointerByReference target);
+  public static native double OpenMM_Integrator_getConstraintTolerance(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GayBerneForce_setCutoffDistance(OpenMM_GayBerneForce*, double)</code>
+   * void OpenMM_Integrator_setConstraintTolerance(OpenMM_Integrator*, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param distance a double.
+   * @param tol a double.
    */
-  public static native void OpenMM_GayBerneForce_setCutoffDistance(
-      PointerByReference target, double distance);
+  public static native void OpenMM_Integrator_setConstraintTolerance(
+      PointerByReference target, double tol);
   /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_GayBerneForce_getUseSwitchingFunction(const OpenMM_GayBerneForce*)</code>
+   * Original signature : <code>void OpenMM_Integrator_step(OpenMM_Integrator*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @param steps a int.
    */
-  public static native int OpenMM_GayBerneForce_getUseSwitchingFunction(PointerByReference target);
+  public static native void OpenMM_Integrator_step(PointerByReference target, int steps);
+  /**
+   * VariableVerletIntegrator<br>
+   * Original signature : <code>
+   * OpenMM_VariableVerletIntegrator* OpenMM_VariableVerletIntegrator_create(double)</code>
+   *
+   * @param errorTol a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_VariableVerletIntegrator_create(double errorTol);
   /**
    * Original signature : <code>
-   * void OpenMM_GayBerneForce_setUseSwitchingFunction(OpenMM_GayBerneForce*, OpenMM_Boolean)</code>
+   * void OpenMM_VariableVerletIntegrator_destroy(OpenMM_VariableVerletIntegrator*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param use a int.
    */
-  public static native void OpenMM_GayBerneForce_setUseSwitchingFunction(
-      PointerByReference target, int use);
+  public static native void OpenMM_VariableVerletIntegrator_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_GayBerneForce_getSwitchingDistance(const OpenMM_GayBerneForce*)</code>
+   * double OpenMM_VariableVerletIntegrator_getErrorTolerance(const OpenMM_VariableVerletIntegrator*)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
    */
-  public static native double OpenMM_GayBerneForce_getSwitchingDistance(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_setSwitchingDistance(OpenMM_GayBerneForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param distance a double.
-   */
-  public static native void OpenMM_GayBerneForce_setSwitchingDistance(
-      PointerByReference target, double distance);
-  /**
-   * Original signature : <code>
-   * int OpenMM_GayBerneForce_addParticle(OpenMM_GayBerneForce*, double, double, int, int, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param sigma a double.
-   * @param epsilon a double.
-   * @param xparticle a int.
-   * @param yparticle a int.
-   * @param sx a double.
-   * @param sy a double.
-   * @param sz a double.
-   * @param ex a double.
-   * @param ey a double.
-   * @param ez a double.
-   * @return a int.
-   */
-  public static native int OpenMM_GayBerneForce_addParticle(
-      PointerByReference target,
-      double sigma,
-      double epsilon,
-      int xparticle,
-      int yparticle,
-      double sx,
-      double sy,
-      double sz,
-      double ex,
-      double ey,
-      double ez);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_getParticleParameters(const OpenMM_GayBerneForce*, int, double*, double*, int*, int*, double*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param sigma a {@link java.nio.DoubleBuffer} object.
-   * @param epsilon a {@link java.nio.DoubleBuffer} object.
-   * @param xparticle a {@link java.nio.IntBuffer} object.
-   * @param yparticle a {@link java.nio.IntBuffer} object.
-   * @param sx a {@link java.nio.DoubleBuffer} object.
-   * @param sy a {@link java.nio.DoubleBuffer} object.
-   * @param sz a {@link java.nio.DoubleBuffer} object.
-   * @param ex a {@link java.nio.DoubleBuffer} object.
-   * @param ey a {@link java.nio.DoubleBuffer} object.
-   * @param ez a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_GayBerneForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleBuffer sigma,
-      DoubleBuffer epsilon,
-      IntBuffer xparticle,
-      IntBuffer yparticle,
-      DoubleBuffer sx,
-      DoubleBuffer sy,
-      DoubleBuffer sz,
-      DoubleBuffer ex,
-      DoubleBuffer ey,
-      DoubleBuffer ez);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_getParticleParameters(const OpenMM_GayBerneForce*, int, double*, double*, int*, int*, double*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param sigma a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param epsilon a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param xparticle a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param yparticle a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param sx a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param sy a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param sz a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ex a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ey a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ez a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_GayBerneForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleByReference sigma,
-      DoubleByReference epsilon,
-      IntByReference xparticle,
-      IntByReference yparticle,
-      DoubleByReference sx,
-      DoubleByReference sy,
-      DoubleByReference sz,
-      DoubleByReference ex,
-      DoubleByReference ey,
-      DoubleByReference ez);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_setParticleParameters(OpenMM_GayBerneForce*, int, double, double, int, int, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param sigma a double.
-   * @param epsilon a double.
-   * @param xparticle a int.
-   * @param yparticle a int.
-   * @param sx a double.
-   * @param sy a double.
-   * @param sz a double.
-   * @param ex a double.
-   * @param ey a double.
-   * @param ez a double.
-   */
-  public static native void OpenMM_GayBerneForce_setParticleParameters(
-      PointerByReference target,
-      int index,
-      double sigma,
-      double epsilon,
-      int xparticle,
-      int yparticle,
-      double sx,
-      double sy,
-      double sz,
-      double ex,
-      double ey,
-      double ez);
-  /**
-   * Original signature : <code>
-   * int OpenMM_GayBerneForce_addException(OpenMM_GayBerneForce*, int, int, double, double, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param sigma a double.
-   * @param epsilon a double.
-   * @param replace a int.
-   * @return a int.
-   */
-  public static native int OpenMM_GayBerneForce_addException(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      double sigma,
-      double epsilon,
-      int replace);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_getExceptionParameters(const OpenMM_GayBerneForce*, int, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param sigma a {@link java.nio.DoubleBuffer} object.
-   * @param epsilon a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_GayBerneForce_getExceptionParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      DoubleBuffer sigma,
-      DoubleBuffer epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_getExceptionParameters(const OpenMM_GayBerneForce*, int, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param sigma a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param epsilon a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_GayBerneForce_getExceptionParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      DoubleByReference sigma,
-      DoubleByReference epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_setExceptionParameters(OpenMM_GayBerneForce*, int, int, int, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param sigma a double.
-   * @param epsilon a double.
-   */
-  public static native void OpenMM_GayBerneForce_setExceptionParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      double sigma,
-      double epsilon);
-  /**
-   * Original signature : <code>
-   * void OpenMM_GayBerneForce_updateParametersInContext(OpenMM_GayBerneForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_GayBerneForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_GayBerneForce_usesPeriodicBoundaryConditions(const OpenMM_GayBerneForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_GayBerneForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * TwoParticleAverageSite<br>
-   * Original signature : <code>
-   * OpenMM_TwoParticleAverageSite* OpenMM_TwoParticleAverageSite_create(int, int, double, double)
-   * </code>
-   *
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param weight1 a double.
-   * @param weight2 a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_TwoParticleAverageSite_create(
-      int particle1, int particle2, double weight1, double weight2);
-  /**
-   * Original signature : <code>
-   * void OpenMM_TwoParticleAverageSite_destroy(OpenMM_TwoParticleAverageSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_TwoParticleAverageSite_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_TwoParticleAverageSite_getWeight(const OpenMM_TwoParticleAverageSite*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle a int.
-   * @return a double.
-   */
-  public static native double OpenMM_TwoParticleAverageSite_getWeight(
-      PointerByReference target, int particle);
-  /**
-   * LocalCoordinatesSite<br>
-   * Original signature : <code>
-   * OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create(const OpenMM_IntArray*, const OpenMM_DoubleArray*, const OpenMM_DoubleArray*, const OpenMM_DoubleArray*, const OpenMM_Vec3*)
-   * </code>
-   *
-   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param originWeights a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xWeights a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param yWeights a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param localPosition a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_LocalCoordinatesSite_create(
-      PointerByReference particles,
-      PointerByReference originWeights,
-      PointerByReference xWeights,
-      PointerByReference yWeights,
-      OpenMM_Vec3 localPosition);
-  /**
-   * Original signature : <code>
-   * OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create_2(int, int, int, const OpenMM_Vec3*, const OpenMM_Vec3*, const OpenMM_Vec3*, const OpenMM_Vec3*)
-   * </code>
-   *
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param originWeights a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param xWeights a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param yWeights a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param localPosition a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_LocalCoordinatesSite_create_2(
-      int particle1,
-      int particle2,
-      int particle3,
-      OpenMM_Vec3 originWeights,
-      OpenMM_Vec3 xWeights,
-      OpenMM_Vec3 yWeights,
-      OpenMM_Vec3 localPosition);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LocalCoordinatesSite_destroy(OpenMM_LocalCoordinatesSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_LocalCoordinatesSite_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LocalCoordinatesSite_getOriginWeights(const OpenMM_LocalCoordinatesSite*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param weights a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_LocalCoordinatesSite_getOriginWeights(
-      PointerByReference target, PointerByReference weights);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LocalCoordinatesSite_getXWeights(const OpenMM_LocalCoordinatesSite*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param weights a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_LocalCoordinatesSite_getXWeights(
-      PointerByReference target, PointerByReference weights);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LocalCoordinatesSite_getYWeights(const OpenMM_LocalCoordinatesSite*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param weights a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_LocalCoordinatesSite_getYWeights(
-      PointerByReference target, PointerByReference weights);
-  /**
-   * Original signature : <code>
-   * OpenMM_Vec3* OpenMM_LocalCoordinatesSite_getLocalPosition(const OpenMM_LocalCoordinatesSite*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   */
-  public static native OpenMM_Vec3 OpenMM_LocalCoordinatesSite_getLocalPosition(
-      PointerByReference target);
-  /**
-   * CustomBondForce<br>
-   * Original signature : <code>OpenMM_CustomBondForce* OpenMM_CustomBondForce_create(const char*)
-   * </code>
-   *
-   * @param energy a {@link java.lang.String} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomBondForce_create(String energy);
-  /**
-   * Original signature : <code>void OpenMM_CustomBondForce_destroy(OpenMM_CustomBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomBondForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_getNumBonds(const OpenMM_CustomBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_getNumBonds(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_getNumPerBondParameters(const OpenMM_CustomBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_getNumPerBondParameters(
+  public static native double OpenMM_VariableVerletIntegrator_getErrorTolerance(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomBondForce_getNumGlobalParameters(const OpenMM_CustomBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_getNumGlobalParameters(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_getNumEnergyParameterDerivatives(const OpenMM_CustomBondForce*)
+   * void OpenMM_VariableVerletIntegrator_setErrorTolerance(OpenMM_VariableVerletIntegrator*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @param tol a double.
    */
-  public static native int OpenMM_CustomBondForce_getNumEnergyParameterDerivatives(
-      PointerByReference target);
+  public static native void OpenMM_VariableVerletIntegrator_setErrorTolerance(
+      PointerByReference target, double tol);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomBondForce_getEnergyFunction(const OpenMM_CustomBondForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomBondForce_getEnergyFunction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setEnergyFunction(OpenMM_CustomBondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomBondForce_setEnergyFunction(
-      PointerByReference target, String energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setEnergyFunction(OpenMM_CustomBondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomBondForce_setEnergyFunction(
-      PointerByReference target, Pointer energy);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_addPerBondParameter(OpenMM_CustomBondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_addPerBondParameter(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_addPerBondParameter(OpenMM_CustomBondForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_addPerBondParameter(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomBondForce_getPerBondParameterName(const OpenMM_CustomBondForce*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomBondForce_getPerBondParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setPerBondParameterName(OpenMM_CustomBondForce*, int, const char*)
+   * double OpenMM_VariableVerletIntegrator_getMaximumStepSize(const OpenMM_VariableVerletIntegrator*)
    * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomBondForce_setPerBondParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setPerBondParameterName(OpenMM_CustomBondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomBondForce_setPerBondParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_addGlobalParameter(OpenMM_CustomBondForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_addGlobalParameter(
-      PointerByReference target, String name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_addGlobalParameter(OpenMM_CustomBondForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_addGlobalParameter(
-      PointerByReference target, Pointer name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomBondForce_getGlobalParameterName(const OpenMM_CustomBondForce*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomBondForce_getGlobalParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setGlobalParameterName(OpenMM_CustomBondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomBondForce_setGlobalParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setGlobalParameterName(OpenMM_CustomBondForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomBondForce_setGlobalParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomBondForce_getGlobalParameterDefaultValue(const OpenMM_CustomBondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomBondForce_getGlobalParameterDefaultValue(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setGlobalParameterDefaultValue(OpenMM_CustomBondForce*, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param defaultValue a double.
-   */
-  public static native void OpenMM_CustomBondForce_setGlobalParameterDefaultValue(
-      PointerByReference target, int index, double defaultValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_addEnergyParameterDerivative(OpenMM_CustomBondForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomBondForce_addEnergyParameterDerivative(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_addEnergyParameterDerivative(OpenMM_CustomBondForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomBondForce_addEnergyParameterDerivative(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomBondForce_getEnergyParameterDerivativeName(const OpenMM_CustomBondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomBondForce_getEnergyParameterDerivativeName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomBondForce_addBond(OpenMM_CustomBondForce*, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_addBond(
-      PointerByReference target, int particle1, int particle2, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_getBondParameters(const OpenMM_CustomBondForce*, int, int*, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomBondForce_getBondParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_getBondParameters(const OpenMM_CustomBondForce*, int, int*, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomBondForce_getBondParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setBondParameters(OpenMM_CustomBondForce*, int, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomBondForce_setBondParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_updateParametersInContext(OpenMM_CustomBondForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomBondForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomBondForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_CustomBondForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomBondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomBondForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_State* OpenMM_State_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_State_create();
-  /**
-   * Original signature : <code>void OpenMM_State_destroy(OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_State_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>double OpenMM_State_getTime(const OpenMM_State*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
+   * @since 7.5.0-Tinker
    */
-  public static native double OpenMM_State_getTime(PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_Vec3Array* OpenMM_State_getPositions(const OpenMM_State*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_State_getPositions(PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_Vec3Array* OpenMM_State_getVelocities(const OpenMM_State*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_State_getVelocities(PointerByReference target);
-  /**
-   * Original signature : <code>OpenMM_Vec3Array* OpenMM_State_getForces(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_State_getForces(PointerByReference target);
-  /**
-   * Original signature : <code>double OpenMM_State_getKineticEnergy(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_State_getKineticEnergy(PointerByReference target);
-  /**
-   * Original signature : <code>double OpenMM_State_getPotentialEnergy(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_State_getPotentialEnergy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_State_getPeriodicBoxVectors(const OpenMM_State*, OpenMM_Vec3*, OpenMM_Vec3*, OpenMM_Vec3*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param a a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param b a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param c a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   */
-  public static native void OpenMM_State_getPeriodicBoxVectors(
-      PointerByReference target, OpenMM_Vec3 a, OpenMM_Vec3 b, OpenMM_Vec3 c);
-  /**
-   * Original signature : <code>double OpenMM_State_getPeriodicBoxVolume(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_State_getPeriodicBoxVolume(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_ParameterArray* OpenMM_State_getParameters(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_State_getParameters(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_ParameterArray* OpenMM_State_getEnergyParameterDerivatives(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_State_getEnergyParameterDerivatives(
+  public static native double OpenMM_VariableVerletIntegrator_getMaximumStepSize(
       PointerByReference target);
   /**
-   * Original signature : <code>int OpenMM_State_getDataTypes(const OpenMM_State*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_State_getDataTypes(PointerByReference target);
-  /**
-   * HarmonicAngleForce<br>
-   * Original signature : <code>OpenMM_HarmonicAngleForce* OpenMM_HarmonicAngleForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_HarmonicAngleForce_create();
-  /**
-   * Original signature : <code>void OpenMM_HarmonicAngleForce_destroy(OpenMM_HarmonicAngleForce*)
+   * Original signature : <code>
+   * void OpenMM_VariableVerletIntegrator_setMaximumStepSize(OpenMM_VariableVerletIntegrator*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param size a double.
+   * @since 7.5.0-Tinker
    */
-  public static native void OpenMM_HarmonicAngleForce_destroy(PointerByReference target);
+  public static native void OpenMM_VariableVerletIntegrator_setMaximumStepSize(
+      PointerByReference target, double size);
   /**
    * Original signature : <code>
-   * int OpenMM_HarmonicAngleForce_getNumAngles(const OpenMM_HarmonicAngleForce*)</code>
+   * void OpenMM_VariableVerletIntegrator_step(OpenMM_VariableVerletIntegrator*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @param steps a int.
    */
-  public static native int OpenMM_HarmonicAngleForce_getNumAngles(PointerByReference target);
+  public static native void OpenMM_VariableVerletIntegrator_step(
+      PointerByReference target, int steps);
   /**
    * Original signature : <code>
-   * int OpenMM_HarmonicAngleForce_addAngle(OpenMM_HarmonicAngleForce*, int, int, int, double, double)
-   * </code>
+   * void OpenMM_VariableVerletIntegrator_stepTo(OpenMM_VariableVerletIntegrator*, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param angle a double.
-   * @param k a double.
-   * @return a int.
+   * @param time a double.
    */
-  public static native int OpenMM_HarmonicAngleForce_addAngle(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      double angle,
-      double k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_HarmonicAngleForce_getAngleParameters(const OpenMM_HarmonicAngleForce*, int, int*, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param angle a {@link java.nio.DoubleBuffer} object.
-   * @param k a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_HarmonicAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      DoubleBuffer angle,
-      DoubleBuffer k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_HarmonicAngleForce_getAngleParameters(const OpenMM_HarmonicAngleForce*, int, int*, int*, int*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param angle a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_HarmonicAngleForce_getAngleParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      DoubleByReference angle,
-      DoubleByReference k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_HarmonicAngleForce_setAngleParameters(OpenMM_HarmonicAngleForce*, int, int, int, int, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param angle a double.
-   * @param k a double.
-   */
-  public static native void OpenMM_HarmonicAngleForce_setAngleParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      double angle,
-      double k);
-  /**
-   * Original signature : <code>
-   * void OpenMM_HarmonicAngleForce_updateParametersInContext(OpenMM_HarmonicAngleForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_HarmonicAngleForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_HarmonicAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicAngleForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_HarmonicAngleForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_HarmonicAngleForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicAngleForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_HarmonicAngleForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
+  public static native void OpenMM_VariableVerletIntegrator_stepTo(
+      PointerByReference target, double time);
   /**
    * Original signature : <code>
    * OpenMM_CustomManyParticleForce* OpenMM_CustomManyParticleForce_create(int, const char*)</code>
@@ -4568,980 +2065,881 @@ public class OpenMMLibrary implements Library {
   public static native int OpenMM_CustomManyParticleForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * Integrator<br>
-   * Original signature : <code>void OpenMM_Integrator_destroy(OpenMM_Integrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Integrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>double OpenMM_Integrator_getStepSize(const OpenMM_Integrator*)
+   * Continuous1DFunction<br>
+   * Original signature : <code>
+   * OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_create(const OpenMM_DoubleArray*, double, double)
    * </code>
    *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_Integrator_getStepSize(PointerByReference target);
-  /**
-   * Original signature : <code>void OpenMM_Integrator_setStepSize(OpenMM_Integrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param size a double.
-   */
-  public static native void OpenMM_Integrator_setStepSize(PointerByReference target, double size);
-  /**
-   * Original signature : <code>
-   * double OpenMM_Integrator_getConstraintTolerance(const OpenMM_Integrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_Integrator_getConstraintTolerance(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Integrator_setConstraintTolerance(OpenMM_Integrator*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tol a double.
-   */
-  public static native void OpenMM_Integrator_setConstraintTolerance(
-      PointerByReference target, double tol);
-  /**
-   * Original signature : <code>void OpenMM_Integrator_step(OpenMM_Integrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   */
-  public static native void OpenMM_Integrator_step(PointerByReference target, int steps);
-  /**
-   * VariableVerletIntegrator<br>
-   * Original signature : <code>
-   * OpenMM_VariableVerletIntegrator* OpenMM_VariableVerletIntegrator_create(double)</code>
-   *
-   * @param errorTol a double.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_VariableVerletIntegrator_create(double errorTol);
+  public static native PointerByReference OpenMM_Continuous1DFunction_create(
+      PointerByReference values, double min, double max);
   /**
    * Original signature : <code>
-   * void OpenMM_VariableVerletIntegrator_destroy(OpenMM_VariableVerletIntegrator*)</code>
+   * void OpenMM_Continuous1DFunction_destroy(OpenMM_Continuous1DFunction*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_VariableVerletIntegrator_destroy(PointerByReference target);
+  public static native void OpenMM_Continuous1DFunction_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_VariableVerletIntegrator_getErrorTolerance(const OpenMM_VariableVerletIntegrator*)
+   * void OpenMM_Continuous1DFunction_getFunctionParameters(const OpenMM_Continuous1DFunction*, OpenMM_DoubleArray*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link java.nio.DoubleBuffer} object.
+   * @param max a {@link java.nio.DoubleBuffer} object.
    */
-  public static native double OpenMM_VariableVerletIntegrator_getErrorTolerance(
+  public static native void OpenMM_Continuous1DFunction_getFunctionParameters(
+      PointerByReference target, PointerByReference values, DoubleBuffer min, DoubleBuffer max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Continuous1DFunction_getFunctionParameters(const OpenMM_Continuous1DFunction*, OpenMM_DoubleArray*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_Continuous1DFunction_getFunctionParameters(
+      PointerByReference target,
+      PointerByReference values,
+      DoubleByReference min,
+      DoubleByReference max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Continuous1DFunction_setFunctionParameters(OpenMM_Continuous1DFunction*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   */
+  public static native void OpenMM_Continuous1DFunction_setFunctionParameters(
+      PointerByReference target, PointerByReference values, double min, double max);
+  /**
+   * Original signature : <code>
+   * OpenMM_Continuous1DFunction* OpenMM_Continuous1DFunction_Copy(const OpenMM_Continuous1DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Continuous1DFunction_Copy(
       PointerByReference target);
   /**
+   * LangevinMiddleIntegrator<br>
    * Original signature : <code>
-   * void OpenMM_VariableVerletIntegrator_setErrorTolerance(OpenMM_VariableVerletIntegrator*, double)
+   * OpenMM_LangevinMiddleIntegrator* OpenMM_LangevinMiddleIntegrator_create(double, double, double)
    * </code>
    *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tol a double.
+   * @param temperature a double.
+   * @param frictionCoeff a double.
+   * @param stepSize a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
    */
-  public static native void OpenMM_VariableVerletIntegrator_setErrorTolerance(
-      PointerByReference target, double tol);
+  public static native PointerByReference OpenMM_LangevinMiddleIntegrator_create(
+      double temperature, double frictionCoeff, double stepSize);
   /**
    * Original signature : <code>
-   * double OpenMM_VariableVerletIntegrator_getMaximumStepSize(const OpenMM_VariableVerletIntegrator*)
+   * void OpenMM_LangevinMiddleIntegrator_destroy(OpenMM_LangevinMiddleIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_LangevinMiddleIntegrator_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_LangevinMiddleIntegrator_getTemperature(const OpenMM_LangevinMiddleIntegrator*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
    * @since 7.5.0-Tinker
    */
-  public static native double OpenMM_VariableVerletIntegrator_getMaximumStepSize(
+  public static native double OpenMM_LangevinMiddleIntegrator_getTemperature(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_VariableVerletIntegrator_setMaximumStepSize(OpenMM_VariableVerletIntegrator*, double)
+   * void OpenMM_LangevinMiddleIntegrator_setTemperature(OpenMM_LangevinMiddleIntegrator*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param size a double.
+   * @param temp a double.
    * @since 7.5.0-Tinker
    */
-  public static native void OpenMM_VariableVerletIntegrator_setMaximumStepSize(
-      PointerByReference target, double size);
+  public static native void OpenMM_LangevinMiddleIntegrator_setTemperature(
+      PointerByReference target, double temp);
   /**
    * Original signature : <code>
-   * void OpenMM_VariableVerletIntegrator_step(OpenMM_VariableVerletIntegrator*, int)</code>
+   * double OpenMM_LangevinMiddleIntegrator_getFriction(const OpenMM_LangevinMiddleIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_LangevinMiddleIntegrator_getFriction(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LangevinMiddleIntegrator_setFriction(OpenMM_LangevinMiddleIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param coeff a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_LangevinMiddleIntegrator_setFriction(
+      PointerByReference target, double coeff);
+  /**
+   * Original signature : <code>
+   * int OpenMM_LangevinMiddleIntegrator_getRandomNumberSeed(const OpenMM_LangevinMiddleIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_LangevinMiddleIntegrator_getRandomNumberSeed(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LangevinMiddleIntegrator_setRandomNumberSeed(OpenMM_LangevinMiddleIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_LangevinMiddleIntegrator_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LangevinMiddleIntegrator_step(OpenMM_LangevinMiddleIntegrator*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param steps a int.
+   * @since 7.5.0-Tinker
    */
-  public static native void OpenMM_VariableVerletIntegrator_step(
+  public static native void OpenMM_LangevinMiddleIntegrator_step(
       PointerByReference target, int steps);
   /**
-   * Original signature : <code>
-   * void OpenMM_VariableVerletIntegrator_stepTo(OpenMM_VariableVerletIntegrator*, double)</code>
+   * Original signature : <code>OpenMM_GBSAOBCForce* OpenMM_GBSAOBCForce_create()</code>
    *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param time a double.
-   */
-  public static native void OpenMM_VariableVerletIntegrator_stepTo(
-      PointerByReference target, double time);
-  /**
-   * Original signature : <code>
-   * OpenMM_MonteCarloMembraneBarostat* OpenMM_MonteCarloMembraneBarostat_create(double, double, double, OpenMM_MonteCarloMembraneBarostat_XYMode, OpenMM_MonteCarloMembraneBarostat_ZMode, int)
-   * </code>
-   *
-   * @param defaultPressure a double.
-   * @param defaultSurfaceTension a double.
-   * @param defaultTemperature a double.
-   * @param xymode a int.
-   * @param zmode a int.
-   * @param frequency a int.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_MonteCarloMembraneBarostat_create(
-      double defaultPressure,
-      double defaultSurfaceTension,
-      double defaultTemperature,
-      int xymode,
-      int zmode,
-      int frequency);
+  public static native PointerByReference OpenMM_GBSAOBCForce_create();
   /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_destroy(OpenMM_MonteCarloMembraneBarostat*)</code>
+   * Original signature : <code>void OpenMM_GBSAOBCForce_destroy(OpenMM_GBSAOBCForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_MonteCarloMembraneBarostat_destroy(PointerByReference target);
+  public static native void OpenMM_GBSAOBCForce_destroy(PointerByReference target);
   /**
-   * Original signature : <code>char* OpenMM_MonteCarloMembraneBarostat_Pressure()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloMembraneBarostat_Pressure();
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloMembraneBarostat_SurfaceTension()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloMembraneBarostat_SurfaceTension();
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloMembraneBarostat_Temperature()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloMembraneBarostat_Temperature();
-  /**
-   * Original signature : <code>
-   * double OpenMM_MonteCarloMembraneBarostat_getDefaultPressure(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_MonteCarloMembraneBarostat_getDefaultPressure(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setDefaultPressure(OpenMM_MonteCarloMembraneBarostat*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param pressure a double.
-   */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setDefaultPressure(
-      PointerByReference target, double pressure);
-  /**
-   * Original signature : <code>
-   * double OpenMM_MonteCarloMembraneBarostat_getDefaultSurfaceTension(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_MonteCarloMembraneBarostat_getDefaultSurfaceTension(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setDefaultSurfaceTension(OpenMM_MonteCarloMembraneBarostat*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param surfaceTension a double.
-   */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setDefaultSurfaceTension(
-      PointerByReference target, double surfaceTension);
-  /**
-   * Original signature : <code>
-   * int OpenMM_MonteCarloMembraneBarostat_getFrequency(const OpenMM_MonteCarloMembraneBarostat*)
+   * Original signature : <code>int OpenMM_GBSAOBCForce_getNumParticles(const OpenMM_GBSAOBCForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_MonteCarloMembraneBarostat_getFrequency(
-      PointerByReference target);
+  public static native int OpenMM_GBSAOBCForce_getNumParticles(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setFrequency(OpenMM_MonteCarloMembraneBarostat*, int)
-   * </code>
+   * int OpenMM_GBSAOBCForce_addParticle(OpenMM_GBSAOBCForce*, double, double, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param freq a int.
-   */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setFrequency(
-      PointerByReference target, int freq);
-  /**
-   * Original signature : <code>
-   * double OpenMM_MonteCarloMembraneBarostat_getDefaultTemperature(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_MonteCarloMembraneBarostat_getDefaultTemperature(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setDefaultTemperature(OpenMM_MonteCarloMembraneBarostat*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setDefaultTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * OpenMM_MonteCarloMembraneBarostat_XYMode OpenMM_MonteCarloMembraneBarostat_getXYMode(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param charge a double.
+   * @param radius a double.
+   * @param scalingFactor a double.
    * @return a int.
    */
-  public static native int OpenMM_MonteCarloMembraneBarostat_getXYMode(PointerByReference target);
+  public static native int OpenMM_GBSAOBCForce_addParticle(
+      PointerByReference target, double charge, double radius, double scalingFactor);
   /**
    * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setXYMode(OpenMM_MonteCarloMembraneBarostat*, OpenMM_MonteCarloMembraneBarostat_XYMode)
+   * void OpenMM_GBSAOBCForce_getParticleParameters(const OpenMM_GBSAOBCForce*, int, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param mode a int.
+   * @param index a int.
+   * @param charge a {@link java.nio.DoubleBuffer} object.
+   * @param radius a {@link java.nio.DoubleBuffer} object.
+   * @param scalingFactor a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setXYMode(
-      PointerByReference target, int mode);
-  /**
-   * Original signature : <code>
-   * OpenMM_MonteCarloMembraneBarostat_ZMode OpenMM_MonteCarloMembraneBarostat_getZMode(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloMembraneBarostat_getZMode(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setZMode(OpenMM_MonteCarloMembraneBarostat*, OpenMM_MonteCarloMembraneBarostat_ZMode)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param mode a int.
-   */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setZMode(
-      PointerByReference target, int mode);
-  /**
-   * Original signature : <code>
-   * int OpenMM_MonteCarloMembraneBarostat_getRandomNumberSeed(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloMembraneBarostat_getRandomNumberSeed(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloMembraneBarostat_setRandomNumberSeed(OpenMM_MonteCarloMembraneBarostat*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_MonteCarloMembraneBarostat_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_MonteCarloMembraneBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloMembraneBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloMembraneBarostat_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * MonteCarloAnisotropicBarostat<br>
-   * Original signature : <code>
-   * OpenMM_MonteCarloAnisotropicBarostat* OpenMM_MonteCarloAnisotropicBarostat_create(const OpenMM_Vec3*, double, OpenMM_Boolean, OpenMM_Boolean, OpenMM_Boolean, int)
-   * </code>
-   *
-   * @param defaultPressure a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   * @param defaultTemperature a double.
-   * @param scaleX a int.
-   * @param scaleY a int.
-   * @param scaleZ a int.
-   * @param frequency a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_MonteCarloAnisotropicBarostat_create(
-      OpenMM_Vec3 defaultPressure,
-      double defaultTemperature,
-      int scaleX,
-      int scaleY,
-      int scaleZ,
-      int frequency);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloAnisotropicBarostat_destroy(OpenMM_MonteCarloAnisotropicBarostat*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_MonteCarloAnisotropicBarostat_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_PressureX()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_PressureX();
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_PressureY()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_PressureY();
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_PressureZ()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_PressureZ();
-  /**
-   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_Temperature()</code>
-   *
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_Temperature();
-  /**
-   * Original signature : <code>
-   * OpenMM_Vec3* OpenMM_MonteCarloAnisotropicBarostat_getDefaultPressure(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   */
-  public static native OpenMM_Vec3 OpenMM_MonteCarloAnisotropicBarostat_getDefaultPressure(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloAnisotropicBarostat_setDefaultPressure(OpenMM_MonteCarloAnisotropicBarostat*, const OpenMM_Vec3*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param pressure a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
-   */
-  public static native void OpenMM_MonteCarloAnisotropicBarostat_setDefaultPressure(
-      PointerByReference target, OpenMM_Vec3 pressure);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleX(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloAnisotropicBarostat_getScaleX(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleY(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloAnisotropicBarostat_getScaleY(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleZ(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloAnisotropicBarostat_getScaleZ(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_MonteCarloAnisotropicBarostat_getFrequency(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloAnisotropicBarostat_getFrequency(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloAnisotropicBarostat_setFrequency(OpenMM_MonteCarloAnisotropicBarostat*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param freq a int.
-   */
-  public static native void OpenMM_MonteCarloAnisotropicBarostat_setFrequency(
-      PointerByReference target, int freq);
-  /**
-   * Original signature : <code>
-   * double OpenMM_MonteCarloAnisotropicBarostat_getDefaultTemperature(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_MonteCarloAnisotropicBarostat_getDefaultTemperature(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloAnisotropicBarostat_setDefaultTemperature(OpenMM_MonteCarloAnisotropicBarostat*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   */
-  public static native void OpenMM_MonteCarloAnisotropicBarostat_setDefaultTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * int OpenMM_MonteCarloAnisotropicBarostat_getRandomNumberSeed(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloAnisotropicBarostat_getRandomNumberSeed(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_MonteCarloAnisotropicBarostat_setRandomNumberSeed(OpenMM_MonteCarloAnisotropicBarostat*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_MonteCarloAnisotropicBarostat_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloAnisotropicBarostat*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_MonteCarloAnisotropicBarostat_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * NoseHooverIntegrator<br>
-   * Original signature : <code>
-   * OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create(double)</code>
-   *
-   * @param stepSize a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native PointerByReference OpenMM_NoseHooverIntegrator_create(double stepSize);
-  /**
-   * Original signature : <code>
-   * OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create_2(double, double, double, int, int, int)
-   * </code>
-   *
-   * @param temperature a double.
-   * @param collisionFrequency a double.
-   * @param stepSize a double.
-   * @param chainLength a int.
-   * @param numMTS a int.
-   * @param numYoshidaSuzuki a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native PointerByReference OpenMM_NoseHooverIntegrator_create_2(
-      double temperature,
-      double collisionFrequency,
-      double stepSize,
-      int chainLength,
-      int numMTS,
-      int numYoshidaSuzuki);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_destroy(OpenMM_NoseHooverIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverIntegrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_step(OpenMM_NoseHooverIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverIntegrator_step(PointerByReference target, int steps);
-  /**
-   * Original signature : <code>
-   * int OpenMM_NoseHooverIntegrator_addThermostat(OpenMM_NoseHooverIntegrator*, double, double, int, int, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @param collisionFrequency a double.
-   * @param chainLength a int.
-   * @param numMTS a int.
-   * @param numYoshidaSuzuki a int.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverIntegrator_addThermostat(
+  public static native void OpenMM_GBSAOBCForce_getParticleParameters(
       PointerByReference target,
-      double temperature,
-      double collisionFrequency,
-      int chainLength,
-      int numMTS,
-      int numYoshidaSuzuki);
+      int index,
+      DoubleBuffer charge,
+      DoubleBuffer radius,
+      DoubleBuffer scalingFactor);
   /**
    * Original signature : <code>
-   * int OpenMM_NoseHooverIntegrator_addSubsystemThermostat(OpenMM_NoseHooverIntegrator*, const OpenMM_IntArray*, const OpenMM_BondArray*, double, double, double, double, int, int, int)
+   * void OpenMM_GBSAOBCForce_getParticleParameters(const OpenMM_GBSAOBCForce*, int, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param thermostatedParticles a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param thermostatedPairs a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @param collisionFrequency a double.
-   * @param relativeTemperature a double.
-   * @param relativeCollisionFrequency a double.
-   * @param chainLength a int.
-   * @param numMTS a int.
-   * @param numYoshidaSuzuki a int.
-   * @return a int.
-   * @since 7.5.0-Tinker
+   * @param index a int.
+   * @param charge a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param scalingFactor a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native int OpenMM_NoseHooverIntegrator_addSubsystemThermostat(
+  public static native void OpenMM_GBSAOBCForce_getParticleParameters(
       PointerByReference target,
-      PointerByReference thermostatedParticles,
-      PointerByReference thermostatedPairs,
-      double temperature,
-      double collisionFrequency,
-      double relativeTemperature,
-      double relativeCollisionFrequency,
-      int chainLength,
-      int numMTS,
-      int numYoshidaSuzuki);
+      int index,
+      DoubleByReference charge,
+      DoubleByReference radius,
+      DoubleByReference scalingFactor);
   /**
    * Original signature : <code>
-   * double OpenMM_NoseHooverIntegrator_getTemperature(const OpenMM_NoseHooverIntegrator*, int)
+   * void OpenMM_GBSAOBCForce_setParticleParameters(OpenMM_GBSAOBCForce*, int, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param chainID a int.
-   * @return a double.
-   * @since 7.5.0-Tinker
+   * @param index a int.
+   * @param charge a double.
+   * @param radius a double.
+   * @param scalingFactor a double.
    */
-  public static native double OpenMM_NoseHooverIntegrator_getTemperature(
-      PointerByReference target, int chainID);
+  public static native void OpenMM_GBSAOBCForce_setParticleParameters(
+      PointerByReference target, int index, double charge, double radius, double scalingFactor);
   /**
    * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_setTemperature(OpenMM_NoseHooverIntegrator*, double, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @param chainID a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverIntegrator_setTemperature(
-      PointerByReference target, double temperature, int chainID);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverIntegrator_getRelativeTemperature(const OpenMM_NoseHooverIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param chainID a int.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverIntegrator_getRelativeTemperature(
-      PointerByReference target, int chainID);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_setRelativeTemperature(OpenMM_NoseHooverIntegrator*, double, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @param chainID a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverIntegrator_setRelativeTemperature(
-      PointerByReference target, double temperature, int chainID);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverIntegrator_getCollisionFrequency(const OpenMM_NoseHooverIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param chainID a int.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverIntegrator_getCollisionFrequency(
-      PointerByReference target, int chainID);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_setCollisionFrequency(OpenMM_NoseHooverIntegrator*, double, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param frequency a double.
-   * @param chainID a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverIntegrator_setCollisionFrequency(
-      PointerByReference target, double frequency, int chainID);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverIntegrator_getRelativeCollisionFrequency(const OpenMM_NoseHooverIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param chainID a int.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverIntegrator_getRelativeCollisionFrequency(
-      PointerByReference target, int chainID);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_setRelativeCollisionFrequency(OpenMM_NoseHooverIntegrator*, double, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param frequency a double.
-   * @param chainID a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverIntegrator_setRelativeCollisionFrequency(
-      PointerByReference target, double frequency, int chainID);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverIntegrator_computeHeatBathEnergy(OpenMM_NoseHooverIntegrator*)</code>
+   * double OpenMM_GBSAOBCForce_getSolventDielectric(const OpenMM_GBSAOBCForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
-   * @since 7.5.0-Tinker
    */
-  public static native double OpenMM_NoseHooverIntegrator_computeHeatBathEnergy(
-      PointerByReference target);
+  public static native double OpenMM_GBSAOBCForce_getSolventDielectric(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_NoseHooverIntegrator_getNumThermostats(const OpenMM_NoseHooverIntegrator*)</code>
+   * void OpenMM_GBSAOBCForce_setSolventDielectric(OpenMM_GBSAOBCForce*, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
+   * @param dielectric a double.
    */
-  public static native int OpenMM_NoseHooverIntegrator_getNumThermostats(PointerByReference target);
+  public static native void OpenMM_GBSAOBCForce_setSolventDielectric(
+      PointerByReference target, double dielectric);
   /**
    * Original signature : <code>
-   * OpenMM_NoseHooverChain* OpenMM_NoseHooverIntegrator_getThermostat(const OpenMM_NoseHooverIntegrator*, int)
-   * </code>
+   * double OpenMM_GBSAOBCForce_getSoluteDielectric(const OpenMM_GBSAOBCForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param chainID a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
+   * @return a double.
    */
-  public static native PointerByReference OpenMM_NoseHooverIntegrator_getThermostat(
-      PointerByReference target, int chainID);
+  public static native double OpenMM_GBSAOBCForce_getSoluteDielectric(PointerByReference target);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_NoseHooverIntegrator_hasSubsystemThermostats(const OpenMM_NoseHooverIntegrator*)
+   * void OpenMM_GBSAOBCForce_setSoluteDielectric(OpenMM_GBSAOBCForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param dielectric a double.
+   */
+  public static native void OpenMM_GBSAOBCForce_setSoluteDielectric(
+      PointerByReference target, double dielectric);
+  /**
+   * Original signature : <code>
+   * double OpenMM_GBSAOBCForce_getSurfaceAreaEnergy(const OpenMM_GBSAOBCForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_GBSAOBCForce_getSurfaceAreaEnergy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GBSAOBCForce_setSurfaceAreaEnergy(OpenMM_GBSAOBCForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a double.
+   */
+  public static native void OpenMM_GBSAOBCForce_setSurfaceAreaEnergy(
+      PointerByReference target, double energy);
+  /**
+   * Original signature : <code>
+   * OpenMM_GBSAOBCForce_NonbondedMethod OpenMM_GBSAOBCForce_getNonbondedMethod(const OpenMM_GBSAOBCForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
-   * @since 7.5.0-Tinker
    */
-  public static native int OpenMM_NoseHooverIntegrator_hasSubsystemThermostats(
-      PointerByReference target);
+  public static native int OpenMM_GBSAOBCForce_getNonbondedMethod(PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_NoseHooverIntegrator_getMaximumPairDistance(const OpenMM_NoseHooverIntegrator*)
+   * void OpenMM_GBSAOBCForce_setNonbondedMethod(OpenMM_GBSAOBCForce*, OpenMM_GBSAOBCForce_NonbondedMethod)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
+   * @param method a int.
    */
-  public static native double OpenMM_NoseHooverIntegrator_getMaximumPairDistance(
-      PointerByReference target);
+  public static native void OpenMM_GBSAOBCForce_setNonbondedMethod(
+      PointerByReference target, int method);
   /**
    * Original signature : <code>
-   * void OpenMM_NoseHooverIntegrator_setMaximumPairDistance(OpenMM_NoseHooverIntegrator*, double)
-   * </code>
+   * double OpenMM_GBSAOBCForce_getCutoffDistance(const OpenMM_GBSAOBCForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_GBSAOBCForce_getCutoffDistance(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GBSAOBCForce_setCutoffDistance(OpenMM_GBSAOBCForce*, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param distance a double.
-   * @since 7.5.0-Tinker
    */
-  public static native void OpenMM_NoseHooverIntegrator_setMaximumPairDistance(
+  public static native void OpenMM_GBSAOBCForce_setCutoffDistance(
       PointerByReference target, double distance);
   /**
-   * CustomCVForce<br>
-   * Original signature : <code>OpenMM_CustomCVForce* OpenMM_CustomCVForce_create(const char*)
+   * Original signature : <code>
+   * void OpenMM_GBSAOBCForce_updateParametersInContext(OpenMM_GBSAOBCForce*, OpenMM_Context*)
    * </code>
    *
-   * @param energy a {@link java.lang.String} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomCVForce_create(String energy);
-  /**
-   * Original signature : <code>void OpenMM_CustomCVForce_destroy(OpenMM_CustomCVForce*)</code>
-   *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomCVForce_destroy(PointerByReference target);
+  public static native void OpenMM_GBSAOBCForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_getNumCollectiveVariables(const OpenMM_CustomCVForce*)</code>
+   * OpenMM_Boolean OpenMM_GBSAOBCForce_usesPeriodicBoundaryConditions(const OpenMM_GBSAOBCForce*)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_getNumCollectiveVariables(
+  public static native int OpenMM_GBSAOBCForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * AndersenThermostat<br>
+   * Original signature : <code>
+   * OpenMM_AndersenThermostat* OpenMM_AndersenThermostat_create(double, double)</code>
+   *
+   * @param defaultTemperature a double.
+   * @param defaultCollisionFrequency a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_AndersenThermostat_create(
+      double defaultTemperature, double defaultCollisionFrequency);
+  /**
+   * Original signature : <code>void OpenMM_AndersenThermostat_destroy(OpenMM_AndersenThermostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_AndersenThermostat_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>char* OpenMM_AndersenThermostat_Temperature()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_AndersenThermostat_Temperature();
+  /**
+   * Original signature : <code>char* OpenMM_AndersenThermostat_CollisionFrequency()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_AndersenThermostat_CollisionFrequency();
+  /**
+   * Original signature : <code>
+   * double OpenMM_AndersenThermostat_getDefaultTemperature(const OpenMM_AndersenThermostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_AndersenThermostat_getDefaultTemperature(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_getNumGlobalParameters(const OpenMM_CustomCVForce*)</code>
+   * void OpenMM_AndersenThermostat_setDefaultTemperature(OpenMM_AndersenThermostat*, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @param temperature a double.
    */
-  public static native int OpenMM_CustomCVForce_getNumGlobalParameters(PointerByReference target);
+  public static native void OpenMM_AndersenThermostat_setDefaultTemperature(
+      PointerByReference target, double temperature);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_getNumEnergyParameterDerivatives(const OpenMM_CustomCVForce*)</code>
+   * double OpenMM_AndersenThermostat_getDefaultCollisionFrequency(const OpenMM_AndersenThermostat*)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @return a double.
    */
-  public static native int OpenMM_CustomCVForce_getNumEnergyParameterDerivatives(
+  public static native double OpenMM_AndersenThermostat_getDefaultCollisionFrequency(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_getNumTabulatedFunctions(const OpenMM_CustomCVForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCVForce_getNumTabulatedFunctions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomCVForce_getEnergyFunction(const OpenMM_CustomCVForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomCVForce_getEnergyFunction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCVForce_setEnergyFunction(OpenMM_CustomCVForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomCVForce_setEnergyFunction(
-      PointerByReference target, String energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCVForce_setEnergyFunction(OpenMM_CustomCVForce*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomCVForce_setEnergyFunction(
-      PointerByReference target, Pointer energy);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCVForce_addCollectiveVariable(OpenMM_CustomCVForce*, const char*, OpenMM_Force*)
+   * void OpenMM_AndersenThermostat_setDefaultCollisionFrequency(OpenMM_AndersenThermostat*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @param frequency a double.
    */
-  public static native int OpenMM_CustomCVForce_addCollectiveVariable(
-      PointerByReference target, String name, PointerByReference variable);
+  public static native void OpenMM_AndersenThermostat_setDefaultCollisionFrequency(
+      PointerByReference target, double frequency);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_addCollectiveVariable(OpenMM_CustomCVForce*, const char*, OpenMM_Force*)
+   * int OpenMM_AndersenThermostat_getRandomNumberSeed(const OpenMM_AndersenThermostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_AndersenThermostat_getRandomNumberSeed(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_AndersenThermostat_setRandomNumberSeed(OpenMM_AndersenThermostat*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_AndersenThermostat_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_AndersenThermostat_usesPeriodicBoundaryConditions(const OpenMM_AndersenThermostat*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_addCollectiveVariable(
-      PointerByReference target, Pointer name, PointerByReference variable);
+  public static native int OpenMM_AndersenThermostat_usesPeriodicBoundaryConditions(
+      PointerByReference target);
   /**
-   * Original signature : <code>
-   * char* OpenMM_CustomCVForce_getCollectiveVariableName(const OpenMM_CustomCVForce*, int)</code>
+   * Original signature : <code>OpenMM_CustomIntegrator* OpenMM_CustomIntegrator_create(double)
+   * </code>
    *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomCVForce_getCollectiveVariableName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * OpenMM_Force* OpenMM_CustomCVForce_getCollectiveVariable(OpenMM_CustomCVForce*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
+   * @param stepSize a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomCVForce_getCollectiveVariable(
-      PointerByReference target, int index);
+  public static native PointerByReference OpenMM_CustomIntegrator_create(double stepSize);
+  /**
+   * Original signature : <code>void OpenMM_CustomIntegrator_destroy(OpenMM_CustomIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_addGlobalParameter(OpenMM_CustomCVForce*, const char*, double)</code>
+   * int OpenMM_CustomIntegrator_getNumGlobalVariables(const OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_getNumGlobalVariables(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_getNumPerDofVariables(const OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_getNumPerDofVariables(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_getNumComputations(const OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_getNumComputations(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_getNumTabulatedFunctions(const OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_getNumTabulatedFunctions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addGlobalVariable(OpenMM_CustomIntegrator*, const char*, double)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
-   * @param defaultValue a double.
+   * @param initialValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_addGlobalParameter(
-      PointerByReference target, String name, double defaultValue);
+  public static native int OpenMM_CustomIntegrator_addGlobalVariable(
+      PointerByReference target, String name, double initialValue);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_addGlobalParameter(OpenMM_CustomCVForce*, const char*, double)</code>
+   * int OpenMM_CustomIntegrator_addGlobalVariable(OpenMM_CustomIntegrator*, const char*, double)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
-   * @param defaultValue a double.
+   * @param initialValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_addGlobalParameter(
-      PointerByReference target, Pointer name, double defaultValue);
+  public static native int OpenMM_CustomIntegrator_addGlobalVariable(
+      PointerByReference target, Pointer name, double initialValue);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomCVForce_getGlobalParameterName(const OpenMM_CustomCVForce*, int)</code>
+   * char* OpenMM_CustomIntegrator_getGlobalVariableName(const OpenMM_CustomIntegrator*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomCVForce_getGlobalParameterName(
+  public static native Pointer OpenMM_CustomIntegrator_getGlobalVariableName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCVForce_setGlobalParameterName(OpenMM_CustomCVForce*, int, const char*)
+   * int OpenMM_CustomIntegrator_addPerDofVariable(OpenMM_CustomIntegrator*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
    * @param name a {@link java.lang.String} object.
+   * @param initialValue a double.
+   * @return a int.
    */
-  public static native void OpenMM_CustomCVForce_setGlobalParameterName(
-      PointerByReference target, int index, String name);
+  public static native int OpenMM_CustomIntegrator_addPerDofVariable(
+      PointerByReference target, String name, double initialValue);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCVForce_setGlobalParameterName(OpenMM_CustomCVForce*, int, const char*)
+   * int OpenMM_CustomIntegrator_addPerDofVariable(OpenMM_CustomIntegrator*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
    * @param name a {@link com.sun.jna.Pointer} object.
+   * @param initialValue a double.
+   * @return a int.
    */
-  public static native void OpenMM_CustomCVForce_setGlobalParameterName(
-      PointerByReference target, int index, Pointer name);
+  public static native int OpenMM_CustomIntegrator_addPerDofVariable(
+      PointerByReference target, Pointer name, double initialValue);
   /**
    * Original signature : <code>
-   * double OpenMM_CustomCVForce_getGlobalParameterDefaultValue(const OpenMM_CustomCVForce*, int)
-   * </code>
+   * char* OpenMM_CustomIntegrator_getPerDofVariableName(const OpenMM_CustomIntegrator*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomIntegrator_getPerDofVariableName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomIntegrator_getGlobalVariable(const OpenMM_CustomIntegrator*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a double.
    */
-  public static native double OpenMM_CustomCVForce_getGlobalParameterDefaultValue(
+  public static native double OpenMM_CustomIntegrator_getGlobalVariable(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCVForce_setGlobalParameterDefaultValue(OpenMM_CustomCVForce*, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param defaultValue a double.
-   */
-  public static native void OpenMM_CustomCVForce_setGlobalParameterDefaultValue(
-      PointerByReference target, int index, double defaultValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCVForce_addEnergyParameterDerivative(OpenMM_CustomCVForce*, const char*)
+   * double OpenMM_CustomIntegrator_getGlobalVariableByName(const OpenMM_CustomIntegrator*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
+   * @return a double.
    */
-  public static native void OpenMM_CustomCVForce_addEnergyParameterDerivative(
+  public static native double OpenMM_CustomIntegrator_getGlobalVariableByName(
       PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCVForce_addEnergyParameterDerivative(OpenMM_CustomCVForce*, const char*)
+   * double OpenMM_CustomIntegrator_getGlobalVariableByName(const OpenMM_CustomIntegrator*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
+   * @return a double.
    */
-  public static native void OpenMM_CustomCVForce_addEnergyParameterDerivative(
+  public static native double OpenMM_CustomIntegrator_getGlobalVariableByName(
       PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomCVForce_getEnergyParameterDerivativeName(const OpenMM_CustomCVForce*, int)
+   * void OpenMM_CustomIntegrator_setGlobalVariable(OpenMM_CustomIntegrator*, int, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param value a double.
+   */
+  public static native void OpenMM_CustomIntegrator_setGlobalVariable(
+      PointerByReference target, int index, double value);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setGlobalVariableByName(OpenMM_CustomIntegrator*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param value a double.
+   */
+  public static native void OpenMM_CustomIntegrator_setGlobalVariableByName(
+      PointerByReference target, String name, double value);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setGlobalVariableByName(OpenMM_CustomIntegrator*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param value a double.
+   */
+  public static native void OpenMM_CustomIntegrator_setGlobalVariableByName(
+      PointerByReference target, Pointer name, double value);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_getPerDofVariable(const OpenMM_CustomIntegrator*, int, OpenMM_Vec3Array*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native Pointer OpenMM_CustomCVForce_getEnergyParameterDerivativeName(
-      PointerByReference target, int index);
+  public static native void OpenMM_CustomIntegrator_getPerDofVariable(
+      PointerByReference target, int index, PointerByReference values);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_addTabulatedFunction(OpenMM_CustomCVForce*, const char*, OpenMM_TabulatedFunction*)
+   * void OpenMM_CustomIntegrator_getPerDofVariableByName(const OpenMM_CustomIntegrator*, const char*, OpenMM_Vec3Array*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_getPerDofVariableByName(
+      PointerByReference target, String name, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_getPerDofVariableByName(const OpenMM_CustomIntegrator*, const char*, OpenMM_Vec3Array*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_getPerDofVariableByName(
+      PointerByReference target, Pointer name, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setPerDofVariable(OpenMM_CustomIntegrator*, int, const OpenMM_Vec3Array*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_setPerDofVariable(
+      PointerByReference target, int index, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setPerDofVariableByName(OpenMM_CustomIntegrator*, const char*, const OpenMM_Vec3Array*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_setPerDofVariableByName(
+      PointerByReference target, String name, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setPerDofVariableByName(OpenMM_CustomIntegrator*, const char*, const OpenMM_Vec3Array*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_setPerDofVariableByName(
+      PointerByReference target, Pointer name, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addComputeGlobal(OpenMM_CustomIntegrator*, const char*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param variable a {@link java.lang.String} object.
+   * @param expression a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addComputeGlobal(
+      PointerByReference target, String variable, String expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addComputeGlobal(OpenMM_CustomIntegrator*, const char*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param variable a {@link com.sun.jna.Pointer} object.
+   * @param expression a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addComputeGlobal(
+      PointerByReference target, Pointer variable, Pointer expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addComputePerDof(OpenMM_CustomIntegrator*, const char*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param variable a {@link java.lang.String} object.
+   * @param expression a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addComputePerDof(
+      PointerByReference target, String variable, String expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addComputePerDof(OpenMM_CustomIntegrator*, const char*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param variable a {@link com.sun.jna.Pointer} object.
+   * @param expression a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addComputePerDof(
+      PointerByReference target, Pointer variable, Pointer expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addComputeSum(OpenMM_CustomIntegrator*, const char*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param variable a {@link java.lang.String} object.
+   * @param expression a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addComputeSum(
+      PointerByReference target, String variable, String expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addComputeSum(OpenMM_CustomIntegrator*, const char*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param variable a {@link com.sun.jna.Pointer} object.
+   * @param expression a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addComputeSum(
+      PointerByReference target, Pointer variable, Pointer expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addConstrainPositions(OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addConstrainPositions(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addConstrainVelocities(OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addConstrainVelocities(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addUpdateContextState(OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_addUpdateContextState(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_beginIfBlock(OpenMM_CustomIntegrator*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param condition a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_beginIfBlock(
+      PointerByReference target, String condition);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_beginIfBlock(OpenMM_CustomIntegrator*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param condition a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_beginIfBlock(
+      PointerByReference target, Pointer condition);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_beginWhileBlock(OpenMM_CustomIntegrator*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param condition a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_beginWhileBlock(
+      PointerByReference target, String condition);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_beginWhileBlock(OpenMM_CustomIntegrator*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param condition a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_beginWhileBlock(
+      PointerByReference target, Pointer condition);
+  /**
+   * Original signature : <code>int OpenMM_CustomIntegrator_endBlock(OpenMM_CustomIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_endBlock(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_getComputationStep(const OpenMM_CustomIntegrator*, int, OpenMM_CustomIntegrator_ComputationType*, char**, char**)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param type a {@link java.nio.IntBuffer} object.
+   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param expression a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_getComputationStep(
+      PointerByReference target,
+      int index,
+      IntBuffer type,
+      PointerByReference variable,
+      PointerByReference expression);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_getComputationStep(const OpenMM_CustomIntegrator*, int, OpenMM_CustomIntegrator_ComputationType*, char**, char**)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param type a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param expression a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomIntegrator_getComputationStep(
+      PointerByReference target,
+      int index,
+      IntByReference type,
+      PointerByReference variable,
+      PointerByReference expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_addTabulatedFunction(OpenMM_CustomIntegrator*, const char*, OpenMM_TabulatedFunction*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -5549,11 +2947,11 @@ public class OpenMMLibrary implements Library {
    * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_addTabulatedFunction(
+  public static native int OpenMM_CustomIntegrator_addTabulatedFunction(
       PointerByReference target, String name, PointerByReference function);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCVForce_addTabulatedFunction(OpenMM_CustomCVForce*, const char*, OpenMM_TabulatedFunction*)
+   * int OpenMM_CustomIntegrator_addTabulatedFunction(OpenMM_CustomIntegrator*, const char*, OpenMM_TabulatedFunction*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -5561,71 +2959,218 @@ public class OpenMMLibrary implements Library {
    * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_addTabulatedFunction(
+  public static native int OpenMM_CustomIntegrator_addTabulatedFunction(
       PointerByReference target, Pointer name, PointerByReference function);
   /**
    * Original signature : <code>
-   * OpenMM_TabulatedFunction* OpenMM_CustomCVForce_getTabulatedFunction(OpenMM_CustomCVForce*, int)
+   * OpenMM_TabulatedFunction* OpenMM_CustomIntegrator_getTabulatedFunction(OpenMM_CustomIntegrator*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomCVForce_getTabulatedFunction(
+  public static native PointerByReference OpenMM_CustomIntegrator_getTabulatedFunction(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomCVForce_getTabulatedFunctionName(const OpenMM_CustomCVForce*, int)</code>
+   * char* OpenMM_CustomIntegrator_getTabulatedFunctionName(const OpenMM_CustomIntegrator*, int)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomCVForce_getTabulatedFunctionName(
+  public static native Pointer OpenMM_CustomIntegrator_getTabulatedFunctionName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCVForce_getCollectiveVariableValues(OpenMM_CustomCVForce*, OpenMM_Context*, OpenMM_DoubleArray*)
-   * </code>
+   * char* OpenMM_CustomIntegrator_getKineticEnergyExpression(const OpenMM_CustomIntegrator*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomCVForce_getCollectiveVariableValues(
-      PointerByReference target, PointerByReference context, PointerByReference values);
+  public static native Pointer OpenMM_CustomIntegrator_getKineticEnergyExpression(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * OpenMM_Context* OpenMM_CustomCVForce_getInnerContext(OpenMM_CustomCVForce*, OpenMM_Context*)
+   * void OpenMM_CustomIntegrator_setKineticEnergyExpression(OpenMM_CustomIntegrator*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param expression a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomIntegrator_setKineticEnergyExpression(
+      PointerByReference target, String expression);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setKineticEnergyExpression(OpenMM_CustomIntegrator*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param expression a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomIntegrator_setKineticEnergyExpression(
+      PointerByReference target, Pointer expression);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomIntegrator_getRandomNumberSeed(const OpenMM_CustomIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomIntegrator_getRandomNumberSeed(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomIntegrator_setRandomNumberSeed(OpenMM_CustomIntegrator*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_CustomIntegrator_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>void OpenMM_CustomIntegrator_step(OpenMM_CustomIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param steps a int.
+   */
+  public static native void OpenMM_CustomIntegrator_step(PointerByReference target, int steps);
+  /**
+   * LangevinIntegrator<br>
+   * Original signature : <code>
+   * OpenMM_LangevinIntegrator* OpenMM_LangevinIntegrator_create(double, double, double)</code>
+   *
+   * @param temperature a double.
+   * @param frictionCoeff a double.
+   * @param stepSize a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomCVForce_getInnerContext(
-      PointerByReference target, PointerByReference context);
+  public static native PointerByReference OpenMM_LangevinIntegrator_create(
+      double temperature, double frictionCoeff, double stepSize);
   /**
-   * Original signature : <code>
-   * void OpenMM_CustomCVForce_updateParametersInContext(OpenMM_CustomCVForce*, OpenMM_Context*)
+   * Original signature : <code>void OpenMM_LangevinIntegrator_destroy(OpenMM_LangevinIntegrator*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomCVForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
+  public static native void OpenMM_LangevinIntegrator_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomCVForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCVForce*)
+   * double OpenMM_LangevinIntegrator_getTemperature(const OpenMM_LangevinIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_LangevinIntegrator_getTemperature(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LangevinIntegrator_setTemperature(OpenMM_LangevinIntegrator*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temp a double.
+   */
+  public static native void OpenMM_LangevinIntegrator_setTemperature(
+      PointerByReference target, double temp);
+  /**
+   * Original signature : <code>
+   * double OpenMM_LangevinIntegrator_getFriction(const OpenMM_LangevinIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_LangevinIntegrator_getFriction(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LangevinIntegrator_setFriction(OpenMM_LangevinIntegrator*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param coeff a double.
+   */
+  public static native void OpenMM_LangevinIntegrator_setFriction(
+      PointerByReference target, double coeff);
+  /**
+   * Original signature : <code>
+   * int OpenMM_LangevinIntegrator_getRandomNumberSeed(const OpenMM_LangevinIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_LangevinIntegrator_getRandomNumberSeed(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LangevinIntegrator_setRandomNumberSeed(OpenMM_LangevinIntegrator*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_LangevinIntegrator_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>void OpenMM_LangevinIntegrator_step(OpenMM_LangevinIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param steps a int.
+   */
+  public static native void OpenMM_LangevinIntegrator_step(PointerByReference target, int steps);
+  /**
+   * VirtualSite<br>
+   * Original signature : <code>void OpenMM_VirtualSite_destroy(OpenMM_VirtualSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_VirtualSite_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>int OpenMM_VirtualSite_getNumParticles(const OpenMM_VirtualSite*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCVForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
+  public static native int OpenMM_VirtualSite_getNumParticles(PointerByReference target);
+  /**
+   * Original signature : <code>int OpenMM_VirtualSite_getParticle(const OpenMM_VirtualSite*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle a int.
+   * @return a int.
+   */
+  public static native int OpenMM_VirtualSite_getParticle(PointerByReference target, int particle);
+  /**
+   * TwoParticleAverageSite<br>
+   * Original signature : <code>
+   * OpenMM_TwoParticleAverageSite* OpenMM_TwoParticleAverageSite_create(int, int, double, double)
+   * </code>
+   *
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param weight1 a double.
+   * @param weight2 a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_TwoParticleAverageSite_create(
+      int particle1, int particle2, double weight1, double weight2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_TwoParticleAverageSite_destroy(OpenMM_TwoParticleAverageSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_TwoParticleAverageSite_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_TwoParticleAverageSite_getWeight(const OpenMM_TwoParticleAverageSite*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle a int.
+   * @return a double.
+   */
+  public static native double OpenMM_TwoParticleAverageSite_getWeight(
+      PointerByReference target, int particle);
   /**
    * Original signature : <code>OpenMM_NonbondedForce* OpenMM_NonbondedForce_create()</code>
    *
@@ -6513,1439 +4058,883 @@ public class OpenMMLibrary implements Library {
   public static native void OpenMM_NonbondedForce_setExceptionsUsePeriodicBoundaryConditions(
       PointerByReference target, int periodic);
   /**
-   * PeriodicTorsionForce<br>
-   * Original signature : <code>OpenMM_PeriodicTorsionForce* OpenMM_PeriodicTorsionForce_create()
+   * OutOfPlaneSite<br>
+   * Original signature : <code>
+   * OpenMM_OutOfPlaneSite* OpenMM_OutOfPlaneSite_create(int, int, int, double, double, double)
    * </code>
    *
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param weight12 a double.
+   * @param weight13 a double.
+   * @param weightCross a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_PeriodicTorsionForce_create();
+  public static native PointerByReference OpenMM_OutOfPlaneSite_create(
+      int particle1,
+      int particle2,
+      int particle3,
+      double weight12,
+      double weight13,
+      double weightCross);
   /**
-   * Original signature : <code>
-   * void OpenMM_PeriodicTorsionForce_destroy(OpenMM_PeriodicTorsionForce*)</code>
+   * Original signature : <code>void OpenMM_OutOfPlaneSite_destroy(OpenMM_OutOfPlaneSite*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_PeriodicTorsionForce_destroy(PointerByReference target);
+  public static native void OpenMM_OutOfPlaneSite_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_PeriodicTorsionForce_getNumTorsions(const OpenMM_PeriodicTorsionForce*)</code>
+   * double OpenMM_OutOfPlaneSite_getWeight12(const OpenMM_OutOfPlaneSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_OutOfPlaneSite_getWeight12(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_OutOfPlaneSite_getWeight13(const OpenMM_OutOfPlaneSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_OutOfPlaneSite_getWeight13(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_OutOfPlaneSite_getWeightCross(const OpenMM_OutOfPlaneSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_OutOfPlaneSite_getWeightCross(PointerByReference target);
+  /**
+   * CustomCVForce<br>
+   * Original signature : <code>OpenMM_CustomCVForce* OpenMM_CustomCVForce_create(const char*)
+   * </code>
+   *
+   * @param energy a {@link java.lang.String} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomCVForce_create(String energy);
+  /**
+   * Original signature : <code>void OpenMM_CustomCVForce_destroy(OpenMM_CustomCVForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomCVForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_getNumCollectiveVariables(const OpenMM_CustomCVForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_PeriodicTorsionForce_getNumTorsions(PointerByReference target);
+  public static native int OpenMM_CustomCVForce_getNumCollectiveVariables(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_PeriodicTorsionForce_addTorsion(OpenMM_PeriodicTorsionForce*, int, int, int, int, int, double, double)
-   * </code>
+   * int OpenMM_CustomCVForce_getNumGlobalParameters(const OpenMM_CustomCVForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param periodicity a int.
-   * @param phase a double.
-   * @param k a double.
    * @return a int.
    */
-  public static native int OpenMM_PeriodicTorsionForce_addTorsion(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      int periodicity,
-      double phase,
-      double k);
+  public static native int OpenMM_CustomCVForce_getNumGlobalParameters(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_PeriodicTorsionForce_getTorsionParameters(const OpenMM_PeriodicTorsionForce*, int, int*, int*, int*, int*, int*, double*, double*)
+   * int OpenMM_CustomCVForce_getNumEnergyParameterDerivatives(const OpenMM_CustomCVForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_getNumEnergyParameterDerivatives(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_getNumTabulatedFunctions(const OpenMM_CustomCVForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_getNumTabulatedFunctions(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCVForce_getEnergyFunction(const OpenMM_CustomCVForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCVForce_getEnergyFunction(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_setEnergyFunction(OpenMM_CustomCVForce*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomCVForce_setEnergyFunction(
+      PointerByReference target, String energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_setEnergyFunction(OpenMM_CustomCVForce*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomCVForce_setEnergyFunction(
+      PointerByReference target, Pointer energy);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_addCollectiveVariable(OpenMM_CustomCVForce*, const char*, OpenMM_Force*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_addCollectiveVariable(
+      PointerByReference target, String name, PointerByReference variable);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_addCollectiveVariable(OpenMM_CustomCVForce*, const char*, OpenMM_Force*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_addCollectiveVariable(
+      PointerByReference target, Pointer name, PointerByReference variable);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCVForce_getCollectiveVariableName(const OpenMM_CustomCVForce*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCVForce_getCollectiveVariableName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * OpenMM_Force* OpenMM_CustomCVForce_getCollectiveVariable(OpenMM_CustomCVForce*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomCVForce_getCollectiveVariable(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_addGlobalParameter(OpenMM_CustomCVForce*, const char*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_addGlobalParameter(
+      PointerByReference target, String name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_addGlobalParameter(OpenMM_CustomCVForce*, const char*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_addGlobalParameter(
+      PointerByReference target, Pointer name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCVForce_getGlobalParameterName(const OpenMM_CustomCVForce*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCVForce_getGlobalParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_setGlobalParameterName(OpenMM_CustomCVForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param particle4 a {@link java.nio.IntBuffer} object.
-   * @param periodicity a {@link java.nio.IntBuffer} object.
-   * @param phase a {@link java.nio.DoubleBuffer} object.
-   * @param k a {@link java.nio.DoubleBuffer} object.
+   * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_PeriodicTorsionForce_getTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      IntBuffer periodicity,
-      DoubleBuffer phase,
-      DoubleBuffer k);
+  public static native void OpenMM_CustomCVForce_setGlobalParameterName(
+      PointerByReference target, int index, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_PeriodicTorsionForce_getTorsionParameters(const OpenMM_PeriodicTorsionForce*, int, int*, int*, int*, int*, int*, double*, double*)
+   * void OpenMM_CustomCVForce_setGlobalParameterName(OpenMM_CustomCVForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param periodicity a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param phase a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_PeriodicTorsionForce_getTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      IntByReference periodicity,
-      DoubleByReference phase,
-      DoubleByReference k);
+  public static native void OpenMM_CustomCVForce_setGlobalParameterName(
+      PointerByReference target, int index, Pointer name);
   /**
    * Original signature : <code>
-   * void OpenMM_PeriodicTorsionForce_setTorsionParameters(OpenMM_PeriodicTorsionForce*, int, int, int, int, int, int, double, double)
+   * double OpenMM_CustomCVForce_getGlobalParameterDefaultValue(const OpenMM_CustomCVForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param periodicity a int.
-   * @param phase a double.
-   * @param k a double.
+   * @return a double.
    */
-  public static native void OpenMM_PeriodicTorsionForce_setTorsionParameters(
-      PointerByReference target,
-      int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      int periodicity,
-      double phase,
-      double k);
+  public static native double OpenMM_CustomCVForce_getGlobalParameterDefaultValue(
+      PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_PeriodicTorsionForce_updateParametersInContext(OpenMM_PeriodicTorsionForce*, OpenMM_Context*)
+   * void OpenMM_CustomCVForce_setGlobalParameterDefaultValue(OpenMM_CustomCVForce*, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param defaultValue a double.
+   */
+  public static native void OpenMM_CustomCVForce_setGlobalParameterDefaultValue(
+      PointerByReference target, int index, double defaultValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_addEnergyParameterDerivative(OpenMM_CustomCVForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomCVForce_addEnergyParameterDerivative(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_addEnergyParameterDerivative(OpenMM_CustomCVForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomCVForce_addEnergyParameterDerivative(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCVForce_getEnergyParameterDerivativeName(const OpenMM_CustomCVForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCVForce_getEnergyParameterDerivativeName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_addTabulatedFunction(OpenMM_CustomCVForce*, const char*, OpenMM_TabulatedFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_addTabulatedFunction(
+      PointerByReference target, String name, PointerByReference function);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCVForce_addTabulatedFunction(OpenMM_CustomCVForce*, const char*, OpenMM_TabulatedFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCVForce_addTabulatedFunction(
+      PointerByReference target, Pointer name, PointerByReference function);
+  /**
+   * Original signature : <code>
+   * OpenMM_TabulatedFunction* OpenMM_CustomCVForce_getTabulatedFunction(OpenMM_CustomCVForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomCVForce_getTabulatedFunction(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCVForce_getTabulatedFunctionName(const OpenMM_CustomCVForce*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCVForce_getTabulatedFunctionName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_getCollectiveVariableValues(OpenMM_CustomCVForce*, OpenMM_Context*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomCVForce_getCollectiveVariableValues(
+      PointerByReference target, PointerByReference context, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * OpenMM_Context* OpenMM_CustomCVForce_getInnerContext(OpenMM_CustomCVForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomCVForce_getInnerContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCVForce_updateParametersInContext(OpenMM_CustomCVForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_PeriodicTorsionForce_updateParametersInContext(
+  public static native void OpenMM_CustomCVForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_PeriodicTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_PeriodicTorsionForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_PeriodicTorsionForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_PeriodicTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_PeriodicTorsionForce*)
+   * OpenMM_Boolean OpenMM_CustomCVForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCVForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_PeriodicTorsionForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_CustomCVForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * BrownianIntegrator<br>
-   * Original signature : <code>
-   * OpenMM_BrownianIntegrator* OpenMM_BrownianIntegrator_create(double, double, double)</code>
+   * Original signature : <code>OpenMM_CustomHbondForce* OpenMM_CustomHbondForce_create(const char*)
+   * </code>
    *
-   * @param temperature a double.
-   * @param frictionCoeff a double.
-   * @param stepSize a double.
+   * @param energy a {@link java.lang.String} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_BrownianIntegrator_create(
-      double temperature, double frictionCoeff, double stepSize);
+  public static native PointerByReference OpenMM_CustomHbondForce_create(String energy);
   /**
-   * Original signature : <code>void OpenMM_BrownianIntegrator_destroy(OpenMM_BrownianIntegrator*)
+   * Original signature : <code>void OpenMM_CustomHbondForce_destroy(OpenMM_CustomHbondForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_BrownianIntegrator_destroy(PointerByReference target);
+  public static native void OpenMM_CustomHbondForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_BrownianIntegrator_getTemperature(const OpenMM_BrownianIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_BrownianIntegrator_getTemperature(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_BrownianIntegrator_setTemperature(OpenMM_BrownianIntegrator*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   */
-  public static native void OpenMM_BrownianIntegrator_setTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * double OpenMM_BrownianIntegrator_getFriction(const OpenMM_BrownianIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_BrownianIntegrator_getFriction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_BrownianIntegrator_setFriction(OpenMM_BrownianIntegrator*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param coeff a double.
-   */
-  public static native void OpenMM_BrownianIntegrator_setFriction(
-      PointerByReference target, double coeff);
-  /**
-   * Original signature : <code>
-   * int OpenMM_BrownianIntegrator_getRandomNumberSeed(const OpenMM_BrownianIntegrator*)</code>
+   * int OpenMM_CustomHbondForce_getNumDonors(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_BrownianIntegrator_getRandomNumberSeed(PointerByReference target);
+  public static native int OpenMM_CustomHbondForce_getNumDonors(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_BrownianIntegrator_setRandomNumberSeed(OpenMM_BrownianIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_BrownianIntegrator_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>void OpenMM_BrownianIntegrator_step(OpenMM_BrownianIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   */
-  public static native void OpenMM_BrownianIntegrator_step(PointerByReference target, int steps);
-  /**
-   * Original signature : <code>OpenMM_GBSAOBCForce* OpenMM_GBSAOBCForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_GBSAOBCForce_create();
-  /**
-   * Original signature : <code>void OpenMM_GBSAOBCForce_destroy(OpenMM_GBSAOBCForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_GBSAOBCForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>int OpenMM_GBSAOBCForce_getNumParticles(const OpenMM_GBSAOBCForce*)
-   * </code>
+   * int OpenMM_CustomHbondForce_getNumAcceptors(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_GBSAOBCForce_getNumParticles(PointerByReference target);
+  public static native int OpenMM_CustomHbondForce_getNumAcceptors(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_GBSAOBCForce_addParticle(OpenMM_GBSAOBCForce*, double, double, double)</code>
+   * int OpenMM_CustomHbondForce_getNumExclusions(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param charge a double.
-   * @param radius a double.
-   * @param scalingFactor a double.
    * @return a int.
    */
-  public static native int OpenMM_GBSAOBCForce_addParticle(
-      PointerByReference target, double charge, double radius, double scalingFactor);
+  public static native int OpenMM_CustomHbondForce_getNumExclusions(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_getParticleParameters(const OpenMM_GBSAOBCForce*, int, double*, double*, double*)
-   * </code>
+   * int OpenMM_CustomHbondForce_getNumPerDonorParameters(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param charge a {@link java.nio.DoubleBuffer} object.
-   * @param radius a {@link java.nio.DoubleBuffer} object.
-   * @param scalingFactor a {@link java.nio.DoubleBuffer} object.
+   * @return a int.
    */
-  public static native void OpenMM_GBSAOBCForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleBuffer charge,
-      DoubleBuffer radius,
-      DoubleBuffer scalingFactor);
+  public static native int OpenMM_CustomHbondForce_getNumPerDonorParameters(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_getParticleParameters(const OpenMM_GBSAOBCForce*, int, double*, double*, double*)
-   * </code>
+   * int OpenMM_CustomHbondForce_getNumPerAcceptorParameters(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param charge a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param radius a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param scalingFactor a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @return a int.
    */
-  public static native void OpenMM_GBSAOBCForce_getParticleParameters(
-      PointerByReference target,
-      int index,
-      DoubleByReference charge,
-      DoubleByReference radius,
-      DoubleByReference scalingFactor);
+  public static native int OpenMM_CustomHbondForce_getNumPerAcceptorParameters(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_setParticleParameters(OpenMM_GBSAOBCForce*, int, double, double, double)
-   * </code>
+   * int OpenMM_CustomHbondForce_getNumGlobalParameters(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param charge a double.
-   * @param radius a double.
-   * @param scalingFactor a double.
+   * @return a int.
    */
-  public static native void OpenMM_GBSAOBCForce_setParticleParameters(
-      PointerByReference target, int index, double charge, double radius, double scalingFactor);
+  public static native int OpenMM_CustomHbondForce_getNumGlobalParameters(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_GBSAOBCForce_getSolventDielectric(const OpenMM_GBSAOBCForce*)</code>
+   * int OpenMM_CustomHbondForce_getNumTabulatedFunctions(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
+   * @return a int.
    */
-  public static native double OpenMM_GBSAOBCForce_getSolventDielectric(PointerByReference target);
+  public static native int OpenMM_CustomHbondForce_getNumTabulatedFunctions(
+      PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_setSolventDielectric(OpenMM_GBSAOBCForce*, double)</code>
+   * int OpenMM_CustomHbondForce_getNumFunctions(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param dielectric a double.
+   * @return a int.
    */
-  public static native void OpenMM_GBSAOBCForce_setSolventDielectric(
-      PointerByReference target, double dielectric);
+  public static native int OpenMM_CustomHbondForce_getNumFunctions(PointerByReference target);
   /**
    * Original signature : <code>
-   * double OpenMM_GBSAOBCForce_getSoluteDielectric(const OpenMM_GBSAOBCForce*)</code>
+   * char* OpenMM_CustomHbondForce_getEnergyFunction(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
+   * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native double OpenMM_GBSAOBCForce_getSoluteDielectric(PointerByReference target);
+  public static native Pointer OpenMM_CustomHbondForce_getEnergyFunction(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_setSoluteDielectric(OpenMM_GBSAOBCForce*, double)</code>
+   * void OpenMM_CustomHbondForce_setEnergyFunction(OpenMM_CustomHbondForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param dielectric a double.
+   * @param energy a {@link java.lang.String} object.
    */
-  public static native void OpenMM_GBSAOBCForce_setSoluteDielectric(
-      PointerByReference target, double dielectric);
+  public static native void OpenMM_CustomHbondForce_setEnergyFunction(
+      PointerByReference target, String energy);
   /**
    * Original signature : <code>
-   * double OpenMM_GBSAOBCForce_getSurfaceAreaEnergy(const OpenMM_GBSAOBCForce*)</code>
+   * void OpenMM_CustomHbondForce_setEnergyFunction(OpenMM_CustomHbondForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
+   * @param energy a {@link com.sun.jna.Pointer} object.
    */
-  public static native double OpenMM_GBSAOBCForce_getSurfaceAreaEnergy(PointerByReference target);
+  public static native void OpenMM_CustomHbondForce_setEnergyFunction(
+      PointerByReference target, Pointer energy);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_setSurfaceAreaEnergy(OpenMM_GBSAOBCForce*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a double.
-   */
-  public static native void OpenMM_GBSAOBCForce_setSurfaceAreaEnergy(
-      PointerByReference target, double energy);
-  /**
-   * Original signature : <code>
-   * OpenMM_GBSAOBCForce_NonbondedMethod OpenMM_GBSAOBCForce_getNonbondedMethod(const OpenMM_GBSAOBCForce*)
+   * OpenMM_CustomHbondForce_NonbondedMethod OpenMM_CustomHbondForce_getNonbondedMethod(const OpenMM_CustomHbondForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_GBSAOBCForce_getNonbondedMethod(PointerByReference target);
+  public static native int OpenMM_CustomHbondForce_getNonbondedMethod(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_setNonbondedMethod(OpenMM_GBSAOBCForce*, OpenMM_GBSAOBCForce_NonbondedMethod)
+   * void OpenMM_CustomHbondForce_setNonbondedMethod(OpenMM_CustomHbondForce*, OpenMM_CustomHbondForce_NonbondedMethod)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param method a int.
    */
-  public static native void OpenMM_GBSAOBCForce_setNonbondedMethod(
+  public static native void OpenMM_CustomHbondForce_setNonbondedMethod(
       PointerByReference target, int method);
   /**
    * Original signature : <code>
-   * double OpenMM_GBSAOBCForce_getCutoffDistance(const OpenMM_GBSAOBCForce*)</code>
+   * double OpenMM_CustomHbondForce_getCutoffDistance(const OpenMM_CustomHbondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a double.
    */
-  public static native double OpenMM_GBSAOBCForce_getCutoffDistance(PointerByReference target);
+  public static native double OpenMM_CustomHbondForce_getCutoffDistance(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_setCutoffDistance(OpenMM_GBSAOBCForce*, double)</code>
+   * void OpenMM_CustomHbondForce_setCutoffDistance(OpenMM_CustomHbondForce*, double)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param distance a double.
    */
-  public static native void OpenMM_GBSAOBCForce_setCutoffDistance(
+  public static native void OpenMM_CustomHbondForce_setCutoffDistance(
       PointerByReference target, double distance);
   /**
    * Original signature : <code>
-   * void OpenMM_GBSAOBCForce_updateParametersInContext(OpenMM_GBSAOBCForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_GBSAOBCForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_GBSAOBCForce_usesPeriodicBoundaryConditions(const OpenMM_GBSAOBCForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_GBSAOBCForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * VerletIntegrator<br>
-   * Original signature : <code>OpenMM_VerletIntegrator* OpenMM_VerletIntegrator_create(double)
-   * </code>
-   *
-   * @param stepSize a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_VerletIntegrator_create(double stepSize);
-  /**
-   * Original signature : <code>void OpenMM_VerletIntegrator_destroy(OpenMM_VerletIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_VerletIntegrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>void OpenMM_VerletIntegrator_step(OpenMM_VerletIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   */
-  public static native void OpenMM_VerletIntegrator_step(PointerByReference target, int steps);
-  /**
-   * NoseHooverChain<br>
-   * Original signature : <code>
-   * OpenMM_NoseHooverChain* OpenMM_NoseHooverChain_create(double, double, double, double, int, int, int, int, int, const OpenMM_IntArray*, const OpenMM_BondArray*)
-   * </code>
-   *
-   * @param temperature a double.
-   * @param relativeTemperature a double.
-   * @param collisionFrequency a double.
-   * @param relativeCollisionFrequency a double.
-   * @param numDOFs a int.
-   * @param chainLength a int.
-   * @param numMTS a int.
-   * @param numYoshidaSuzuki a int.
-   * @param chainID a int.
-   * @param thermostatedAtoms a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param thermostatedPairs a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native PointerByReference OpenMM_NoseHooverChain_create(
-      double temperature,
-      double relativeTemperature,
-      double collisionFrequency,
-      double relativeCollisionFrequency,
-      int numDOFs,
-      int chainLength,
-      int numMTS,
-      int numYoshidaSuzuki,
-      int chainID,
-      PointerByReference thermostatedAtoms,
-      PointerByReference thermostatedPairs);
-  /**
-   * Original signature : <code>void OpenMM_NoseHooverChain_destroy(OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverChain_getTemperature(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverChain_getTemperature(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setTemperature(OpenMM_NoseHooverChain*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setTemperature(
-      PointerByReference target, double temperature);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverChain_getRelativeTemperature(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverChain_getRelativeTemperature(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setRelativeTemperature(OpenMM_NoseHooverChain*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temperature a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setRelativeTemperature(
-      PointerByReference target, double temperature);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverChain_getCollisionFrequency(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverChain_getCollisionFrequency(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setCollisionFrequency(OpenMM_NoseHooverChain*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param frequency a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setCollisionFrequency(
-      PointerByReference target, double frequency);
-  /**
-   * Original signature : <code>
-   * double OpenMM_NoseHooverChain_getRelativeCollisionFrequency(const OpenMM_NoseHooverChain*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_NoseHooverChain_getRelativeCollisionFrequency(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setRelativeCollisionFrequency(OpenMM_NoseHooverChain*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param frequency a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setRelativeCollisionFrequency(
-      PointerByReference target, double frequency);
-  /**
-   * Original signature : <code>
-   * int OpenMM_NoseHooverChain_getNumDegreesOfFreedom(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverChain_getNumDegreesOfFreedom(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setNumDegreesOfFreedom(OpenMM_NoseHooverChain*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param numDOF a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setNumDegreesOfFreedom(
-      PointerByReference target, int numDOF);
-  /**
-   * Original signature : <code>
-   * int OpenMM_NoseHooverChain_getChainLength(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverChain_getChainLength(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_NoseHooverChain_getNumMultiTimeSteps(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverChain_getNumMultiTimeSteps(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_NoseHooverChain_getNumYoshidaSuzukiTimeSteps(const OpenMM_NoseHooverChain*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverChain_getNumYoshidaSuzukiTimeSteps(
-      PointerByReference target);
-  /**
-   * Original signature : <code>int OpenMM_NoseHooverChain_getChainID(const OpenMM_NoseHooverChain*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverChain_getChainID(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * OpenMM_IntArray* OpenMM_NoseHooverChain_getThermostatedAtoms(const OpenMM_NoseHooverChain*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native PointerByReference OpenMM_NoseHooverChain_getThermostatedAtoms(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setThermostatedAtoms(OpenMM_NoseHooverChain*, const OpenMM_IntArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param atomIDs a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setThermostatedAtoms(
-      PointerByReference target, PointerByReference atomIDs);
-  /**
-   * Original signature : <code>
-   * OpenMM_BondArray* OpenMM_NoseHooverChain_getThermostatedPairs(const OpenMM_NoseHooverChain*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native PointerByReference OpenMM_NoseHooverChain_getThermostatedPairs(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_NoseHooverChain_setThermostatedPairs(OpenMM_NoseHooverChain*, const OpenMM_BondArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param pairIDs a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_NoseHooverChain_setThermostatedPairs(
-      PointerByReference target, PointerByReference pairIDs);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_NoseHooverChain_usesPeriodicBoundaryConditions(const OpenMM_NoseHooverChain*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_NoseHooverChain_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * LangevinMiddleIntegrator<br>
-   * Original signature : <code>
-   * OpenMM_LangevinMiddleIntegrator* OpenMM_LangevinMiddleIntegrator_create(double, double, double)
-   * </code>
-   *
-   * @param temperature a double.
-   * @param frictionCoeff a double.
-   * @param stepSize a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native PointerByReference OpenMM_LangevinMiddleIntegrator_create(
-      double temperature, double frictionCoeff, double stepSize);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinMiddleIntegrator_destroy(OpenMM_LangevinMiddleIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_LangevinMiddleIntegrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_LangevinMiddleIntegrator_getTemperature(const OpenMM_LangevinMiddleIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_LangevinMiddleIntegrator_getTemperature(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinMiddleIntegrator_setTemperature(OpenMM_LangevinMiddleIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_LangevinMiddleIntegrator_setTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * double OpenMM_LangevinMiddleIntegrator_getFriction(const OpenMM_LangevinMiddleIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_LangevinMiddleIntegrator_getFriction(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinMiddleIntegrator_setFriction(OpenMM_LangevinMiddleIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param coeff a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_LangevinMiddleIntegrator_setFriction(
-      PointerByReference target, double coeff);
-  /**
-   * Original signature : <code>
-   * int OpenMM_LangevinMiddleIntegrator_getRandomNumberSeed(const OpenMM_LangevinMiddleIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native int OpenMM_LangevinMiddleIntegrator_getRandomNumberSeed(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinMiddleIntegrator_setRandomNumberSeed(OpenMM_LangevinMiddleIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_LangevinMiddleIntegrator_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinMiddleIntegrator_step(OpenMM_LangevinMiddleIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_LangevinMiddleIntegrator_step(
-      PointerByReference target, int steps);
-  /**
-   * LocalEnergyMinimizer<br>
-   * Original signature : <code>
-   * void OpenMM_LocalEnergyMinimizer_destroy(OpenMM_LocalEnergyMinimizer*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_LocalEnergyMinimizer_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LocalEnergyMinimizer_minimize(OpenMM_Context*, double, int)</code>
-   *
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tolerance a double.
-   * @param maxIterations a int.
-   */
-  public static native void OpenMM_LocalEnergyMinimizer_minimize(
-      PointerByReference context, double tolerance, int maxIterations);
-  /**
-   * LangevinIntegrator<br>
-   * Original signature : <code>
-   * OpenMM_LangevinIntegrator* OpenMM_LangevinIntegrator_create(double, double, double)</code>
-   *
-   * @param temperature a double.
-   * @param frictionCoeff a double.
-   * @param stepSize a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_LangevinIntegrator_create(
-      double temperature, double frictionCoeff, double stepSize);
-  /**
-   * Original signature : <code>void OpenMM_LangevinIntegrator_destroy(OpenMM_LangevinIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_LangevinIntegrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_LangevinIntegrator_getTemperature(const OpenMM_LangevinIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_LangevinIntegrator_getTemperature(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinIntegrator_setTemperature(OpenMM_LangevinIntegrator*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   */
-  public static native void OpenMM_LangevinIntegrator_setTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * double OpenMM_LangevinIntegrator_getFriction(const OpenMM_LangevinIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_LangevinIntegrator_getFriction(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinIntegrator_setFriction(OpenMM_LangevinIntegrator*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param coeff a double.
-   */
-  public static native void OpenMM_LangevinIntegrator_setFriction(
-      PointerByReference target, double coeff);
-  /**
-   * Original signature : <code>
-   * int OpenMM_LangevinIntegrator_getRandomNumberSeed(const OpenMM_LangevinIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_LangevinIntegrator_getRandomNumberSeed(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_LangevinIntegrator_setRandomNumberSeed(OpenMM_LangevinIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_LangevinIntegrator_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>void OpenMM_LangevinIntegrator_step(OpenMM_LangevinIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   */
-  public static native void OpenMM_LangevinIntegrator_step(PointerByReference target, int steps);
-  /**
-   * VariableLangevinIntegrator<br>
-   * Original signature : <code>
-   * OpenMM_VariableLangevinIntegrator* OpenMM_VariableLangevinIntegrator_create(double, double, double)
-   * </code>
-   *
-   * @param temperature a double.
-   * @param frictionCoeff a double.
-   * @param errorTol a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_VariableLangevinIntegrator_create(
-      double temperature, double frictionCoeff, double errorTol);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_destroy(OpenMM_VariableLangevinIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_VariableLangevinIntegrator_getTemperature(const OpenMM_VariableLangevinIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_VariableLangevinIntegrator_getTemperature(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_setTemperature(OpenMM_VariableLangevinIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param temp a double.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_setTemperature(
-      PointerByReference target, double temp);
-  /**
-   * Original signature : <code>
-   * double OpenMM_VariableLangevinIntegrator_getFriction(const OpenMM_VariableLangevinIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_VariableLangevinIntegrator_getFriction(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_setFriction(OpenMM_VariableLangevinIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param coeff a double.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_setFriction(
-      PointerByReference target, double coeff);
-  /**
-   * Original signature : <code>
-   * double OpenMM_VariableLangevinIntegrator_getErrorTolerance(const OpenMM_VariableLangevinIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_VariableLangevinIntegrator_getErrorTolerance(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_setErrorTolerance(OpenMM_VariableLangevinIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tol a double.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_setErrorTolerance(
-      PointerByReference target, double tol);
-  /**
-   * Original signature : <code>
-   * double OpenMM_VariableLangevinIntegrator_getMaximumStepSize(const OpenMM_VariableLangevinIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native double OpenMM_VariableLangevinIntegrator_getMaximumStepSize(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_setMaximumStepSize(OpenMM_VariableLangevinIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param size a double.
-   * @since 7.5.0-Tinker
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_setMaximumStepSize(
-      PointerByReference target, double size);
-  /**
-   * Original signature : <code>
-   * int OpenMM_VariableLangevinIntegrator_getRandomNumberSeed(const OpenMM_VariableLangevinIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_VariableLangevinIntegrator_getRandomNumberSeed(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_setRandomNumberSeed(OpenMM_VariableLangevinIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_step(OpenMM_VariableLangevinIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_step(
-      PointerByReference target, int steps);
-  /**
-   * Original signature : <code>
-   * void OpenMM_VariableLangevinIntegrator_stepTo(OpenMM_VariableLangevinIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param time a double.
-   */
-  public static native void OpenMM_VariableLangevinIntegrator_stepTo(
-      PointerByReference target, double time);
-  /**
-   * Original signature : <code>OpenMM_CustomIntegrator* OpenMM_CustomIntegrator_create(double)
-   * </code>
-   *
-   * @param stepSize a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomIntegrator_create(double stepSize);
-  /**
-   * Original signature : <code>void OpenMM_CustomIntegrator_destroy(OpenMM_CustomIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomIntegrator_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_getNumGlobalVariables(const OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_getNumGlobalVariables(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_getNumPerDofVariables(const OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_getNumPerDofVariables(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_getNumComputations(const OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_getNumComputations(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_getNumTabulatedFunctions(const OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_getNumTabulatedFunctions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addGlobalVariable(OpenMM_CustomIntegrator*, const char*, double)
-   * </code>
+   * int OpenMM_CustomHbondForce_addPerDonorParameter(OpenMM_CustomHbondForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
-   * @param initialValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomIntegrator_addGlobalVariable(
-      PointerByReference target, String name, double initialValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addGlobalVariable(OpenMM_CustomIntegrator*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param initialValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addGlobalVariable(
-      PointerByReference target, Pointer name, double initialValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomIntegrator_getGlobalVariableName(const OpenMM_CustomIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomIntegrator_getGlobalVariableName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addPerDofVariable(OpenMM_CustomIntegrator*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param initialValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addPerDofVariable(
-      PointerByReference target, String name, double initialValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addPerDofVariable(OpenMM_CustomIntegrator*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param initialValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addPerDofVariable(
-      PointerByReference target, Pointer name, double initialValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomIntegrator_getPerDofVariableName(const OpenMM_CustomIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomIntegrator_getPerDofVariableName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomIntegrator_getGlobalVariable(const OpenMM_CustomIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomIntegrator_getGlobalVariable(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomIntegrator_getGlobalVariableByName(const OpenMM_CustomIntegrator*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomIntegrator_getGlobalVariableByName(
+  public static native int OpenMM_CustomHbondForce_addPerDonorParameter(
       PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * double OpenMM_CustomIntegrator_getGlobalVariableByName(const OpenMM_CustomIntegrator*, const char*)
-   * </code>
+   * int OpenMM_CustomHbondForce_addPerDonorParameter(OpenMM_CustomHbondForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a double.
+   * @return a int.
    */
-  public static native double OpenMM_CustomIntegrator_getGlobalVariableByName(
+  public static native int OpenMM_CustomHbondForce_addPerDonorParameter(
       PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setGlobalVariable(OpenMM_CustomIntegrator*, int, double)</code>
+   * char* OpenMM_CustomHbondForce_getPerDonorParameterName(const OpenMM_CustomHbondForce*, int)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param value a double.
+   * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomIntegrator_setGlobalVariable(
-      PointerByReference target, int index, double value);
+  public static native Pointer OpenMM_CustomHbondForce_getPerDonorParameterName(
+      PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setGlobalVariableByName(OpenMM_CustomIntegrator*, const char*, double)
+   * void OpenMM_CustomHbondForce_setPerDonorParameterName(OpenMM_CustomHbondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomHbondForce_setPerDonorParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_setPerDonorParameterName(OpenMM_CustomHbondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomHbondForce_setPerDonorParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomHbondForce_addPerAcceptorParameter(OpenMM_CustomHbondForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
-   * @param value a double.
+   * @return a int.
    */
-  public static native void OpenMM_CustomIntegrator_setGlobalVariableByName(
-      PointerByReference target, String name, double value);
+  public static native int OpenMM_CustomHbondForce_addPerAcceptorParameter(
+      PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setGlobalVariableByName(OpenMM_CustomIntegrator*, const char*, double)
+   * int OpenMM_CustomHbondForce_addPerAcceptorParameter(OpenMM_CustomHbondForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
-   * @param value a double.
+   * @return a int.
    */
-  public static native void OpenMM_CustomIntegrator_setGlobalVariableByName(
-      PointerByReference target, Pointer name, double value);
+  public static native int OpenMM_CustomHbondForce_addPerAcceptorParameter(
+      PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_getPerDofVariable(const OpenMM_CustomIntegrator*, int, OpenMM_Vec3Array*)
+   * char* OpenMM_CustomHbondForce_getPerAcceptorParameterName(const OpenMM_CustomHbondForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomIntegrator_getPerDofVariable(
-      PointerByReference target, int index, PointerByReference values);
+  public static native Pointer OpenMM_CustomHbondForce_getPerAcceptorParameterName(
+      PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_getPerDofVariableByName(const OpenMM_CustomIntegrator*, const char*, OpenMM_Vec3Array*)
+   * void OpenMM_CustomHbondForce_setPerAcceptorParameterName(OpenMM_CustomHbondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomHbondForce_setPerAcceptorParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_setPerAcceptorParameterName(OpenMM_CustomHbondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomHbondForce_setPerAcceptorParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomHbondForce_addGlobalParameter(OpenMM_CustomHbondForce*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param defaultValue a double.
+   * @return a int.
    */
-  public static native void OpenMM_CustomIntegrator_getPerDofVariableByName(
-      PointerByReference target, String name, PointerByReference values);
+  public static native int OpenMM_CustomHbondForce_addGlobalParameter(
+      PointerByReference target, String name, double defaultValue);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_getPerDofVariableByName(const OpenMM_CustomIntegrator*, const char*, OpenMM_Vec3Array*)
+   * int OpenMM_CustomHbondForce_addGlobalParameter(OpenMM_CustomHbondForce*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param defaultValue a double.
+   * @return a int.
    */
-  public static native void OpenMM_CustomIntegrator_getPerDofVariableByName(
-      PointerByReference target, Pointer name, PointerByReference values);
+  public static native int OpenMM_CustomHbondForce_addGlobalParameter(
+      PointerByReference target, Pointer name, double defaultValue);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setPerDofVariable(OpenMM_CustomIntegrator*, int, const OpenMM_Vec3Array*)
+   * char* OpenMM_CustomHbondForce_getGlobalParameterName(const OpenMM_CustomHbondForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomIntegrator_setPerDofVariable(
-      PointerByReference target, int index, PointerByReference values);
+  public static native Pointer OpenMM_CustomHbondForce_getGlobalParameterName(
+      PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setPerDofVariableByName(OpenMM_CustomIntegrator*, const char*, const OpenMM_Vec3Array*)
+   * void OpenMM_CustomHbondForce_setGlobalParameterName(OpenMM_CustomHbondForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
    * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomIntegrator_setPerDofVariableByName(
-      PointerByReference target, String name, PointerByReference values);
+  public static native void OpenMM_CustomHbondForce_setGlobalParameterName(
+      PointerByReference target, int index, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setPerDofVariableByName(OpenMM_CustomIntegrator*, const char*, const OpenMM_Vec3Array*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomIntegrator_setPerDofVariableByName(
-      PointerByReference target, Pointer name, PointerByReference values);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addComputeGlobal(OpenMM_CustomIntegrator*, const char*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param variable a {@link java.lang.String} object.
-   * @param expression a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addComputeGlobal(
-      PointerByReference target, String variable, String expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addComputeGlobal(OpenMM_CustomIntegrator*, const char*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param variable a {@link com.sun.jna.Pointer} object.
-   * @param expression a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addComputeGlobal(
-      PointerByReference target, Pointer variable, Pointer expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addComputePerDof(OpenMM_CustomIntegrator*, const char*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param variable a {@link java.lang.String} object.
-   * @param expression a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addComputePerDof(
-      PointerByReference target, String variable, String expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addComputePerDof(OpenMM_CustomIntegrator*, const char*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param variable a {@link com.sun.jna.Pointer} object.
-   * @param expression a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addComputePerDof(
-      PointerByReference target, Pointer variable, Pointer expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addComputeSum(OpenMM_CustomIntegrator*, const char*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param variable a {@link java.lang.String} object.
-   * @param expression a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addComputeSum(
-      PointerByReference target, String variable, String expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addComputeSum(OpenMM_CustomIntegrator*, const char*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param variable a {@link com.sun.jna.Pointer} object.
-   * @param expression a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addComputeSum(
-      PointerByReference target, Pointer variable, Pointer expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addConstrainPositions(OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addConstrainPositions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addConstrainVelocities(OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addConstrainVelocities(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addUpdateContextState(OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_addUpdateContextState(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_beginIfBlock(OpenMM_CustomIntegrator*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param condition a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_beginIfBlock(
-      PointerByReference target, String condition);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_beginIfBlock(OpenMM_CustomIntegrator*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param condition a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_beginIfBlock(
-      PointerByReference target, Pointer condition);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_beginWhileBlock(OpenMM_CustomIntegrator*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param condition a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_beginWhileBlock(
-      PointerByReference target, String condition);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_beginWhileBlock(OpenMM_CustomIntegrator*, const char*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param condition a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_beginWhileBlock(
-      PointerByReference target, Pointer condition);
-  /**
-   * Original signature : <code>int OpenMM_CustomIntegrator_endBlock(OpenMM_CustomIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomIntegrator_endBlock(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomIntegrator_getComputationStep(const OpenMM_CustomIntegrator*, int, OpenMM_CustomIntegrator_ComputationType*, char**, char**)
+   * void OpenMM_CustomHbondForce_setGlobalParameterName(OpenMM_CustomHbondForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param type a {@link java.nio.IntBuffer} object.
-   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param expression a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomIntegrator_getComputationStep(
+  public static native void OpenMM_CustomHbondForce_setGlobalParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomHbondForce_getGlobalParameterDefaultValue(const OpenMM_CustomHbondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomHbondForce_getGlobalParameterDefaultValue(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_setGlobalParameterDefaultValue(OpenMM_CustomHbondForce*, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param defaultValue a double.
+   */
+  public static native void OpenMM_CustomHbondForce_setGlobalParameterDefaultValue(
+      PointerByReference target, int index, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomHbondForce_addDonor(OpenMM_CustomHbondForce*, int, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param d1 a int.
+   * @param d2 a int.
+   * @param d3 a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomHbondForce_addDonor(
+      PointerByReference target, int d1, int d2, int d3, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_getDonorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param d1 a {@link java.nio.IntBuffer} object.
+   * @param d2 a {@link java.nio.IntBuffer} object.
+   * @param d3 a {@link java.nio.IntBuffer} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomHbondForce_getDonorParameters(
       PointerByReference target,
       int index,
-      IntBuffer type,
-      PointerByReference variable,
-      PointerByReference expression);
+      IntBuffer d1,
+      IntBuffer d2,
+      IntBuffer d3,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_getComputationStep(const OpenMM_CustomIntegrator*, int, OpenMM_CustomIntegrator_ComputationType*, char**, char**)
+   * void OpenMM_CustomHbondForce_getDonorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param type a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param variable a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param expression a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param d1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param d2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param d3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomIntegrator_getComputationStep(
+  public static native void OpenMM_CustomHbondForce_getDonorParameters(
       PointerByReference target,
       int index,
-      IntByReference type,
-      PointerByReference variable,
-      PointerByReference expression);
+      IntByReference d1,
+      IntByReference d2,
+      IntByReference d3,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addTabulatedFunction(OpenMM_CustomIntegrator*, const char*, OpenMM_TabulatedFunction*)
+   * void OpenMM_CustomHbondForce_setDonorParameters(OpenMM_CustomHbondForce*, int, int, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param d1 a int.
+   * @param d2 a int.
+   * @param d3 a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomHbondForce_setDonorParameters(
+      PointerByReference target, int index, int d1, int d2, int d3, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomHbondForce_addAcceptor(OpenMM_CustomHbondForce*, int, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param a1 a int.
+   * @param a2 a int.
+   * @param a3 a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomHbondForce_addAcceptor(
+      PointerByReference target, int a1, int a2, int a3, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_getAcceptorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param a1 a {@link java.nio.IntBuffer} object.
+   * @param a2 a {@link java.nio.IntBuffer} object.
+   * @param a3 a {@link java.nio.IntBuffer} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomHbondForce_getAcceptorParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer a1,
+      IntBuffer a2,
+      IntBuffer a3,
+      PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_getAcceptorParameters(const OpenMM_CustomHbondForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param a1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param a2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param a3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomHbondForce_getAcceptorParameters(
+      PointerByReference target,
+      int index,
+      IntByReference a1,
+      IntByReference a2,
+      IntByReference a3,
+      PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_setAcceptorParameters(OpenMM_CustomHbondForce*, int, int, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param a1 a int.
+   * @param a2 a int.
+   * @param a3 a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomHbondForce_setAcceptorParameters(
+      PointerByReference target, int index, int a1, int a2, int a3, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomHbondForce_addExclusion(OpenMM_CustomHbondForce*, int, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param donor a int.
+   * @param acceptor a int.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomHbondForce_addExclusion(
+      PointerByReference target, int donor, int acceptor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_getExclusionParticles(const OpenMM_CustomHbondForce*, int, int*, int*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param donor a {@link java.nio.IntBuffer} object.
+   * @param acceptor a {@link java.nio.IntBuffer} object.
+   */
+  public static native void OpenMM_CustomHbondForce_getExclusionParticles(
+      PointerByReference target, int index, IntBuffer donor, IntBuffer acceptor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_getExclusionParticles(const OpenMM_CustomHbondForce*, int, int*, int*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param donor a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param acceptor a {@link com.sun.jna.ptr.IntByReference} object.
+   */
+  public static native void OpenMM_CustomHbondForce_getExclusionParticles(
+      PointerByReference target, int index, IntByReference donor, IntByReference acceptor);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_setExclusionParticles(OpenMM_CustomHbondForce*, int, int, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param donor a int.
+   * @param acceptor a int.
+   */
+  public static native void OpenMM_CustomHbondForce_setExclusionParticles(
+      PointerByReference target, int index, int donor, int acceptor);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomHbondForce_addTabulatedFunction(OpenMM_CustomHbondForce*, const char*, OpenMM_TabulatedFunction*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -7953,11 +4942,11 @@ public class OpenMMLibrary implements Library {
    * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomIntegrator_addTabulatedFunction(
+  public static native int OpenMM_CustomHbondForce_addTabulatedFunction(
       PointerByReference target, String name, PointerByReference function);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomIntegrator_addTabulatedFunction(OpenMM_CustomIntegrator*, const char*, OpenMM_TabulatedFunction*)
+   * int OpenMM_CustomHbondForce_addTabulatedFunction(OpenMM_CustomHbondForce*, const char*, OpenMM_TabulatedFunction*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -7965,365 +4954,584 @@ public class OpenMMLibrary implements Library {
    * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomIntegrator_addTabulatedFunction(
+  public static native int OpenMM_CustomHbondForce_addTabulatedFunction(
       PointerByReference target, Pointer name, PointerByReference function);
   /**
    * Original signature : <code>
-   * OpenMM_TabulatedFunction* OpenMM_CustomIntegrator_getTabulatedFunction(OpenMM_CustomIntegrator*, int)
+   * OpenMM_TabulatedFunction* OpenMM_CustomHbondForce_getTabulatedFunction(OpenMM_CustomHbondForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomIntegrator_getTabulatedFunction(
+  public static native PointerByReference OpenMM_CustomHbondForce_getTabulatedFunction(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomIntegrator_getTabulatedFunctionName(const OpenMM_CustomIntegrator*, int)
+   * char* OpenMM_CustomHbondForce_getTabulatedFunctionName(const OpenMM_CustomHbondForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomIntegrator_getTabulatedFunctionName(
+  public static native Pointer OpenMM_CustomHbondForce_getTabulatedFunctionName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomIntegrator_getKineticEnergyExpression(const OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomIntegrator_getKineticEnergyExpression(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setKineticEnergyExpression(OpenMM_CustomIntegrator*, const char*)
+   * int OpenMM_CustomHbondForce_addFunction(OpenMM_CustomHbondForce*, const char*, const OpenMM_DoubleArray*, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param expression a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomIntegrator_setKineticEnergyExpression(
-      PointerByReference target, String expression);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setKineticEnergyExpression(OpenMM_CustomIntegrator*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param expression a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomIntegrator_setKineticEnergyExpression(
-      PointerByReference target, Pointer expression);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomIntegrator_getRandomNumberSeed(const OpenMM_CustomIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomIntegrator_getRandomNumberSeed(PointerByReference target);
+  public static native int OpenMM_CustomHbondForce_addFunction(
+      PointerByReference target, String name, PointerByReference values, double min, double max);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomIntegrator_setRandomNumberSeed(OpenMM_CustomIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param seed a int.
-   */
-  public static native void OpenMM_CustomIntegrator_setRandomNumberSeed(
-      PointerByReference target, int seed);
-  /**
-   * Original signature : <code>void OpenMM_CustomIntegrator_step(OpenMM_CustomIntegrator*, int)
+   * int OpenMM_CustomHbondForce_addFunction(OpenMM_CustomHbondForce*, const char*, const OpenMM_DoubleArray*, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param steps a int.
-   */
-  public static native void OpenMM_CustomIntegrator_step(PointerByReference target, int steps);
-  /**
-   * RBTorsionForce<br>
-   * Original signature : <code>OpenMM_RBTorsionForce* OpenMM_RBTorsionForce_create()</code>
-   *
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_RBTorsionForce_create();
-  /**
-   * Original signature : <code>void OpenMM_RBTorsionForce_destroy(OpenMM_RBTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_RBTorsionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_RBTorsionForce_getNumTorsions(const OpenMM_RBTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
    * @return a int.
    */
-  public static native int OpenMM_RBTorsionForce_getNumTorsions(PointerByReference target);
+  public static native int OpenMM_CustomHbondForce_addFunction(
+      PointerByReference target, Pointer name, PointerByReference values, double min, double max);
   /**
    * Original signature : <code>
-   * int OpenMM_RBTorsionForce_addTorsion(OpenMM_RBTorsionForce*, int, int, int, int, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param c0 a double.
-   * @param c1 a double.
-   * @param c2 a double.
-   * @param c3 a double.
-   * @param c4 a double.
-   * @param c5 a double.
-   * @return a int.
-   */
-  public static native int OpenMM_RBTorsionForce_addTorsion(
-      PointerByReference target,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double c0,
-      double c1,
-      double c2,
-      double c3,
-      double c4,
-      double c5);
-  /**
-   * Original signature : <code>
-   * void OpenMM_RBTorsionForce_getTorsionParameters(const OpenMM_RBTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*)
+   * void OpenMM_CustomHbondForce_getFunctionParameters(const OpenMM_CustomHbondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particle1 a {@link java.nio.IntBuffer} object.
-   * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param particle3 a {@link java.nio.IntBuffer} object.
-   * @param particle4 a {@link java.nio.IntBuffer} object.
-   * @param c0 a {@link java.nio.DoubleBuffer} object.
-   * @param c1 a {@link java.nio.DoubleBuffer} object.
-   * @param c2 a {@link java.nio.DoubleBuffer} object.
-   * @param c3 a {@link java.nio.DoubleBuffer} object.
-   * @param c4 a {@link java.nio.DoubleBuffer} object.
-   * @param c5 a {@link java.nio.DoubleBuffer} object.
+   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link java.nio.DoubleBuffer} object.
+   * @param max a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_RBTorsionForce_getTorsionParameters(
+  public static native void OpenMM_CustomHbondForce_getFunctionParameters(
       PointerByReference target,
       int index,
-      IntBuffer particle1,
-      IntBuffer particle2,
-      IntBuffer particle3,
-      IntBuffer particle4,
-      DoubleBuffer c0,
-      DoubleBuffer c1,
-      DoubleBuffer c2,
-      DoubleBuffer c3,
-      DoubleBuffer c4,
-      DoubleBuffer c5);
+      PointerByReference name,
+      PointerByReference values,
+      DoubleBuffer min,
+      DoubleBuffer max);
   /**
    * Original signature : <code>
-   * void OpenMM_RBTorsionForce_getTorsionParameters(const OpenMM_RBTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*)
+   * void OpenMM_CustomHbondForce_getFunctionParameters(const OpenMM_CustomHbondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param c0 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param c1 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param c2 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param c3 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param c4 a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param c5 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native void OpenMM_RBTorsionForce_getTorsionParameters(
+  public static native void OpenMM_CustomHbondForce_getFunctionParameters(
       PointerByReference target,
       int index,
-      IntByReference particle1,
-      IntByReference particle2,
-      IntByReference particle3,
-      IntByReference particle4,
-      DoubleByReference c0,
-      DoubleByReference c1,
-      DoubleByReference c2,
-      DoubleByReference c3,
-      DoubleByReference c4,
-      DoubleByReference c5);
+      PointerByReference name,
+      PointerByReference values,
+      DoubleByReference min,
+      DoubleByReference max);
   /**
    * Original signature : <code>
-   * void OpenMM_RBTorsionForce_setTorsionParameters(OpenMM_RBTorsionForce*, int, int, int, int, int, double, double, double, double, double, double)
+   * void OpenMM_CustomHbondForce_setFunctionParameters(OpenMM_CustomHbondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param particle4 a int.
-   * @param c0 a double.
-   * @param c1 a double.
-   * @param c2 a double.
-   * @param c3 a double.
-   * @param c4 a double.
-   * @param c5 a double.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
    */
-  public static native void OpenMM_RBTorsionForce_setTorsionParameters(
+  public static native void OpenMM_CustomHbondForce_setFunctionParameters(
       PointerByReference target,
       int index,
-      int particle1,
-      int particle2,
-      int particle3,
-      int particle4,
-      double c0,
-      double c1,
-      double c2,
-      double c3,
-      double c4,
-      double c5);
+      String name,
+      PointerByReference values,
+      double min,
+      double max);
   /**
    * Original signature : <code>
-   * void OpenMM_RBTorsionForce_updateParametersInContext(OpenMM_RBTorsionForce*, OpenMM_Context*)
+   * void OpenMM_CustomHbondForce_setFunctionParameters(OpenMM_CustomHbondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   */
+  public static native void OpenMM_CustomHbondForce_setFunctionParameters(
+      PointerByReference target,
+      int index,
+      Pointer name,
+      PointerByReference values,
+      double min,
+      double max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomHbondForce_updateParametersInContext(OpenMM_CustomHbondForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_RBTorsionForce_updateParametersInContext(
+  public static native void OpenMM_CustomHbondForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_RBTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_RBTorsionForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_RBTorsionForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_RBTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_RBTorsionForce*)
+   * OpenMM_Boolean OpenMM_CustomHbondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomHbondForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_RBTorsionForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_CustomHbondForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * CompoundIntegrator<br>
-   * Original signature : <code>OpenMM_CompoundIntegrator* OpenMM_CompoundIntegrator_create()</code>
+   * NoseHooverIntegrator<br>
+   * Original signature : <code>
+   * OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create(double)</code>
    *
+   * @param stepSize a double.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
    */
-  public static native PointerByReference OpenMM_CompoundIntegrator_create();
-  /**
-   * Original signature : <code>void OpenMM_CompoundIntegrator_destroy(OpenMM_CompoundIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CompoundIntegrator_destroy(PointerByReference target);
+  public static native PointerByReference OpenMM_NoseHooverIntegrator_create(double stepSize);
   /**
    * Original signature : <code>
-   * int OpenMM_CompoundIntegrator_getNumIntegrators(const OpenMM_CompoundIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CompoundIntegrator_getNumIntegrators(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CompoundIntegrator_addIntegrator(OpenMM_CompoundIntegrator*, OpenMM_Integrator*)
+   * OpenMM_NoseHooverIntegrator* OpenMM_NoseHooverIntegrator_create_2(double, double, double, int, int, int)
    * </code>
    *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CompoundIntegrator_addIntegrator(
-      PointerByReference target, PointerByReference integrator);
-  /**
-   * Original signature : <code>
-   * OpenMM_Integrator* OpenMM_CompoundIntegrator_getIntegrator(OpenMM_CompoundIntegrator*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
+   * @param temperature a double.
+   * @param collisionFrequency a double.
+   * @param stepSize a double.
+   * @param chainLength a int.
+   * @param numMTS a int.
+   * @param numYoshidaSuzuki a int.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
    */
-  public static native PointerByReference OpenMM_CompoundIntegrator_getIntegrator(
-      PointerByReference target, int index);
+  public static native PointerByReference OpenMM_NoseHooverIntegrator_create_2(
+      double temperature,
+      double collisionFrequency,
+      double stepSize,
+      int chainLength,
+      int numMTS,
+      int numYoshidaSuzuki);
   /**
    * Original signature : <code>
-   * int OpenMM_CompoundIntegrator_getCurrentIntegrator(const OpenMM_CompoundIntegrator*)</code>
+   * void OpenMM_NoseHooverIntegrator_destroy(OpenMM_NoseHooverIntegrator*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
+   * @since 7.5.0-Tinker
    */
-  public static native int OpenMM_CompoundIntegrator_getCurrentIntegrator(
-      PointerByReference target);
+  public static native void OpenMM_NoseHooverIntegrator_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_CompoundIntegrator_setCurrentIntegrator(OpenMM_CompoundIntegrator*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   */
-  public static native void OpenMM_CompoundIntegrator_setCurrentIntegrator(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CompoundIntegrator_getStepSize(const OpenMM_CompoundIntegrator*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_CompoundIntegrator_getStepSize(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CompoundIntegrator_setStepSize(OpenMM_CompoundIntegrator*, double)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param size a double.
-   */
-  public static native void OpenMM_CompoundIntegrator_setStepSize(
-      PointerByReference target, double size);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CompoundIntegrator_getConstraintTolerance(const OpenMM_CompoundIntegrator*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_CompoundIntegrator_getConstraintTolerance(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CompoundIntegrator_setConstraintTolerance(OpenMM_CompoundIntegrator*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param tol a double.
-   */
-  public static native void OpenMM_CompoundIntegrator_setConstraintTolerance(
-      PointerByReference target, double tol);
-  /**
-   * Original signature : <code>void OpenMM_CompoundIntegrator_step(OpenMM_CompoundIntegrator*, int)
-   * </code>
+   * void OpenMM_NoseHooverIntegrator_step(OpenMM_NoseHooverIntegrator*, int)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param steps a int.
+   * @since 7.5.0-Tinker
    */
-  public static native void OpenMM_CompoundIntegrator_step(PointerByReference target, int steps);
+  public static native void OpenMM_NoseHooverIntegrator_step(PointerByReference target, int steps);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverIntegrator_addThermostat(OpenMM_NoseHooverIntegrator*, double, double, int, int, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @param collisionFrequency a double.
+   * @param chainLength a int.
+   * @param numMTS a int.
+   * @param numYoshidaSuzuki a int.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverIntegrator_addThermostat(
+      PointerByReference target,
+      double temperature,
+      double collisionFrequency,
+      int chainLength,
+      int numMTS,
+      int numYoshidaSuzuki);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverIntegrator_addSubsystemThermostat(OpenMM_NoseHooverIntegrator*, const OpenMM_IntArray*, const OpenMM_BondArray*, double, double, double, double, int, int, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param thermostatedParticles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param thermostatedPairs a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @param collisionFrequency a double.
+   * @param relativeTemperature a double.
+   * @param relativeCollisionFrequency a double.
+   * @param chainLength a int.
+   * @param numMTS a int.
+   * @param numYoshidaSuzuki a int.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverIntegrator_addSubsystemThermostat(
+      PointerByReference target,
+      PointerByReference thermostatedParticles,
+      PointerByReference thermostatedPairs,
+      double temperature,
+      double collisionFrequency,
+      double relativeTemperature,
+      double relativeCollisionFrequency,
+      int chainLength,
+      int numMTS,
+      int numYoshidaSuzuki);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverIntegrator_getTemperature(const OpenMM_NoseHooverIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param chainID a int.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverIntegrator_getTemperature(
+      PointerByReference target, int chainID);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverIntegrator_setTemperature(OpenMM_NoseHooverIntegrator*, double, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @param chainID a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverIntegrator_setTemperature(
+      PointerByReference target, double temperature, int chainID);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverIntegrator_getRelativeTemperature(const OpenMM_NoseHooverIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param chainID a int.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverIntegrator_getRelativeTemperature(
+      PointerByReference target, int chainID);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverIntegrator_setRelativeTemperature(OpenMM_NoseHooverIntegrator*, double, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @param chainID a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverIntegrator_setRelativeTemperature(
+      PointerByReference target, double temperature, int chainID);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverIntegrator_getCollisionFrequency(const OpenMM_NoseHooverIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param chainID a int.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverIntegrator_getCollisionFrequency(
+      PointerByReference target, int chainID);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverIntegrator_setCollisionFrequency(OpenMM_NoseHooverIntegrator*, double, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param frequency a double.
+   * @param chainID a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverIntegrator_setCollisionFrequency(
+      PointerByReference target, double frequency, int chainID);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverIntegrator_getRelativeCollisionFrequency(const OpenMM_NoseHooverIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param chainID a int.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverIntegrator_getRelativeCollisionFrequency(
+      PointerByReference target, int chainID);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverIntegrator_setRelativeCollisionFrequency(OpenMM_NoseHooverIntegrator*, double, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param frequency a double.
+   * @param chainID a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverIntegrator_setRelativeCollisionFrequency(
+      PointerByReference target, double frequency, int chainID);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverIntegrator_computeHeatBathEnergy(OpenMM_NoseHooverIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverIntegrator_computeHeatBathEnergy(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverIntegrator_getNumThermostats(const OpenMM_NoseHooverIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverIntegrator_getNumThermostats(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_NoseHooverChain* OpenMM_NoseHooverIntegrator_getThermostat(const OpenMM_NoseHooverIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param chainID a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native PointerByReference OpenMM_NoseHooverIntegrator_getThermostat(
+      PointerByReference target, int chainID);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_NoseHooverIntegrator_hasSubsystemThermostats(const OpenMM_NoseHooverIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverIntegrator_hasSubsystemThermostats(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverIntegrator_getMaximumPairDistance(const OpenMM_NoseHooverIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverIntegrator_getMaximumPairDistance(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverIntegrator_setMaximumPairDistance(OpenMM_NoseHooverIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param distance a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverIntegrator_setMaximumPairDistance(
+      PointerByReference target, double distance);
+  /**
+   * MonteCarloAnisotropicBarostat<br>
+   * Original signature : <code>
+   * OpenMM_MonteCarloAnisotropicBarostat* OpenMM_MonteCarloAnisotropicBarostat_create(const OpenMM_Vec3*, double, OpenMM_Boolean, OpenMM_Boolean, OpenMM_Boolean, int)
+   * </code>
+   *
+   * @param defaultPressure a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param defaultTemperature a double.
+   * @param scaleX a int.
+   * @param scaleY a int.
+   * @param scaleZ a int.
+   * @param frequency a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_MonteCarloAnisotropicBarostat_create(
+      OpenMM_Vec3 defaultPressure,
+      double defaultTemperature,
+      int scaleX,
+      int scaleY,
+      int scaleZ,
+      int frequency);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloAnisotropicBarostat_destroy(OpenMM_MonteCarloAnisotropicBarostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_MonteCarloAnisotropicBarostat_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_PressureX()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_PressureX();
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_PressureY()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_PressureY();
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_PressureZ()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_PressureZ();
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloAnisotropicBarostat_Temperature()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloAnisotropicBarostat_Temperature();
+  /**
+   * Original signature : <code>
+   * OpenMM_Vec3* OpenMM_MonteCarloAnisotropicBarostat_getDefaultPressure(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   */
+  public static native OpenMM_Vec3 OpenMM_MonteCarloAnisotropicBarostat_getDefaultPressure(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloAnisotropicBarostat_setDefaultPressure(OpenMM_MonteCarloAnisotropicBarostat*, const OpenMM_Vec3*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param pressure a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   */
+  public static native void OpenMM_MonteCarloAnisotropicBarostat_setDefaultPressure(
+      PointerByReference target, OpenMM_Vec3 pressure);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleX(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloAnisotropicBarostat_getScaleX(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleY(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloAnisotropicBarostat_getScaleY(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_getScaleZ(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloAnisotropicBarostat_getScaleZ(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_MonteCarloAnisotropicBarostat_getFrequency(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloAnisotropicBarostat_getFrequency(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloAnisotropicBarostat_setFrequency(OpenMM_MonteCarloAnisotropicBarostat*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param freq a int.
+   */
+  public static native void OpenMM_MonteCarloAnisotropicBarostat_setFrequency(
+      PointerByReference target, int freq);
+  /**
+   * Original signature : <code>
+   * double OpenMM_MonteCarloAnisotropicBarostat_getDefaultTemperature(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_MonteCarloAnisotropicBarostat_getDefaultTemperature(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloAnisotropicBarostat_setDefaultTemperature(OpenMM_MonteCarloAnisotropicBarostat*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temp a double.
+   */
+  public static native void OpenMM_MonteCarloAnisotropicBarostat_setDefaultTemperature(
+      PointerByReference target, double temp);
+  /**
+   * Original signature : <code>
+   * int OpenMM_MonteCarloAnisotropicBarostat_getRandomNumberSeed(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloAnisotropicBarostat_getRandomNumberSeed(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloAnisotropicBarostat_setRandomNumberSeed(OpenMM_MonteCarloAnisotropicBarostat*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_MonteCarloAnisotropicBarostat_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_MonteCarloAnisotropicBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloAnisotropicBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloAnisotropicBarostat_usesPeriodicBoundaryConditions(
+      PointerByReference target);
   /**
    * System<br>
    * Original signature : <code>OpenMM_System* OpenMM_System_create()</code>
@@ -8537,179 +5745,274 @@ public class OpenMMLibrary implements Library {
    */
   public static native int OpenMM_System_usesPeriodicBoundaryConditions(PointerByReference target);
   /**
-   * CustomCompoundBondForce<br>
-   * Original signature : <code>
-   * OpenMM_CustomCompoundBondForce* OpenMM_CustomCompoundBondForce_create(int, const char*)</code>
+   * HarmonicAngleForce<br>
+   * Original signature : <code>OpenMM_HarmonicAngleForce* OpenMM_HarmonicAngleForce_create()</code>
    *
-   * @param numParticles a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_HarmonicAngleForce_create();
+  /**
+   * Original signature : <code>void OpenMM_HarmonicAngleForce_destroy(OpenMM_HarmonicAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_HarmonicAngleForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_HarmonicAngleForce_getNumAngles(const OpenMM_HarmonicAngleForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_HarmonicAngleForce_getNumAngles(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_HarmonicAngleForce_addAngle(OpenMM_HarmonicAngleForce*, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param angle a double.
+   * @param k a double.
+   * @return a int.
+   */
+  public static native int OpenMM_HarmonicAngleForce_addAngle(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      int particle3,
+      double angle,
+      double k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicAngleForce_getAngleParameters(const OpenMM_HarmonicAngleForce*, int, int*, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
+   * @param angle a {@link java.nio.DoubleBuffer} object.
+   * @param k a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_HarmonicAngleForce_getAngleParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
+      DoubleBuffer angle,
+      DoubleBuffer k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicAngleForce_getAngleParameters(const OpenMM_HarmonicAngleForce*, int, int*, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param angle a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_HarmonicAngleForce_getAngleParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      DoubleByReference angle,
+      DoubleByReference k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicAngleForce_setAngleParameters(OpenMM_HarmonicAngleForce*, int, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param angle a double.
+   * @param k a double.
+   */
+  public static native void OpenMM_HarmonicAngleForce_setAngleParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      int particle3,
+      double angle,
+      double k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicAngleForce_updateParametersInContext(OpenMM_HarmonicAngleForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_HarmonicAngleForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicAngleForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_HarmonicAngleForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_HarmonicAngleForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicAngleForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_HarmonicAngleForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * CustomAngleForce<br>
+   * Original signature : <code>OpenMM_CustomAngleForce* OpenMM_CustomAngleForce_create(const char*)
+   * </code>
+   *
    * @param energy a {@link java.lang.String} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomCompoundBondForce_create(
-      int numParticles, String energy);
+  public static native PointerByReference OpenMM_CustomAngleForce_create(String energy);
   /**
-   * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_destroy(OpenMM_CustomCompoundBondForce*)</code>
+   * Original signature : <code>void OpenMM_CustomAngleForce_destroy(OpenMM_CustomAngleForce*)
+   * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_destroy(PointerByReference target);
+  public static native void OpenMM_CustomAngleForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumParticlesPerBond(const OpenMM_CustomCompoundBondForce*)
-   * </code>
+   * int OpenMM_CustomAngleForce_getNumAngles(const OpenMM_CustomAngleForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_getNumParticlesPerBond(
+  public static native int OpenMM_CustomAngleForce_getNumAngles(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomAngleForce_getNumPerAngleParameters(const OpenMM_CustomAngleForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomAngleForce_getNumPerAngleParameters(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumBonds(const OpenMM_CustomCompoundBondForce*)</code>
+   * int OpenMM_CustomAngleForce_getNumGlobalParameters(const OpenMM_CustomAngleForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_getNumBonds(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumPerBondParameters(const OpenMM_CustomCompoundBondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_getNumPerBondParameters(
+  public static native int OpenMM_CustomAngleForce_getNumGlobalParameters(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumGlobalParameters(const OpenMM_CustomCompoundBondForce*)
+   * int OpenMM_CustomAngleForce_getNumEnergyParameterDerivatives(const OpenMM_CustomAngleForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_getNumGlobalParameters(
+  public static native int OpenMM_CustomAngleForce_getNumEnergyParameterDerivatives(
       PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumEnergyParameterDerivatives(const OpenMM_CustomCompoundBondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_getNumEnergyParameterDerivatives(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumTabulatedFunctions(const OpenMM_CustomCompoundBondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_getNumTabulatedFunctions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_getNumFunctions(const OpenMM_CustomCompoundBondForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_getNumFunctions(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomCompoundBondForce_getEnergyFunction(const OpenMM_CustomCompoundBondForce*)
-   * </code>
+   * char* OpenMM_CustomAngleForce_getEnergyFunction(const OpenMM_CustomAngleForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomCompoundBondForce_getEnergyFunction(
-      PointerByReference target);
+  public static native Pointer OpenMM_CustomAngleForce_getEnergyFunction(PointerByReference target);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setEnergyFunction(OpenMM_CustomCompoundBondForce*, const char*)
-   * </code>
+   * void OpenMM_CustomAngleForce_setEnergyFunction(OpenMM_CustomAngleForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param energy a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setEnergyFunction(
+  public static native void OpenMM_CustomAngleForce_setEnergyFunction(
       PointerByReference target, String energy);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setEnergyFunction(OpenMM_CustomCompoundBondForce*, const char*)
-   * </code>
+   * void OpenMM_CustomAngleForce_setEnergyFunction(OpenMM_CustomAngleForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param energy a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setEnergyFunction(
+  public static native void OpenMM_CustomAngleForce_setEnergyFunction(
       PointerByReference target, Pointer energy);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addPerBondParameter(OpenMM_CustomCompoundBondForce*, const char*)
-   * </code>
+   * int OpenMM_CustomAngleForce_addPerAngleParameter(OpenMM_CustomAngleForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_addPerBondParameter(
+  public static native int OpenMM_CustomAngleForce_addPerAngleParameter(
       PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addPerBondParameter(OpenMM_CustomCompoundBondForce*, const char*)
-   * </code>
+   * int OpenMM_CustomAngleForce_addPerAngleParameter(OpenMM_CustomAngleForce*, const char*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_addPerBondParameter(
+  public static native int OpenMM_CustomAngleForce_addPerAngleParameter(
       PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomCompoundBondForce_getPerBondParameterName(const OpenMM_CustomCompoundBondForce*, int)
+   * char* OpenMM_CustomAngleForce_getPerAngleParameterName(const OpenMM_CustomAngleForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomCompoundBondForce_getPerBondParameterName(
+  public static native Pointer OpenMM_CustomAngleForce_getPerAngleParameterName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setPerBondParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * void OpenMM_CustomAngleForce_setPerAngleParameterName(OpenMM_CustomAngleForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setPerBondParameterName(
+  public static native void OpenMM_CustomAngleForce_setPerAngleParameterName(
       PointerByReference target, int index, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setPerBondParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * void OpenMM_CustomAngleForce_setPerAngleParameterName(OpenMM_CustomAngleForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setPerBondParameterName(
+  public static native void OpenMM_CustomAngleForce_setPerAngleParameterName(
       PointerByReference target, int index, Pointer name);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addGlobalParameter(OpenMM_CustomCompoundBondForce*, const char*, double)
+   * int OpenMM_CustomAngleForce_addGlobalParameter(OpenMM_CustomAngleForce*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -8717,11 +6020,11 @@ public class OpenMMLibrary implements Library {
    * @param defaultValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_addGlobalParameter(
+  public static native int OpenMM_CustomAngleForce_addGlobalParameter(
       PointerByReference target, String name, double defaultValue);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addGlobalParameter(OpenMM_CustomCompoundBondForce*, const char*, double)
+   * int OpenMM_CustomAngleForce_addGlobalParameter(OpenMM_CustomAngleForce*, const char*, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -8729,316 +6032,795 @@ public class OpenMMLibrary implements Library {
    * @param defaultValue a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_addGlobalParameter(
+  public static native int OpenMM_CustomAngleForce_addGlobalParameter(
       PointerByReference target, Pointer name, double defaultValue);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomCompoundBondForce_getGlobalParameterName(const OpenMM_CustomCompoundBondForce*, int)
+   * char* OpenMM_CustomAngleForce_getGlobalParameterName(const OpenMM_CustomAngleForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomCompoundBondForce_getGlobalParameterName(
+  public static native Pointer OpenMM_CustomAngleForce_getGlobalParameterName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setGlobalParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * void OpenMM_CustomAngleForce_setGlobalParameterName(OpenMM_CustomAngleForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setGlobalParameterName(
+  public static native void OpenMM_CustomAngleForce_setGlobalParameterName(
       PointerByReference target, int index, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setGlobalParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * void OpenMM_CustomAngleForce_setGlobalParameterName(OpenMM_CustomAngleForce*, int, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setGlobalParameterName(
+  public static native void OpenMM_CustomAngleForce_setGlobalParameterName(
       PointerByReference target, int index, Pointer name);
   /**
    * Original signature : <code>
-   * double OpenMM_CustomCompoundBondForce_getGlobalParameterDefaultValue(const OpenMM_CustomCompoundBondForce*, int)
+   * double OpenMM_CustomAngleForce_getGlobalParameterDefaultValue(const OpenMM_CustomAngleForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a double.
    */
-  public static native double OpenMM_CustomCompoundBondForce_getGlobalParameterDefaultValue(
+  public static native double OpenMM_CustomAngleForce_getGlobalParameterDefaultValue(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setGlobalParameterDefaultValue(OpenMM_CustomCompoundBondForce*, int, double)
+   * void OpenMM_CustomAngleForce_setGlobalParameterDefaultValue(OpenMM_CustomAngleForce*, int, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param defaultValue a double.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setGlobalParameterDefaultValue(
+  public static native void OpenMM_CustomAngleForce_setGlobalParameterDefaultValue(
       PointerByReference target, int index, double defaultValue);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(OpenMM_CustomCompoundBondForce*, const char*)
+   * void OpenMM_CustomAngleForce_addEnergyParameterDerivative(OpenMM_CustomAngleForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link java.lang.String} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(
+  public static native void OpenMM_CustomAngleForce_addEnergyParameterDerivative(
       PointerByReference target, String name);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(OpenMM_CustomCompoundBondForce*, const char*)
+   * void OpenMM_CustomAngleForce_addEnergyParameterDerivative(OpenMM_CustomAngleForce*, const char*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param name a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(
+  public static native void OpenMM_CustomAngleForce_addEnergyParameterDerivative(
       PointerByReference target, Pointer name);
   /**
    * Original signature : <code>
-   * char* OpenMM_CustomCompoundBondForce_getEnergyParameterDerivativeName(const OpenMM_CustomCompoundBondForce*, int)
+   * char* OpenMM_CustomAngleForce_getEnergyParameterDerivativeName(const OpenMM_CustomAngleForce*, int)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomCompoundBondForce_getEnergyParameterDerivativeName(
+  public static native Pointer OpenMM_CustomAngleForce_getEnergyParameterDerivativeName(
       PointerByReference target, int index);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addBond(OpenMM_CustomCompoundBondForce*, const OpenMM_IntArray*, const OpenMM_DoubleArray*)
+   * int OpenMM_CustomAngleForce_addAngle(OpenMM_CustomAngleForce*, int, int, int, const OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
    * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_addBond(
-      PointerByReference target, PointerByReference particles, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_getBondParameters(const OpenMM_CustomCompoundBondForce*, int, OpenMM_IntArray*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomCompoundBondForce_getBondParameters(
+  public static native int OpenMM_CustomAngleForce_addAngle(
       PointerByReference target,
-      int index,
-      PointerByReference particles,
+      int particle1,
+      int particle2,
+      int particle3,
       PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setBondParameters(OpenMM_CustomCompoundBondForce*, int, const OpenMM_IntArray*, const OpenMM_DoubleArray*)
+   * void OpenMM_CustomAngleForce_getAngleParameters(const OpenMM_CustomAngleForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param particle3 a {@link java.nio.IntBuffer} object.
    * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setBondParameters(
+  public static native void OpenMM_CustomAngleForce_getAngleParameters(
       PointerByReference target,
       int index,
-      PointerByReference particles,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      IntBuffer particle3,
       PointerByReference parameters);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addTabulatedFunction(OpenMM_CustomCompoundBondForce*, const char*, OpenMM_TabulatedFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_addTabulatedFunction(
-      PointerByReference target, String name, PointerByReference function);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addTabulatedFunction(OpenMM_CustomCompoundBondForce*, const char*, OpenMM_TabulatedFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_addTabulatedFunction(
-      PointerByReference target, Pointer name, PointerByReference function);
-  /**
-   * Original signature : <code>
-   * OpenMM_TabulatedFunction* OpenMM_CustomCompoundBondForce_getTabulatedFunction(OpenMM_CustomCompoundBondForce*, int)
+   * void OpenMM_CustomAngleForce_getAngleParameters(const OpenMM_CustomAngleForce*, int, int*, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CustomCompoundBondForce_getTabulatedFunction(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomCompoundBondForce_getTabulatedFunctionName(const OpenMM_CustomCompoundBondForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomCompoundBondForce_getTabulatedFunctionName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addFunction(OpenMM_CustomCompoundBondForce*, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_addFunction(
-      PointerByReference target, String name, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomCompoundBondForce_addFunction(OpenMM_CustomCompoundBondForce*, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomCompoundBondForce_addFunction(
-      PointerByReference target, Pointer name, PointerByReference values, double min, double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_getFunctionParameters(const OpenMM_CustomCompoundBondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link java.nio.DoubleBuffer} object.
-   * @param max a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_CustomCompoundBondForce_getFunctionParameters(
+  public static native void OpenMM_CustomAngleForce_getAngleParameters(
       PointerByReference target,
       int index,
-      PointerByReference name,
-      PointerByReference values,
-      DoubleBuffer min,
-      DoubleBuffer max);
+      IntByReference particle1,
+      IntByReference particle2,
+      IntByReference particle3,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_getFunctionParameters(const OpenMM_CustomCompoundBondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
+   * void OpenMM_CustomAngleForce_setAngleParameters(OpenMM_CustomAngleForce*, int, int, int, int, const OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
-   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_getFunctionParameters(
+  public static native void OpenMM_CustomAngleForce_setAngleParameters(
       PointerByReference target,
       int index,
-      PointerByReference name,
-      PointerByReference values,
-      DoubleByReference min,
-      DoubleByReference max);
+      int particle1,
+      int particle2,
+      int particle3,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setFunctionParameters(OpenMM_CustomCompoundBondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_CustomCompoundBondForce_setFunctionParameters(
-      PointerByReference target,
-      int index,
-      String name,
-      PointerByReference values,
-      double min,
-      double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setFunctionParameters(OpenMM_CustomCompoundBondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param min a double.
-   * @param max a double.
-   */
-  public static native void OpenMM_CustomCompoundBondForce_setFunctionParameters(
-      PointerByReference target,
-      int index,
-      Pointer name,
-      PointerByReference values,
-      double min,
-      double max);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_updateParametersInContext(OpenMM_CustomCompoundBondForce*, OpenMM_Context*)
+   * void OpenMM_CustomAngleForce_updateParametersInContext(OpenMM_CustomAngleForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomCompoundBondForce_updateParametersInContext(
+  public static native void OpenMM_CustomAngleForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomCompoundBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomCompoundBondForce*, OpenMM_Boolean)
+   * void OpenMM_CustomAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomAngleForce*, OpenMM_Boolean)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param periodic a int.
    */
-  public static native void OpenMM_CustomCompoundBondForce_setUsesPeriodicBoundaryConditions(
+  public static native void OpenMM_CustomAngleForce_setUsesPeriodicBoundaryConditions(
       PointerByReference target, int periodic);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomCompoundBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCompoundBondForce*)
+   * OpenMM_Boolean OpenMM_CustomAngleForce_usesPeriodicBoundaryConditions(const OpenMM_CustomAngleForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomCompoundBondForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_CustomAngleForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
+  /**
+   * CustomExternalForce<br>
+   * Original signature : <code>
+   * OpenMM_CustomExternalForce* OpenMM_CustomExternalForce_create(const char*)</code>
+   *
+   * @param energy a {@link java.lang.String} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomExternalForce_create(String energy);
+  /**
+   * Original signature : <code>void OpenMM_CustomExternalForce_destroy(OpenMM_CustomExternalForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomExternalForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_getNumParticles(const OpenMM_CustomExternalForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_getNumParticles(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_getNumPerParticleParameters(const OpenMM_CustomExternalForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_getNumPerParticleParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_getNumGlobalParameters(const OpenMM_CustomExternalForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_getNumGlobalParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomExternalForce_getEnergyFunction(const OpenMM_CustomExternalForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomExternalForce_getEnergyFunction(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setEnergyFunction(OpenMM_CustomExternalForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setEnergyFunction(
+      PointerByReference target, String energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setEnergyFunction(OpenMM_CustomExternalForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setEnergyFunction(
+      PointerByReference target, Pointer energy);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_addPerParticleParameter(OpenMM_CustomExternalForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_addPerParticleParameter(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_addPerParticleParameter(OpenMM_CustomExternalForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_addPerParticleParameter(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomExternalForce_getPerParticleParameterName(const OpenMM_CustomExternalForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomExternalForce_getPerParticleParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setPerParticleParameterName(OpenMM_CustomExternalForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setPerParticleParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setPerParticleParameterName(OpenMM_CustomExternalForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setPerParticleParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_addGlobalParameter(OpenMM_CustomExternalForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_addGlobalParameter(
+      PointerByReference target, String name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_addGlobalParameter(OpenMM_CustomExternalForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_addGlobalParameter(
+      PointerByReference target, Pointer name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomExternalForce_getGlobalParameterName(const OpenMM_CustomExternalForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomExternalForce_getGlobalParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setGlobalParameterName(OpenMM_CustomExternalForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setGlobalParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setGlobalParameterName(OpenMM_CustomExternalForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setGlobalParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomExternalForce_getGlobalParameterDefaultValue(const OpenMM_CustomExternalForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomExternalForce_getGlobalParameterDefaultValue(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setGlobalParameterDefaultValue(OpenMM_CustomExternalForce*, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param defaultValue a double.
+   */
+  public static native void OpenMM_CustomExternalForce_setGlobalParameterDefaultValue(
+      PointerByReference target, int index, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomExternalForce_addParticle(OpenMM_CustomExternalForce*, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_addParticle(
+      PointerByReference target, int particle, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_getParticleParameters(const OpenMM_CustomExternalForce*, int, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle a {@link java.nio.IntBuffer} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomExternalForce_getParticleParameters(
+      PointerByReference target, int index, IntBuffer particle, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_getParticleParameters(const OpenMM_CustomExternalForce*, int, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomExternalForce_getParticleParameters(
+      PointerByReference target, int index, IntByReference particle, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_setParticleParameters(OpenMM_CustomExternalForce*, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomExternalForce_setParticleParameters(
+      PointerByReference target, int index, int particle, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomExternalForce_updateParametersInContext(OpenMM_CustomExternalForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomExternalForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CustomExternalForce_usesPeriodicBoundaryConditions(const OpenMM_CustomExternalForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomExternalForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_MonteCarloMembraneBarostat* OpenMM_MonteCarloMembraneBarostat_create(double, double, double, OpenMM_MonteCarloMembraneBarostat_XYMode, OpenMM_MonteCarloMembraneBarostat_ZMode, int)
+   * </code>
+   *
+   * @param defaultPressure a double.
+   * @param defaultSurfaceTension a double.
+   * @param defaultTemperature a double.
+   * @param xymode a int.
+   * @param zmode a int.
+   * @param frequency a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_MonteCarloMembraneBarostat_create(
+      double defaultPressure,
+      double defaultSurfaceTension,
+      double defaultTemperature,
+      int xymode,
+      int zmode,
+      int frequency);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_destroy(OpenMM_MonteCarloMembraneBarostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloMembraneBarostat_Pressure()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloMembraneBarostat_Pressure();
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloMembraneBarostat_SurfaceTension()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloMembraneBarostat_SurfaceTension();
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloMembraneBarostat_Temperature()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloMembraneBarostat_Temperature();
+  /**
+   * Original signature : <code>
+   * double OpenMM_MonteCarloMembraneBarostat_getDefaultPressure(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_MonteCarloMembraneBarostat_getDefaultPressure(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setDefaultPressure(OpenMM_MonteCarloMembraneBarostat*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param pressure a double.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setDefaultPressure(
+      PointerByReference target, double pressure);
+  /**
+   * Original signature : <code>
+   * double OpenMM_MonteCarloMembraneBarostat_getDefaultSurfaceTension(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_MonteCarloMembraneBarostat_getDefaultSurfaceTension(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setDefaultSurfaceTension(OpenMM_MonteCarloMembraneBarostat*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param surfaceTension a double.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setDefaultSurfaceTension(
+      PointerByReference target, double surfaceTension);
+  /**
+   * Original signature : <code>
+   * int OpenMM_MonteCarloMembraneBarostat_getFrequency(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloMembraneBarostat_getFrequency(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setFrequency(OpenMM_MonteCarloMembraneBarostat*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param freq a int.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setFrequency(
+      PointerByReference target, int freq);
+  /**
+   * Original signature : <code>
+   * double OpenMM_MonteCarloMembraneBarostat_getDefaultTemperature(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_MonteCarloMembraneBarostat_getDefaultTemperature(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setDefaultTemperature(OpenMM_MonteCarloMembraneBarostat*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temp a double.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setDefaultTemperature(
+      PointerByReference target, double temp);
+  /**
+   * Original signature : <code>
+   * OpenMM_MonteCarloMembraneBarostat_XYMode OpenMM_MonteCarloMembraneBarostat_getXYMode(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloMembraneBarostat_getXYMode(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setXYMode(OpenMM_MonteCarloMembraneBarostat*, OpenMM_MonteCarloMembraneBarostat_XYMode)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param mode a int.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setXYMode(
+      PointerByReference target, int mode);
+  /**
+   * Original signature : <code>
+   * OpenMM_MonteCarloMembraneBarostat_ZMode OpenMM_MonteCarloMembraneBarostat_getZMode(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloMembraneBarostat_getZMode(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setZMode(OpenMM_MonteCarloMembraneBarostat*, OpenMM_MonteCarloMembraneBarostat_ZMode)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param mode a int.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setZMode(
+      PointerByReference target, int mode);
+  /**
+   * Original signature : <code>
+   * int OpenMM_MonteCarloMembraneBarostat_getRandomNumberSeed(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloMembraneBarostat_getRandomNumberSeed(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloMembraneBarostat_setRandomNumberSeed(OpenMM_MonteCarloMembraneBarostat*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_MonteCarloMembraneBarostat_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_MonteCarloMembraneBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloMembraneBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloMembraneBarostat_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * MonteCarloBarostat<br>
+   * Original signature : <code>
+   * OpenMM_MonteCarloBarostat* OpenMM_MonteCarloBarostat_create(double, double, int)</code>
+   *
+   * @param defaultPressure a double.
+   * @param defaultTemperature a double.
+   * @param frequency a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_MonteCarloBarostat_create(
+      double defaultPressure, double defaultTemperature, int frequency);
+  /**
+   * Original signature : <code>void OpenMM_MonteCarloBarostat_destroy(OpenMM_MonteCarloBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_MonteCarloBarostat_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloBarostat_Pressure()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloBarostat_Pressure();
+  /**
+   * Original signature : <code>char* OpenMM_MonteCarloBarostat_Temperature()</code>
+   *
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_MonteCarloBarostat_Temperature();
+  /**
+   * Original signature : <code>
+   * double OpenMM_MonteCarloBarostat_getDefaultPressure(const OpenMM_MonteCarloBarostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_MonteCarloBarostat_getDefaultPressure(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloBarostat_setDefaultPressure(OpenMM_MonteCarloBarostat*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param pressure a double.
+   */
+  public static native void OpenMM_MonteCarloBarostat_setDefaultPressure(
+      PointerByReference target, double pressure);
+  /**
+   * Original signature : <code>
+   * int OpenMM_MonteCarloBarostat_getFrequency(const OpenMM_MonteCarloBarostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloBarostat_getFrequency(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloBarostat_setFrequency(OpenMM_MonteCarloBarostat*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param freq a int.
+   */
+  public static native void OpenMM_MonteCarloBarostat_setFrequency(
+      PointerByReference target, int freq);
+  /**
+   * Original signature : <code>
+   * double OpenMM_MonteCarloBarostat_getDefaultTemperature(const OpenMM_MonteCarloBarostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_MonteCarloBarostat_getDefaultTemperature(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloBarostat_setDefaultTemperature(OpenMM_MonteCarloBarostat*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temp a double.
+   */
+  public static native void OpenMM_MonteCarloBarostat_setDefaultTemperature(
+      PointerByReference target, double temp);
+  /**
+   * Original signature : <code>
+   * int OpenMM_MonteCarloBarostat_getRandomNumberSeed(const OpenMM_MonteCarloBarostat*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloBarostat_getRandomNumberSeed(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_MonteCarloBarostat_setRandomNumberSeed(OpenMM_MonteCarloBarostat*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_MonteCarloBarostat_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_MonteCarloBarostat_usesPeriodicBoundaryConditions(const OpenMM_MonteCarloBarostat*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_MonteCarloBarostat_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * LocalEnergyMinimizer<br>
+   * Original signature : <code>
+   * void OpenMM_LocalEnergyMinimizer_destroy(OpenMM_LocalEnergyMinimizer*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_LocalEnergyMinimizer_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LocalEnergyMinimizer_minimize(OpenMM_Context*, double, int)</code>
+   *
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param tolerance a double.
+   * @param maxIterations a int.
+   */
+  public static native void OpenMM_LocalEnergyMinimizer_minimize(
+      PointerByReference context, double tolerance, int maxIterations);
   /**
    * CustomCentroidBondForce<br>
    * Original signature : <code>
@@ -9489,708 +7271,52 @@ public class OpenMMLibrary implements Library {
   public static native int OpenMM_CustomCentroidBondForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * CMAPTorsionForce<br>
-   * Original signature : <code>OpenMM_CMAPTorsionForce* OpenMM_CMAPTorsionForce_create()</code>
+   * OpenMMException<br>
+   * Original signature : <code>OpenMM_OpenMMException* OpenMM_OpenMMException_create(const char*)
+   * </code>
    *
+   * @param message a {@link java.lang.String} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_CMAPTorsionForce_create();
+  public static native PointerByReference OpenMM_OpenMMException_create(String message);
   /**
-   * Original signature : <code>void OpenMM_CMAPTorsionForce_destroy(OpenMM_CMAPTorsionForce*)
+   * Original signature : <code>void OpenMM_OpenMMException_destroy(OpenMM_OpenMMException*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_OpenMMException_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>char* OpenMM_OpenMMException_what(const OpenMM_OpenMMException*)
    * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CMAPTorsionForce_getNumMaps(const OpenMM_CMAPTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CMAPTorsionForce_getNumMaps(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CMAPTorsionForce_getNumTorsions(const OpenMM_CMAPTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CMAPTorsionForce_getNumTorsions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CMAPTorsionForce_addMap(OpenMM_CMAPTorsionForce*, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param size a int.
-   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CMAPTorsionForce_addMap(
-      PointerByReference target, int size, PointerByReference energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_getMapParameters(const OpenMM_CMAPTorsionForce*, int, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param size a {@link java.nio.IntBuffer} object.
-   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_getMapParameters(
-      PointerByReference target, int index, IntBuffer size, PointerByReference energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_getMapParameters(const OpenMM_CMAPTorsionForce*, int, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param size a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_getMapParameters(
-      PointerByReference target, int index, IntByReference size, PointerByReference energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_setMapParameters(OpenMM_CMAPTorsionForce*, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param size a int.
-   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_setMapParameters(
-      PointerByReference target, int index, int size, PointerByReference energy);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CMAPTorsionForce_addTorsion(OpenMM_CMAPTorsionForce*, int, int, int, int, int, int, int, int, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param map a int.
-   * @param a1 a int.
-   * @param a2 a int.
-   * @param a3 a int.
-   * @param a4 a int.
-   * @param b1 a int.
-   * @param b2 a int.
-   * @param b3 a int.
-   * @param b4 a int.
-   * @return a int.
-   */
-  public static native int OpenMM_CMAPTorsionForce_addTorsion(
-      PointerByReference target,
-      int map,
-      int a1,
-      int a2,
-      int a3,
-      int a4,
-      int b1,
-      int b2,
-      int b3,
-      int b4);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_getTorsionParameters(const OpenMM_CMAPTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*, int*, int*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param map a {@link java.nio.IntBuffer} object.
-   * @param a1 a {@link java.nio.IntBuffer} object.
-   * @param a2 a {@link java.nio.IntBuffer} object.
-   * @param a3 a {@link java.nio.IntBuffer} object.
-   * @param a4 a {@link java.nio.IntBuffer} object.
-   * @param b1 a {@link java.nio.IntBuffer} object.
-   * @param b2 a {@link java.nio.IntBuffer} object.
-   * @param b3 a {@link java.nio.IntBuffer} object.
-   * @param b4 a {@link java.nio.IntBuffer} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_getTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntBuffer map,
-      IntBuffer a1,
-      IntBuffer a2,
-      IntBuffer a3,
-      IntBuffer a4,
-      IntBuffer b1,
-      IntBuffer b2,
-      IntBuffer b3,
-      IntBuffer b4);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_getTorsionParameters(const OpenMM_CMAPTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*, int*, int*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param map a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param a1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param a2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param a3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param a4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param b1 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param b2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param b3 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param b4 a {@link com.sun.jna.ptr.IntByReference} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_getTorsionParameters(
-      PointerByReference target,
-      int index,
-      IntByReference map,
-      IntByReference a1,
-      IntByReference a2,
-      IntByReference a3,
-      IntByReference a4,
-      IntByReference b1,
-      IntByReference b2,
-      IntByReference b3,
-      IntByReference b4);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_setTorsionParameters(OpenMM_CMAPTorsionForce*, int, int, int, int, int, int, int, int, int, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param map a int.
-   * @param a1 a int.
-   * @param a2 a int.
-   * @param a3 a int.
-   * @param a4 a int.
-   * @param b1 a int.
-   * @param b2 a int.
-   * @param b3 a int.
-   * @param b4 a int.
-   */
-  public static native void OpenMM_CMAPTorsionForce_setTorsionParameters(
-      PointerByReference target,
-      int index,
-      int map,
-      int a1,
-      int a2,
-      int a3,
-      int a4,
-      int b1,
-      int b2,
-      int b3,
-      int b4);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_updateParametersInContext(OpenMM_CMAPTorsionForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CMAPTorsionForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMAPTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CMAPTorsionForce*, OpenMM_Boolean)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param periodic a int.
-   */
-  public static native void OpenMM_CMAPTorsionForce_setUsesPeriodicBoundaryConditions(
-      PointerByReference target, int periodic);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CMAPTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CMAPTorsionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CMAPTorsionForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * Continuous3DFunction<br>
-   * Original signature : <code>
-   * OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_create(int, int, int, const OpenMM_DoubleArray*, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param xsize a int.
-   * @param ysize a int.
-   * @param zsize a int.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a double.
-   * @param xmax a double.
-   * @param ymin a double.
-   * @param ymax a double.
-   * @param zmin a double.
-   * @param zmax a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Continuous3DFunction_create(
-      int xsize,
-      int ysize,
-      int zsize,
-      PointerByReference values,
-      double xmin,
-      double xmax,
-      double ymin,
-      double ymax,
-      double zmin,
-      double zmax);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous3DFunction_destroy(OpenMM_Continuous3DFunction*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Continuous3DFunction_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous3DFunction_getFunctionParameters(const OpenMM_Continuous3DFunction*, int*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xsize a {@link java.nio.IntBuffer} object.
-   * @param ysize a {@link java.nio.IntBuffer} object.
-   * @param zsize a {@link java.nio.IntBuffer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a {@link java.nio.DoubleBuffer} object.
-   * @param xmax a {@link java.nio.DoubleBuffer} object.
-   * @param ymin a {@link java.nio.DoubleBuffer} object.
-   * @param ymax a {@link java.nio.DoubleBuffer} object.
-   * @param zmin a {@link java.nio.DoubleBuffer} object.
-   * @param zmax a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_Continuous3DFunction_getFunctionParameters(
-      PointerByReference target,
-      IntBuffer xsize,
-      IntBuffer ysize,
-      IntBuffer zsize,
-      PointerByReference values,
-      DoubleBuffer xmin,
-      DoubleBuffer xmax,
-      DoubleBuffer ymin,
-      DoubleBuffer ymax,
-      DoubleBuffer zmin,
-      DoubleBuffer zmax);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous3DFunction_getFunctionParameters(const OpenMM_Continuous3DFunction*, int*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xsize a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param ysize a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param zsize a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param xmax a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ymin a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ymax a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param zmin a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param zmax a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_Continuous3DFunction_getFunctionParameters(
-      PointerByReference target,
-      IntByReference xsize,
-      IntByReference ysize,
-      IntByReference zsize,
-      PointerByReference values,
-      DoubleByReference xmin,
-      DoubleByReference xmax,
-      DoubleByReference ymin,
-      DoubleByReference ymax,
-      DoubleByReference zmin,
-      DoubleByReference zmax);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous3DFunction_setFunctionParameters(OpenMM_Continuous3DFunction*, int, int, int, const OpenMM_DoubleArray*, double, double, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xsize a int.
-   * @param ysize a int.
-   * @param zsize a int.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a double.
-   * @param xmax a double.
-   * @param ymin a double.
-   * @param ymax a double.
-   * @param zmin a double.
-   * @param zmax a double.
-   */
-  public static native void OpenMM_Continuous3DFunction_setFunctionParameters(
-      PointerByReference target,
-      int xsize,
-      int ysize,
-      int zsize,
-      PointerByReference values,
-      double xmin,
-      double xmax,
-      double ymin,
-      double ymax,
-      double zmin,
-      double zmax);
-  /**
-   * Original signature : <code>
-   * OpenMM_Continuous3DFunction* OpenMM_Continuous3DFunction_Copy(const OpenMM_Continuous3DFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Continuous3DFunction_Copy(
-      PointerByReference target);
-  /**
-   * OutOfPlaneSite<br>
-   * Original signature : <code>
-   * OpenMM_OutOfPlaneSite* OpenMM_OutOfPlaneSite_create(int, int, int, double, double, double)
-   * </code>
-   *
-   * @param particle1 a int.
-   * @param particle2 a int.
-   * @param particle3 a int.
-   * @param weight12 a double.
-   * @param weight13 a double.
-   * @param weightCross a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_OutOfPlaneSite_create(
-      int particle1,
-      int particle2,
-      int particle3,
-      double weight12,
-      double weight13,
-      double weightCross);
-  /**
-   * Original signature : <code>void OpenMM_OutOfPlaneSite_destroy(OpenMM_OutOfPlaneSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_OutOfPlaneSite_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_OutOfPlaneSite_getWeight12(const OpenMM_OutOfPlaneSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_OutOfPlaneSite_getWeight12(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_OutOfPlaneSite_getWeight13(const OpenMM_OutOfPlaneSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_OutOfPlaneSite_getWeight13(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * double OpenMM_OutOfPlaneSite_getWeightCross(const OpenMM_OutOfPlaneSite*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a double.
-   */
-  public static native double OpenMM_OutOfPlaneSite_getWeightCross(PointerByReference target);
-  /**
-   * Discrete1DFunction<br>
-   * Original signature : <code>
-   * OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_create(const OpenMM_DoubleArray*)</code>
-   *
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Discrete1DFunction_create(
-      PointerByReference values);
-  /**
-   * Original signature : <code>void OpenMM_Discrete1DFunction_destroy(OpenMM_Discrete1DFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Discrete1DFunction_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Discrete1DFunction_getFunctionParameters(const OpenMM_Discrete1DFunction*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Discrete1DFunction_getFunctionParameters(
-      PointerByReference target, PointerByReference values);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Discrete1DFunction_setFunctionParameters(OpenMM_Discrete1DFunction*, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Discrete1DFunction_setFunctionParameters(
-      PointerByReference target, PointerByReference values);
-  /**
-   * Original signature : <code>
-   * OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_Copy(const OpenMM_Discrete1DFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Discrete1DFunction_Copy(PointerByReference target);
-  /**
-   * CustomTorsionForce<br>
-   * Original signature : <code>
-   * OpenMM_CustomTorsionForce* OpenMM_CustomTorsionForce_create(const char*)</code>
-   *
-   * @param energy a {@link java.lang.String} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomTorsionForce_create(String energy);
-  /**
-   * Original signature : <code>void OpenMM_CustomTorsionForce_destroy(OpenMM_CustomTorsionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_getNumTorsions(const OpenMM_CustomTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_getNumTorsions(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_getNumPerTorsionParameters(const OpenMM_CustomTorsionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_getNumPerTorsionParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_getNumGlobalParameters(const OpenMM_CustomTorsionForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_getNumGlobalParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_getNumEnergyParameterDerivatives(const OpenMM_CustomTorsionForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_getNumEnergyParameterDerivatives(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomTorsionForce_getEnergyFunction(const OpenMM_CustomTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a {@link com.sun.jna.Pointer} object.
    */
-  public static native Pointer OpenMM_CustomTorsionForce_getEnergyFunction(
-      PointerByReference target);
+  public static native Pointer OpenMM_OpenMMException_what(PointerByReference target);
   /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setEnergyFunction(OpenMM_CustomTorsionForce*, const char*)
-   * </code>
+   * RBTorsionForce<br>
+   * Original signature : <code>OpenMM_RBTorsionForce* OpenMM_RBTorsionForce_create()</code>
    *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link java.lang.String} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomTorsionForce_setEnergyFunction(
-      PointerByReference target, String energy);
+  public static native PointerByReference OpenMM_RBTorsionForce_create();
   /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setEnergyFunction(OpenMM_CustomTorsionForce*, const char*)
-   * </code>
+   * Original signature : <code>void OpenMM_RBTorsionForce_destroy(OpenMM_RBTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link com.sun.jna.Pointer} object.
    */
-  public static native void OpenMM_CustomTorsionForce_setEnergyFunction(
-      PointerByReference target, Pointer energy);
+  public static native void OpenMM_RBTorsionForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_addPerTorsionParameter(OpenMM_CustomTorsionForce*, const char*)
-   * </code>
+   * int OpenMM_RBTorsionForce_getNumTorsions(const OpenMM_RBTorsionForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomTorsionForce_addPerTorsionParameter(
-      PointerByReference target, String name);
+  public static native int OpenMM_RBTorsionForce_getNumTorsions(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_addPerTorsionParameter(OpenMM_CustomTorsionForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_addPerTorsionParameter(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomTorsionForce_getPerTorsionParameterName(const OpenMM_CustomTorsionForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomTorsionForce_getPerTorsionParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setPerTorsionParameterName(OpenMM_CustomTorsionForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_setPerTorsionParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setPerTorsionParameterName(OpenMM_CustomTorsionForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_setPerTorsionParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_addGlobalParameter(OpenMM_CustomTorsionForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_addGlobalParameter(
-      PointerByReference target, String name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_addGlobalParameter(OpenMM_CustomTorsionForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomTorsionForce_addGlobalParameter(
-      PointerByReference target, Pointer name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomTorsionForce_getGlobalParameterName(const OpenMM_CustomTorsionForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomTorsionForce_getGlobalParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setGlobalParameterName(OpenMM_CustomTorsionForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_setGlobalParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setGlobalParameterName(OpenMM_CustomTorsionForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_setGlobalParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomTorsionForce_getGlobalParameterDefaultValue(const OpenMM_CustomTorsionForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomTorsionForce_getGlobalParameterDefaultValue(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setGlobalParameterDefaultValue(OpenMM_CustomTorsionForce*, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param defaultValue a double.
-   */
-  public static native void OpenMM_CustomTorsionForce_setGlobalParameterDefaultValue(
-      PointerByReference target, int index, double defaultValue);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(OpenMM_CustomTorsionForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(OpenMM_CustomTorsionForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomTorsionForce_addEnergyParameterDerivative(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomTorsionForce_getEnergyParameterDerivativeName(const OpenMM_CustomTorsionForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomTorsionForce_getEnergyParameterDerivativeName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomTorsionForce_addTorsion(OpenMM_CustomTorsionForce*, int, int, int, int, const OpenMM_DoubleArray*)
+   * int OpenMM_RBTorsionForce_addTorsion(OpenMM_RBTorsionForce*, int, int, int, int, double, double, double, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -10198,19 +7324,29 @@ public class OpenMMLibrary implements Library {
    * @param particle2 a int.
    * @param particle3 a int.
    * @param particle4 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param c0 a double.
+   * @param c1 a double.
+   * @param c2 a double.
+   * @param c3 a double.
+   * @param c4 a double.
+   * @param c5 a double.
    * @return a int.
    */
-  public static native int OpenMM_CustomTorsionForce_addTorsion(
+  public static native int OpenMM_RBTorsionForce_addTorsion(
       PointerByReference target,
       int particle1,
       int particle2,
       int particle3,
       int particle4,
-      PointerByReference parameters);
+      double c0,
+      double c1,
+      double c2,
+      double c3,
+      double c4,
+      double c5);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_getTorsionParameters(const OpenMM_CustomTorsionForce*, int, int*, int*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_RBTorsionForce_getTorsionParameters(const OpenMM_RBTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -10219,19 +7355,29 @@ public class OpenMMLibrary implements Library {
    * @param particle2 a {@link java.nio.IntBuffer} object.
    * @param particle3 a {@link java.nio.IntBuffer} object.
    * @param particle4 a {@link java.nio.IntBuffer} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param c0 a {@link java.nio.DoubleBuffer} object.
+   * @param c1 a {@link java.nio.DoubleBuffer} object.
+   * @param c2 a {@link java.nio.DoubleBuffer} object.
+   * @param c3 a {@link java.nio.DoubleBuffer} object.
+   * @param c4 a {@link java.nio.DoubleBuffer} object.
+   * @param c5 a {@link java.nio.DoubleBuffer} object.
    */
-  public static native void OpenMM_CustomTorsionForce_getTorsionParameters(
+  public static native void OpenMM_RBTorsionForce_getTorsionParameters(
       PointerByReference target,
       int index,
       IntBuffer particle1,
       IntBuffer particle2,
       IntBuffer particle3,
       IntBuffer particle4,
-      PointerByReference parameters);
+      DoubleBuffer c0,
+      DoubleBuffer c1,
+      DoubleBuffer c2,
+      DoubleBuffer c3,
+      DoubleBuffer c4,
+      DoubleBuffer c5);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_getTorsionParameters(const OpenMM_CustomTorsionForce*, int, int*, int*, int*, int*, OpenMM_DoubleArray*)
+   * void OpenMM_RBTorsionForce_getTorsionParameters(const OpenMM_RBTorsionForce*, int, int*, int*, int*, int*, double*, double*, double*, double*, double*, double*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -10240,19 +7386,29 @@ public class OpenMMLibrary implements Library {
    * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle3 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle4 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param c0 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param c1 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param c2 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param c3 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param c4 a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param c5 a {@link com.sun.jna.ptr.DoubleByReference} object.
    */
-  public static native void OpenMM_CustomTorsionForce_getTorsionParameters(
+  public static native void OpenMM_RBTorsionForce_getTorsionParameters(
       PointerByReference target,
       int index,
       IntByReference particle1,
       IntByReference particle2,
       IntByReference particle3,
       IntByReference particle4,
-      PointerByReference parameters);
+      DoubleByReference c0,
+      DoubleByReference c1,
+      DoubleByReference c2,
+      DoubleByReference c3,
+      DoubleByReference c4,
+      DoubleByReference c5);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setTorsionParameters(OpenMM_CustomTorsionForce*, int, int, int, int, int, const OpenMM_DoubleArray*)
+   * void OpenMM_RBTorsionForce_setTorsionParameters(OpenMM_RBTorsionForce*, int, int, int, int, int, double, double, double, double, double, double)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
@@ -10261,164 +7417,486 @@ public class OpenMMLibrary implements Library {
    * @param particle2 a int.
    * @param particle3 a int.
    * @param particle4 a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param c0 a double.
+   * @param c1 a double.
+   * @param c2 a double.
+   * @param c3 a double.
+   * @param c4 a double.
+   * @param c5 a double.
    */
-  public static native void OpenMM_CustomTorsionForce_setTorsionParameters(
+  public static native void OpenMM_RBTorsionForce_setTorsionParameters(
       PointerByReference target,
       int index,
       int particle1,
       int particle2,
       int particle3,
       int particle4,
-      PointerByReference parameters);
+      double c0,
+      double c1,
+      double c2,
+      double c3,
+      double c4,
+      double c5);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_updateParametersInContext(OpenMM_CustomTorsionForce*, OpenMM_Context*)
+   * void OpenMM_RBTorsionForce_updateParametersInContext(OpenMM_RBTorsionForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_CustomTorsionForce_updateParametersInContext(
+  public static native void OpenMM_RBTorsionForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_CustomTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomTorsionForce*, OpenMM_Boolean)
+   * void OpenMM_RBTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_RBTorsionForce*, OpenMM_Boolean)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param periodic a int.
    */
-  public static native void OpenMM_CustomTorsionForce_setUsesPeriodicBoundaryConditions(
+  public static native void OpenMM_RBTorsionForce_setUsesPeriodicBoundaryConditions(
       PointerByReference target, int periodic);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CustomTorsionForce*)
+   * OpenMM_Boolean OpenMM_RBTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_RBTorsionForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_CustomTorsionForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_RBTorsionForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
-   * HarmonicBondForce<br>
-   * Original signature : <code>OpenMM_HarmonicBondForce* OpenMM_HarmonicBondForce_create()</code>
+   * CustomBondForce<br>
+   * Original signature : <code>OpenMM_CustomBondForce* OpenMM_CustomBondForce_create(const char*)
+   * </code>
    *
+   * @param energy a {@link java.lang.String} object.
    * @return a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native PointerByReference OpenMM_HarmonicBondForce_create();
+  public static native PointerByReference OpenMM_CustomBondForce_create(String energy);
   /**
-   * Original signature : <code>void OpenMM_HarmonicBondForce_destroy(OpenMM_HarmonicBondForce*)
-   * </code>
+   * Original signature : <code>void OpenMM_CustomBondForce_destroy(OpenMM_CustomBondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_HarmonicBondForce_destroy(PointerByReference target);
+  public static native void OpenMM_CustomBondForce_destroy(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_HarmonicBondForce_getNumBonds(const OpenMM_HarmonicBondForce*)</code>
+   * int OpenMM_CustomBondForce_getNumBonds(const OpenMM_CustomBondForce*)</code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_HarmonicBondForce_getNumBonds(PointerByReference target);
+  public static native int OpenMM_CustomBondForce_getNumBonds(PointerByReference target);
   /**
    * Original signature : <code>
-   * int OpenMM_HarmonicBondForce_addBond(OpenMM_HarmonicBondForce*, int, int, double, double)
+   * int OpenMM_CustomBondForce_getNumPerBondParameters(const OpenMM_CustomBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_getNumPerBondParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_getNumGlobalParameters(const OpenMM_CustomBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_getNumGlobalParameters(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_getNumEnergyParameterDerivatives(const OpenMM_CustomBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_getNumEnergyParameterDerivatives(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomBondForce_getEnergyFunction(const OpenMM_CustomBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomBondForce_getEnergyFunction(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setEnergyFunction(OpenMM_CustomBondForce*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomBondForce_setEnergyFunction(
+      PointerByReference target, String energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setEnergyFunction(OpenMM_CustomBondForce*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomBondForce_setEnergyFunction(
+      PointerByReference target, Pointer energy);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_addPerBondParameter(OpenMM_CustomBondForce*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_addPerBondParameter(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_addPerBondParameter(OpenMM_CustomBondForce*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_addPerBondParameter(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomBondForce_getPerBondParameterName(const OpenMM_CustomBondForce*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomBondForce_getPerBondParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setPerBondParameterName(OpenMM_CustomBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomBondForce_setPerBondParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setPerBondParameterName(OpenMM_CustomBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomBondForce_setPerBondParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_addGlobalParameter(OpenMM_CustomBondForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_addGlobalParameter(
+      PointerByReference target, String name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_addGlobalParameter(OpenMM_CustomBondForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomBondForce_addGlobalParameter(
+      PointerByReference target, Pointer name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomBondForce_getGlobalParameterName(const OpenMM_CustomBondForce*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomBondForce_getGlobalParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setGlobalParameterName(OpenMM_CustomBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomBondForce_setGlobalParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setGlobalParameterName(OpenMM_CustomBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomBondForce_setGlobalParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomBondForce_getGlobalParameterDefaultValue(const OpenMM_CustomBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomBondForce_getGlobalParameterDefaultValue(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_setGlobalParameterDefaultValue(OpenMM_CustomBondForce*, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param defaultValue a double.
+   */
+  public static native void OpenMM_CustomBondForce_setGlobalParameterDefaultValue(
+      PointerByReference target, int index, double defaultValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_addEnergyParameterDerivative(OpenMM_CustomBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomBondForce_addEnergyParameterDerivative(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomBondForce_addEnergyParameterDerivative(OpenMM_CustomBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomBondForce_addEnergyParameterDerivative(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomBondForce_getEnergyParameterDerivativeName(const OpenMM_CustomBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomBondForce_getEnergyParameterDerivativeName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomBondForce_addBond(OpenMM_CustomBondForce*, int, int, const OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param particle1 a int.
    * @param particle2 a int.
-   * @param length a double.
-   * @param k a double.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_HarmonicBondForce_addBond(
-      PointerByReference target, int particle1, int particle2, double length, double k);
+  public static native int OpenMM_CustomBondForce_addBond(
+      PointerByReference target, int particle1, int particle2, PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_HarmonicBondForce_getBondParameters(const OpenMM_HarmonicBondForce*, int, int*, int*, double*, double*)
+   * void OpenMM_CustomBondForce_getBondParameters(const OpenMM_CustomBondForce*, int, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param particle1 a {@link java.nio.IntBuffer} object.
    * @param particle2 a {@link java.nio.IntBuffer} object.
-   * @param length a {@link java.nio.DoubleBuffer} object.
-   * @param k a {@link java.nio.DoubleBuffer} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_HarmonicBondForce_getBondParameters(
+  public static native void OpenMM_CustomBondForce_getBondParameters(
       PointerByReference target,
       int index,
       IntBuffer particle1,
       IntBuffer particle2,
-      DoubleBuffer length,
-      DoubleBuffer k);
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_HarmonicBondForce_getBondParameters(const OpenMM_HarmonicBondForce*, int, int*, int*, double*, double*)
+   * void OpenMM_CustomBondForce_getBondParameters(const OpenMM_CustomBondForce*, int, int*, int*, OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
    * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param length a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_HarmonicBondForce_getBondParameters(
+  public static native void OpenMM_CustomBondForce_getBondParameters(
       PointerByReference target,
       int index,
       IntByReference particle1,
       IntByReference particle2,
-      DoubleByReference length,
-      DoubleByReference k);
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_HarmonicBondForce_setBondParameters(OpenMM_HarmonicBondForce*, int, int, int, double, double)
+   * void OpenMM_CustomBondForce_setBondParameters(OpenMM_CustomBondForce*, int, int, int, const OpenMM_DoubleArray*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param index a int.
    * @param particle1 a int.
    * @param particle2 a int.
-   * @param length a double.
-   * @param k a double.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_HarmonicBondForce_setBondParameters(
-      PointerByReference target, int index, int particle1, int particle2, double length, double k);
+  public static native void OpenMM_CustomBondForce_setBondParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      PointerByReference parameters);
   /**
    * Original signature : <code>
-   * void OpenMM_HarmonicBondForce_updateParametersInContext(OpenMM_HarmonicBondForce*, OpenMM_Context*)
+   * void OpenMM_CustomBondForce_updateParametersInContext(OpenMM_CustomBondForce*, OpenMM_Context*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
    */
-  public static native void OpenMM_HarmonicBondForce_updateParametersInContext(
+  public static native void OpenMM_CustomBondForce_updateParametersInContext(
       PointerByReference target, PointerByReference context);
   /**
    * Original signature : <code>
-   * void OpenMM_HarmonicBondForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicBondForce*, OpenMM_Boolean)
+   * void OpenMM_CustomBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomBondForce*, OpenMM_Boolean)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @param periodic a int.
    */
-  public static native void OpenMM_HarmonicBondForce_setUsesPeriodicBoundaryConditions(
+  public static native void OpenMM_CustomBondForce_setUsesPeriodicBoundaryConditions(
       PointerByReference target, int periodic);
   /**
    * Original signature : <code>
-   * OpenMM_Boolean OpenMM_HarmonicBondForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicBondForce*)
+   * OpenMM_Boolean OpenMM_CustomBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomBondForce*)
    * </code>
    *
    * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
    * @return a int.
    */
-  public static native int OpenMM_HarmonicBondForce_usesPeriodicBoundaryConditions(
+  public static native int OpenMM_CustomBondForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_State* OpenMM_State_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_State_create();
+  /**
+   * Original signature : <code>void OpenMM_State_destroy(OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_State_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>double OpenMM_State_getTime(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_State_getTime(PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_Vec3Array* OpenMM_State_getPositions(const OpenMM_State*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_State_getPositions(PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_Vec3Array* OpenMM_State_getVelocities(const OpenMM_State*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_State_getVelocities(PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_Vec3Array* OpenMM_State_getForces(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_State_getForces(PointerByReference target);
+  /**
+   * Original signature : <code>double OpenMM_State_getKineticEnergy(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_State_getKineticEnergy(PointerByReference target);
+  /**
+   * Original signature : <code>double OpenMM_State_getPotentialEnergy(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_State_getPotentialEnergy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_State_getPeriodicBoxVectors(const OpenMM_State*, OpenMM_Vec3*, OpenMM_Vec3*, OpenMM_Vec3*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param a a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param b a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param c a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   */
+  public static native void OpenMM_State_getPeriodicBoxVectors(
+      PointerByReference target, OpenMM_Vec3 a, OpenMM_Vec3 b, OpenMM_Vec3 c);
+  /**
+   * Original signature : <code>double OpenMM_State_getPeriodicBoxVolume(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_State_getPeriodicBoxVolume(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_ParameterArray* OpenMM_State_getParameters(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_State_getParameters(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_ParameterArray* OpenMM_State_getEnergyParameterDerivatives(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_State_getEnergyParameterDerivatives(
+      PointerByReference target);
+  /**
+   * Original signature : <code>int OpenMM_State_getDataTypes(const OpenMM_State*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_State_getDataTypes(PointerByReference target);
   /**
    * Original signature : <code>OpenMM_CustomGBForce* OpenMM_CustomGBForce_create()</code>
    *
@@ -11106,6 +8584,2171 @@ public class OpenMMLibrary implements Library {
   public static native int OpenMM_CustomGBForce_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
+   * BrownianIntegrator<br>
+   * Original signature : <code>
+   * OpenMM_BrownianIntegrator* OpenMM_BrownianIntegrator_create(double, double, double)</code>
+   *
+   * @param temperature a double.
+   * @param frictionCoeff a double.
+   * @param stepSize a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_BrownianIntegrator_create(
+      double temperature, double frictionCoeff, double stepSize);
+  /**
+   * Original signature : <code>void OpenMM_BrownianIntegrator_destroy(OpenMM_BrownianIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_BrownianIntegrator_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_BrownianIntegrator_getTemperature(const OpenMM_BrownianIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_BrownianIntegrator_getTemperature(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_BrownianIntegrator_setTemperature(OpenMM_BrownianIntegrator*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temp a double.
+   */
+  public static native void OpenMM_BrownianIntegrator_setTemperature(
+      PointerByReference target, double temp);
+  /**
+   * Original signature : <code>
+   * double OpenMM_BrownianIntegrator_getFriction(const OpenMM_BrownianIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_BrownianIntegrator_getFriction(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_BrownianIntegrator_setFriction(OpenMM_BrownianIntegrator*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param coeff a double.
+   */
+  public static native void OpenMM_BrownianIntegrator_setFriction(
+      PointerByReference target, double coeff);
+  /**
+   * Original signature : <code>
+   * int OpenMM_BrownianIntegrator_getRandomNumberSeed(const OpenMM_BrownianIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_BrownianIntegrator_getRandomNumberSeed(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_BrownianIntegrator_setRandomNumberSeed(OpenMM_BrownianIntegrator*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_BrownianIntegrator_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>void OpenMM_BrownianIntegrator_step(OpenMM_BrownianIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param steps a int.
+   */
+  public static native void OpenMM_BrownianIntegrator_step(PointerByReference target, int steps);
+  /**
+   * LocalCoordinatesSite<br>
+   * Original signature : <code>
+   * OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create(const OpenMM_IntArray*, const OpenMM_DoubleArray*, const OpenMM_DoubleArray*, const OpenMM_DoubleArray*, const OpenMM_Vec3*)
+   * </code>
+   *
+   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param originWeights a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xWeights a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param yWeights a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param localPosition a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_LocalCoordinatesSite_create(
+      PointerByReference particles,
+      PointerByReference originWeights,
+      PointerByReference xWeights,
+      PointerByReference yWeights,
+      OpenMM_Vec3 localPosition);
+  /**
+   * Original signature : <code>
+   * OpenMM_LocalCoordinatesSite* OpenMM_LocalCoordinatesSite_create_2(int, int, int, const OpenMM_Vec3*, const OpenMM_Vec3*, const OpenMM_Vec3*, const OpenMM_Vec3*)
+   * </code>
+   *
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param originWeights a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param xWeights a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param yWeights a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param localPosition a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_LocalCoordinatesSite_create_2(
+      int particle1,
+      int particle2,
+      int particle3,
+      OpenMM_Vec3 originWeights,
+      OpenMM_Vec3 xWeights,
+      OpenMM_Vec3 yWeights,
+      OpenMM_Vec3 localPosition);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LocalCoordinatesSite_destroy(OpenMM_LocalCoordinatesSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_LocalCoordinatesSite_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LocalCoordinatesSite_getOriginWeights(const OpenMM_LocalCoordinatesSite*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param weights a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_LocalCoordinatesSite_getOriginWeights(
+      PointerByReference target, PointerByReference weights);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LocalCoordinatesSite_getXWeights(const OpenMM_LocalCoordinatesSite*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param weights a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_LocalCoordinatesSite_getXWeights(
+      PointerByReference target, PointerByReference weights);
+  /**
+   * Original signature : <code>
+   * void OpenMM_LocalCoordinatesSite_getYWeights(const OpenMM_LocalCoordinatesSite*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param weights a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_LocalCoordinatesSite_getYWeights(
+      PointerByReference target, PointerByReference weights);
+  /**
+   * Original signature : <code>
+   * OpenMM_Vec3* OpenMM_LocalCoordinatesSite_getLocalPosition(const OpenMM_LocalCoordinatesSite*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   */
+  public static native OpenMM_Vec3 OpenMM_LocalCoordinatesSite_getLocalPosition(
+      PointerByReference target);
+  /**
+   * ThreeParticleAverageSite<br>
+   * Original signature : <code>
+   * OpenMM_ThreeParticleAverageSite* OpenMM_ThreeParticleAverageSite_create(int, int, int, double, double, double)
+   * </code>
+   *
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param particle3 a int.
+   * @param weight1 a double.
+   * @param weight2 a double.
+   * @param weight3 a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_ThreeParticleAverageSite_create(
+      int particle1, int particle2, int particle3, double weight1, double weight2, double weight3);
+  /**
+   * Original signature : <code>
+   * void OpenMM_ThreeParticleAverageSite_destroy(OpenMM_ThreeParticleAverageSite*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_ThreeParticleAverageSite_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_ThreeParticleAverageSite_getWeight(const OpenMM_ThreeParticleAverageSite*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle a int.
+   * @return a double.
+   */
+  public static native double OpenMM_ThreeParticleAverageSite_getWeight(
+      PointerByReference target, int particle);
+  /**
+   * CompoundIntegrator<br>
+   * Original signature : <code>OpenMM_CompoundIntegrator* OpenMM_CompoundIntegrator_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CompoundIntegrator_create();
+  /**
+   * Original signature : <code>void OpenMM_CompoundIntegrator_destroy(OpenMM_CompoundIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CompoundIntegrator_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CompoundIntegrator_getNumIntegrators(const OpenMM_CompoundIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CompoundIntegrator_getNumIntegrators(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CompoundIntegrator_addIntegrator(OpenMM_CompoundIntegrator*, OpenMM_Integrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CompoundIntegrator_addIntegrator(
+      PointerByReference target, PointerByReference integrator);
+  /**
+   * Original signature : <code>
+   * OpenMM_Integrator* OpenMM_CompoundIntegrator_getIntegrator(OpenMM_CompoundIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CompoundIntegrator_getIntegrator(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CompoundIntegrator_getCurrentIntegrator(const OpenMM_CompoundIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CompoundIntegrator_getCurrentIntegrator(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CompoundIntegrator_setCurrentIntegrator(OpenMM_CompoundIntegrator*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   */
+  public static native void OpenMM_CompoundIntegrator_setCurrentIntegrator(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CompoundIntegrator_getStepSize(const OpenMM_CompoundIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_CompoundIntegrator_getStepSize(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CompoundIntegrator_setStepSize(OpenMM_CompoundIntegrator*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param size a double.
+   */
+  public static native void OpenMM_CompoundIntegrator_setStepSize(
+      PointerByReference target, double size);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CompoundIntegrator_getConstraintTolerance(const OpenMM_CompoundIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_CompoundIntegrator_getConstraintTolerance(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CompoundIntegrator_setConstraintTolerance(OpenMM_CompoundIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param tol a double.
+   */
+  public static native void OpenMM_CompoundIntegrator_setConstraintTolerance(
+      PointerByReference target, double tol);
+  /**
+   * Original signature : <code>void OpenMM_CompoundIntegrator_step(OpenMM_CompoundIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param steps a int.
+   */
+  public static native void OpenMM_CompoundIntegrator_step(PointerByReference target, int steps);
+  /**
+   * CMAPTorsionForce<br>
+   * Original signature : <code>OpenMM_CMAPTorsionForce* OpenMM_CMAPTorsionForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CMAPTorsionForce_create();
+  /**
+   * Original signature : <code>void OpenMM_CMAPTorsionForce_destroy(OpenMM_CMAPTorsionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CMAPTorsionForce_getNumMaps(const OpenMM_CMAPTorsionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CMAPTorsionForce_getNumMaps(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CMAPTorsionForce_getNumTorsions(const OpenMM_CMAPTorsionForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CMAPTorsionForce_getNumTorsions(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CMAPTorsionForce_addMap(OpenMM_CMAPTorsionForce*, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param size a int.
+   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CMAPTorsionForce_addMap(
+      PointerByReference target, int size, PointerByReference energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_getMapParameters(const OpenMM_CMAPTorsionForce*, int, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param size a {@link java.nio.IntBuffer} object.
+   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_getMapParameters(
+      PointerByReference target, int index, IntBuffer size, PointerByReference energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_getMapParameters(const OpenMM_CMAPTorsionForce*, int, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param size a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_getMapParameters(
+      PointerByReference target, int index, IntByReference size, PointerByReference energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_setMapParameters(OpenMM_CMAPTorsionForce*, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param size a int.
+   * @param energy a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_setMapParameters(
+      PointerByReference target, int index, int size, PointerByReference energy);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CMAPTorsionForce_addTorsion(OpenMM_CMAPTorsionForce*, int, int, int, int, int, int, int, int, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param map a int.
+   * @param a1 a int.
+   * @param a2 a int.
+   * @param a3 a int.
+   * @param a4 a int.
+   * @param b1 a int.
+   * @param b2 a int.
+   * @param b3 a int.
+   * @param b4 a int.
+   * @return a int.
+   */
+  public static native int OpenMM_CMAPTorsionForce_addTorsion(
+      PointerByReference target,
+      int map,
+      int a1,
+      int a2,
+      int a3,
+      int a4,
+      int b1,
+      int b2,
+      int b3,
+      int b4);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_getTorsionParameters(const OpenMM_CMAPTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*, int*, int*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param map a {@link java.nio.IntBuffer} object.
+   * @param a1 a {@link java.nio.IntBuffer} object.
+   * @param a2 a {@link java.nio.IntBuffer} object.
+   * @param a3 a {@link java.nio.IntBuffer} object.
+   * @param a4 a {@link java.nio.IntBuffer} object.
+   * @param b1 a {@link java.nio.IntBuffer} object.
+   * @param b2 a {@link java.nio.IntBuffer} object.
+   * @param b3 a {@link java.nio.IntBuffer} object.
+   * @param b4 a {@link java.nio.IntBuffer} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_getTorsionParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer map,
+      IntBuffer a1,
+      IntBuffer a2,
+      IntBuffer a3,
+      IntBuffer a4,
+      IntBuffer b1,
+      IntBuffer b2,
+      IntBuffer b3,
+      IntBuffer b4);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_getTorsionParameters(const OpenMM_CMAPTorsionForce*, int, int*, int*, int*, int*, int*, int*, int*, int*, int*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param map a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param a1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param a2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param a3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param a4 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param b1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param b2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param b3 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param b4 a {@link com.sun.jna.ptr.IntByReference} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_getTorsionParameters(
+      PointerByReference target,
+      int index,
+      IntByReference map,
+      IntByReference a1,
+      IntByReference a2,
+      IntByReference a3,
+      IntByReference a4,
+      IntByReference b1,
+      IntByReference b2,
+      IntByReference b3,
+      IntByReference b4);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_setTorsionParameters(OpenMM_CMAPTorsionForce*, int, int, int, int, int, int, int, int, int, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param map a int.
+   * @param a1 a int.
+   * @param a2 a int.
+   * @param a3 a int.
+   * @param a4 a int.
+   * @param b1 a int.
+   * @param b2 a int.
+   * @param b3 a int.
+   * @param b4 a int.
+   */
+  public static native void OpenMM_CMAPTorsionForce_setTorsionParameters(
+      PointerByReference target,
+      int index,
+      int map,
+      int a1,
+      int a2,
+      int a3,
+      int a4,
+      int b1,
+      int b2,
+      int b3,
+      int b4);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_updateParametersInContext(OpenMM_CMAPTorsionForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CMAPTorsionForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CMAPTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_CMAPTorsionForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_CMAPTorsionForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CMAPTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_CMAPTorsionForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CMAPTorsionForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * Context<br>
+   * Original signature : <code>
+   * OpenMM_Context* OpenMM_Context_create(const OpenMM_System*, OpenMM_Integrator*)</code>
+   *
+   * @param system a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_create(
+      PointerByReference system, PointerByReference integrator);
+  /**
+   * Original signature : <code>
+   * OpenMM_Context* OpenMM_Context_create_2(const OpenMM_System*, OpenMM_Integrator*, OpenMM_Platform*)
+   * </code>
+   *
+   * @param system a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param platform a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_create_2(
+      PointerByReference system, PointerByReference integrator, PointerByReference platform);
+  /**
+   * Original signature : <code>
+   * OpenMM_Context* OpenMM_Context_create_3(const OpenMM_System*, OpenMM_Integrator*, OpenMM_Platform*, const OpenMM_PropertyArray*)
+   * </code>
+   *
+   * @param system a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param integrator a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param platform a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param properties a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_create_3(
+      PointerByReference system,
+      PointerByReference integrator,
+      PointerByReference platform,
+      PointerByReference properties);
+  /**
+   * Original signature : <code>void OpenMM_Context_destroy(OpenMM_Context*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Context_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_System* OpenMM_Context_getSystem(const OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_getSystem(PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_Integrator* OpenMM_Context_getIntegrator(OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_getIntegrator(PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_Platform* OpenMM_Context_getPlatform(OpenMM_Context*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_getPlatform(PointerByReference target);
+  /**
+   * Original signature : <code>void OpenMM_Context_setState(OpenMM_Context*, const OpenMM_State*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param state a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Context_setState(
+      PointerByReference target, PointerByReference state);
+  /**
+   * Original signature : <code>void OpenMM_Context_setTime(OpenMM_Context*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param time a double.
+   */
+  public static native void OpenMM_Context_setTime(PointerByReference target, double time);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_setPositions(OpenMM_Context*, const OpenMM_Vec3Array*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param positions a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Context_setPositions(
+      PointerByReference target, PointerByReference positions);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_setVelocities(OpenMM_Context*, const OpenMM_Vec3Array*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param velocities a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Context_setVelocities(
+      PointerByReference target, PointerByReference velocities);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_setVelocitiesToTemperature(OpenMM_Context*, double, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @param randomSeed a int.
+   */
+  public static native void OpenMM_Context_setVelocitiesToTemperature(
+      PointerByReference target, double temperature, int randomSeed);
+  /**
+   * Original signature : <code>
+   * OpenMM_ParameterArray* OpenMM_Context_getParameters(const OpenMM_Context*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Context_getParameters(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_Context_getParameter(const OpenMM_Context*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @return a double.
+   */
+  public static native double OpenMM_Context_getParameter(PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * double OpenMM_Context_getParameter(const OpenMM_Context*, const char*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @return a double.
+   */
+  public static native double OpenMM_Context_getParameter(PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_setParameter(OpenMM_Context*, const char*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param value a double.
+   */
+  public static native void OpenMM_Context_setParameter(
+      PointerByReference target, String name, double value);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_setParameter(OpenMM_Context*, const char*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param value a double.
+   */
+  public static native void OpenMM_Context_setParameter(
+      PointerByReference target, Pointer name, double value);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_setPeriodicBoxVectors(OpenMM_Context*, const OpenMM_Vec3*, const OpenMM_Vec3*, const OpenMM_Vec3*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param a a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param b a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   * @param c a {@link edu.uiowa.jopenmm.OpenMM_Vec3} object.
+   */
+  public static native void OpenMM_Context_setPeriodicBoxVectors(
+      PointerByReference target, OpenMM_Vec3 a, OpenMM_Vec3 b, OpenMM_Vec3 c);
+  /**
+   * Original signature : <code>void OpenMM_Context_applyConstraints(OpenMM_Context*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param tol a double.
+   */
+  public static native void OpenMM_Context_applyConstraints(PointerByReference target, double tol);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Context_applyVelocityConstraints(OpenMM_Context*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param tol a double.
+   */
+  public static native void OpenMM_Context_applyVelocityConstraints(
+      PointerByReference target, double tol);
+  /**
+   * Original signature : <code>void OpenMM_Context_computeVirtualSites(OpenMM_Context*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Context_computeVirtualSites(PointerByReference target);
+  /**
+   * Original signature : <code>void OpenMM_Context_reinitialize(OpenMM_Context*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param preserveState a int.
+   */
+  public static native void OpenMM_Context_reinitialize(
+      PointerByReference target, int preserveState);
+  /**
+   * Original signature : <code>
+   * OpenMM_CustomNonbondedForce* OpenMM_CustomNonbondedForce_create(const char*)</code>
+   *
+   * @param energy a {@link java.lang.String} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomNonbondedForce_create(String energy);
+  /**
+   * Original signature : <code>
+   * OpenMM_CustomNonbondedForce* OpenMM_CustomNonbondedForce_create_2(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param rhs a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomNonbondedForce_create_2(
+      PointerByReference rhs);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_destroy(OpenMM_CustomNonbondedForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumParticles(const OpenMM_CustomNonbondedForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumParticles(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumExclusions(const OpenMM_CustomNonbondedForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumExclusions(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumPerParticleParameters(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumPerParticleParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumGlobalParameters(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumGlobalParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumTabulatedFunctions(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumTabulatedFunctions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumFunctions(const OpenMM_CustomNonbondedForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumFunctions(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumInteractionGroups(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumInteractionGroups(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_getNumEnergyParameterDerivatives(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNumEnergyParameterDerivatives(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomNonbondedForce_getEnergyFunction(const OpenMM_CustomNonbondedForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomNonbondedForce_getEnergyFunction(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setEnergyFunction(OpenMM_CustomNonbondedForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setEnergyFunction(
+      PointerByReference target, String energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setEnergyFunction(OpenMM_CustomNonbondedForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setEnergyFunction(
+      PointerByReference target, Pointer energy);
+  /**
+   * Original signature : <code>
+   * OpenMM_CustomNonbondedForce_NonbondedMethod OpenMM_CustomNonbondedForce_getNonbondedMethod(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getNonbondedMethod(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setNonbondedMethod(OpenMM_CustomNonbondedForce*, OpenMM_CustomNonbondedForce_NonbondedMethod)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param method a int.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setNonbondedMethod(
+      PointerByReference target, int method);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomNonbondedForce_getCutoffDistance(const OpenMM_CustomNonbondedForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomNonbondedForce_getCutoffDistance(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setCutoffDistance(OpenMM_CustomNonbondedForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param distance a double.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setCutoffDistance(
+      PointerByReference target, double distance);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CustomNonbondedForce_getUseSwitchingFunction(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getUseSwitchingFunction(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setUseSwitchingFunction(OpenMM_CustomNonbondedForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param use a int.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setUseSwitchingFunction(
+      PointerByReference target, int use);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomNonbondedForce_getSwitchingDistance(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomNonbondedForce_getSwitchingDistance(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setSwitchingDistance(OpenMM_CustomNonbondedForce*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param distance a double.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setSwitchingDistance(
+      PointerByReference target, double distance);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CustomNonbondedForce_getUseLongRangeCorrection(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_getUseLongRangeCorrection(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setUseLongRangeCorrection(OpenMM_CustomNonbondedForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param use a int.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setUseLongRangeCorrection(
+      PointerByReference target, int use);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addPerParticleParameter(OpenMM_CustomNonbondedForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addPerParticleParameter(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addPerParticleParameter(OpenMM_CustomNonbondedForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addPerParticleParameter(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomNonbondedForce_getPerParticleParameterName(const OpenMM_CustomNonbondedForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomNonbondedForce_getPerParticleParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setPerParticleParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setPerParticleParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setPerParticleParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setPerParticleParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addGlobalParameter(OpenMM_CustomNonbondedForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addGlobalParameter(
+      PointerByReference target, String name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addGlobalParameter(OpenMM_CustomNonbondedForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addGlobalParameter(
+      PointerByReference target, Pointer name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomNonbondedForce_getGlobalParameterName(const OpenMM_CustomNonbondedForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomNonbondedForce_getGlobalParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setGlobalParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setGlobalParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setGlobalParameterName(OpenMM_CustomNonbondedForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setGlobalParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomNonbondedForce_getGlobalParameterDefaultValue(const OpenMM_CustomNonbondedForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomNonbondedForce_getGlobalParameterDefaultValue(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setGlobalParameterDefaultValue(OpenMM_CustomNonbondedForce*, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param defaultValue a double.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setGlobalParameterDefaultValue(
+      PointerByReference target, int index, double defaultValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(OpenMM_CustomNonbondedForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(OpenMM_CustomNonbondedForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_addEnergyParameterDerivative(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomNonbondedForce_getEnergyParameterDerivativeName(const OpenMM_CustomNonbondedForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomNonbondedForce_getEnergyParameterDerivativeName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addParticle(OpenMM_CustomNonbondedForce*, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addParticle(
+      PointerByReference target, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_getParticleParameters(const OpenMM_CustomNonbondedForce*, int, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_getParticleParameters(
+      PointerByReference target, int index, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setParticleParameters(OpenMM_CustomNonbondedForce*, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setParticleParameters(
+      PointerByReference target, int index, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addExclusion(OpenMM_CustomNonbondedForce*, int, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addExclusion(
+      PointerByReference target, int particle1, int particle2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_getExclusionParticles(const OpenMM_CustomNonbondedForce*, int, int*, int*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_getExclusionParticles(
+      PointerByReference target, int index, IntBuffer particle1, IntBuffer particle2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_getExclusionParticles(const OpenMM_CustomNonbondedForce*, int, int*, int*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_getExclusionParticles(
+      PointerByReference target, int index, IntByReference particle1, IntByReference particle2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setExclusionParticles(OpenMM_CustomNonbondedForce*, int, int, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setExclusionParticles(
+      PointerByReference target, int index, int particle1, int particle2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_createExclusionsFromBonds(OpenMM_CustomNonbondedForce*, const OpenMM_BondArray*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param bonds a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param bondCutoff a int.
+   */
+  public static native void OpenMM_CustomNonbondedForce_createExclusionsFromBonds(
+      PointerByReference target, PointerByReference bonds, int bondCutoff);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addTabulatedFunction(OpenMM_CustomNonbondedForce*, const char*, OpenMM_TabulatedFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addTabulatedFunction(
+      PointerByReference target, String name, PointerByReference function);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addTabulatedFunction(OpenMM_CustomNonbondedForce*, const char*, OpenMM_TabulatedFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addTabulatedFunction(
+      PointerByReference target, Pointer name, PointerByReference function);
+  /**
+   * Original signature : <code>
+   * OpenMM_TabulatedFunction* OpenMM_CustomNonbondedForce_getTabulatedFunction(OpenMM_CustomNonbondedForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomNonbondedForce_getTabulatedFunction(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomNonbondedForce_getTabulatedFunctionName(const OpenMM_CustomNonbondedForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomNonbondedForce_getTabulatedFunctionName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addFunction(OpenMM_CustomNonbondedForce*, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addFunction(
+      PointerByReference target, String name, PointerByReference values, double min, double max);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addFunction(OpenMM_CustomNonbondedForce*, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addFunction(
+      PointerByReference target, Pointer name, PointerByReference values, double min, double max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_getFunctionParameters(const OpenMM_CustomNonbondedForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link java.nio.DoubleBuffer} object.
+   * @param max a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_getFunctionParameters(
+      PointerByReference target,
+      int index,
+      PointerByReference name,
+      PointerByReference values,
+      DoubleBuffer min,
+      DoubleBuffer max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_getFunctionParameters(const OpenMM_CustomNonbondedForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_getFunctionParameters(
+      PointerByReference target,
+      int index,
+      PointerByReference name,
+      PointerByReference values,
+      DoubleByReference min,
+      DoubleByReference max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setFunctionParameters(OpenMM_CustomNonbondedForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setFunctionParameters(
+      PointerByReference target,
+      int index,
+      String name,
+      PointerByReference values,
+      double min,
+      double max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setFunctionParameters(OpenMM_CustomNonbondedForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setFunctionParameters(
+      PointerByReference target,
+      int index,
+      Pointer name,
+      PointerByReference values,
+      double min,
+      double max);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomNonbondedForce_addInteractionGroup(OpenMM_CustomNonbondedForce*, const OpenMM_IntSet*, const OpenMM_IntSet*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param set1 a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param set2 a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_addInteractionGroup(
+      PointerByReference target, PointerByReference set1, PointerByReference set2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_getInteractionGroupParameters(const OpenMM_CustomNonbondedForce*, int, OpenMM_IntSet*, OpenMM_IntSet*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param set1 a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param set2 a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_getInteractionGroupParameters(
+      PointerByReference target, int index, PointerByReference set1, PointerByReference set2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_setInteractionGroupParameters(OpenMM_CustomNonbondedForce*, int, const OpenMM_IntSet*, const OpenMM_IntSet*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param set1 a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param set2 a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_setInteractionGroupParameters(
+      PointerByReference target, int index, PointerByReference set1, PointerByReference set2);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomNonbondedForce_updateParametersInContext(OpenMM_CustomNonbondedForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomNonbondedForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CustomNonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_CustomNonbondedForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomNonbondedForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>OpenMM_GayBerneForce* OpenMM_GayBerneForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_GayBerneForce_create();
+  /**
+   * Original signature : <code>void OpenMM_GayBerneForce_destroy(OpenMM_GayBerneForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_GayBerneForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_GayBerneForce_getNumParticles(const OpenMM_GayBerneForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_getNumParticles(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_GayBerneForce_getNumExceptions(const OpenMM_GayBerneForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_getNumExceptions(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_GayBerneForce_NonbondedMethod OpenMM_GayBerneForce_getNonbondedMethod(const OpenMM_GayBerneForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_getNonbondedMethod(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_setNonbondedMethod(OpenMM_GayBerneForce*, OpenMM_GayBerneForce_NonbondedMethod)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param method a int.
+   */
+  public static native void OpenMM_GayBerneForce_setNonbondedMethod(
+      PointerByReference target, int method);
+  /**
+   * Original signature : <code>
+   * double OpenMM_GayBerneForce_getCutoffDistance(const OpenMM_GayBerneForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_GayBerneForce_getCutoffDistance(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_setCutoffDistance(OpenMM_GayBerneForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param distance a double.
+   */
+  public static native void OpenMM_GayBerneForce_setCutoffDistance(
+      PointerByReference target, double distance);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_GayBerneForce_getUseSwitchingFunction(const OpenMM_GayBerneForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_getUseSwitchingFunction(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_setUseSwitchingFunction(OpenMM_GayBerneForce*, OpenMM_Boolean)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param use a int.
+   */
+  public static native void OpenMM_GayBerneForce_setUseSwitchingFunction(
+      PointerByReference target, int use);
+  /**
+   * Original signature : <code>
+   * double OpenMM_GayBerneForce_getSwitchingDistance(const OpenMM_GayBerneForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_GayBerneForce_getSwitchingDistance(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_setSwitchingDistance(OpenMM_GayBerneForce*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param distance a double.
+   */
+  public static native void OpenMM_GayBerneForce_setSwitchingDistance(
+      PointerByReference target, double distance);
+  /**
+   * Original signature : <code>
+   * int OpenMM_GayBerneForce_addParticle(OpenMM_GayBerneForce*, double, double, int, int, double, double, double, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param sigma a double.
+   * @param epsilon a double.
+   * @param xparticle a int.
+   * @param yparticle a int.
+   * @param sx a double.
+   * @param sy a double.
+   * @param sz a double.
+   * @param ex a double.
+   * @param ey a double.
+   * @param ez a double.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_addParticle(
+      PointerByReference target,
+      double sigma,
+      double epsilon,
+      int xparticle,
+      int yparticle,
+      double sx,
+      double sy,
+      double sz,
+      double ex,
+      double ey,
+      double ez);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_getParticleParameters(const OpenMM_GayBerneForce*, int, double*, double*, int*, int*, double*, double*, double*, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param sigma a {@link java.nio.DoubleBuffer} object.
+   * @param epsilon a {@link java.nio.DoubleBuffer} object.
+   * @param xparticle a {@link java.nio.IntBuffer} object.
+   * @param yparticle a {@link java.nio.IntBuffer} object.
+   * @param sx a {@link java.nio.DoubleBuffer} object.
+   * @param sy a {@link java.nio.DoubleBuffer} object.
+   * @param sz a {@link java.nio.DoubleBuffer} object.
+   * @param ex a {@link java.nio.DoubleBuffer} object.
+   * @param ey a {@link java.nio.DoubleBuffer} object.
+   * @param ez a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_GayBerneForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleBuffer sigma,
+      DoubleBuffer epsilon,
+      IntBuffer xparticle,
+      IntBuffer yparticle,
+      DoubleBuffer sx,
+      DoubleBuffer sy,
+      DoubleBuffer sz,
+      DoubleBuffer ex,
+      DoubleBuffer ey,
+      DoubleBuffer ez);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_getParticleParameters(const OpenMM_GayBerneForce*, int, double*, double*, int*, int*, double*, double*, double*, double*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param sigma a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param epsilon a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param xparticle a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param yparticle a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param sx a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param sy a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param sz a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ex a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ey a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param ez a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_GayBerneForce_getParticleParameters(
+      PointerByReference target,
+      int index,
+      DoubleByReference sigma,
+      DoubleByReference epsilon,
+      IntByReference xparticle,
+      IntByReference yparticle,
+      DoubleByReference sx,
+      DoubleByReference sy,
+      DoubleByReference sz,
+      DoubleByReference ex,
+      DoubleByReference ey,
+      DoubleByReference ez);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_setParticleParameters(OpenMM_GayBerneForce*, int, double, double, int, int, double, double, double, double, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param sigma a double.
+   * @param epsilon a double.
+   * @param xparticle a int.
+   * @param yparticle a int.
+   * @param sx a double.
+   * @param sy a double.
+   * @param sz a double.
+   * @param ex a double.
+   * @param ey a double.
+   * @param ez a double.
+   */
+  public static native void OpenMM_GayBerneForce_setParticleParameters(
+      PointerByReference target,
+      int index,
+      double sigma,
+      double epsilon,
+      int xparticle,
+      int yparticle,
+      double sx,
+      double sy,
+      double sz,
+      double ex,
+      double ey,
+      double ez);
+  /**
+   * Original signature : <code>
+   * int OpenMM_GayBerneForce_addException(OpenMM_GayBerneForce*, int, int, double, double, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param sigma a double.
+   * @param epsilon a double.
+   * @param replace a int.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_addException(
+      PointerByReference target,
+      int particle1,
+      int particle2,
+      double sigma,
+      double epsilon,
+      int replace);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_getExceptionParameters(const OpenMM_GayBerneForce*, int, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param sigma a {@link java.nio.DoubleBuffer} object.
+   * @param epsilon a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_GayBerneForce_getExceptionParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      DoubleBuffer sigma,
+      DoubleBuffer epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_getExceptionParameters(const OpenMM_GayBerneForce*, int, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param sigma a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param epsilon a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_GayBerneForce_getExceptionParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      DoubleByReference sigma,
+      DoubleByReference epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_setExceptionParameters(OpenMM_GayBerneForce*, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param sigma a double.
+   * @param epsilon a double.
+   */
+  public static native void OpenMM_GayBerneForce_setExceptionParameters(
+      PointerByReference target,
+      int index,
+      int particle1,
+      int particle2,
+      double sigma,
+      double epsilon);
+  /**
+   * Original signature : <code>
+   * void OpenMM_GayBerneForce_updateParametersInContext(OpenMM_GayBerneForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_GayBerneForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_GayBerneForce_usesPeriodicBoundaryConditions(const OpenMM_GayBerneForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_GayBerneForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * HarmonicBondForce<br>
+   * Original signature : <code>OpenMM_HarmonicBondForce* OpenMM_HarmonicBondForce_create()</code>
+   *
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_HarmonicBondForce_create();
+  /**
+   * Original signature : <code>void OpenMM_HarmonicBondForce_destroy(OpenMM_HarmonicBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_HarmonicBondForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_HarmonicBondForce_getNumBonds(const OpenMM_HarmonicBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_HarmonicBondForce_getNumBonds(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_HarmonicBondForce_addBond(OpenMM_HarmonicBondForce*, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param length a double.
+   * @param k a double.
+   * @return a int.
+   */
+  public static native int OpenMM_HarmonicBondForce_addBond(
+      PointerByReference target, int particle1, int particle2, double length, double k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicBondForce_getBondParameters(const OpenMM_HarmonicBondForce*, int, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link java.nio.IntBuffer} object.
+   * @param particle2 a {@link java.nio.IntBuffer} object.
+   * @param length a {@link java.nio.DoubleBuffer} object.
+   * @param k a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_HarmonicBondForce_getBondParameters(
+      PointerByReference target,
+      int index,
+      IntBuffer particle1,
+      IntBuffer particle2,
+      DoubleBuffer length,
+      DoubleBuffer k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicBondForce_getBondParameters(const OpenMM_HarmonicBondForce*, int, int*, int*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param particle2 a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param length a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param k a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_HarmonicBondForce_getBondParameters(
+      PointerByReference target,
+      int index,
+      IntByReference particle1,
+      IntByReference particle2,
+      DoubleByReference length,
+      DoubleByReference k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicBondForce_setBondParameters(OpenMM_HarmonicBondForce*, int, int, int, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particle1 a int.
+   * @param particle2 a int.
+   * @param length a double.
+   * @param k a double.
+   */
+  public static native void OpenMM_HarmonicBondForce_setBondParameters(
+      PointerByReference target, int index, int particle1, int particle2, double length, double k);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicBondForce_updateParametersInContext(OpenMM_HarmonicBondForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_HarmonicBondForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_HarmonicBondForce_setUsesPeriodicBoundaryConditions(OpenMM_HarmonicBondForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_HarmonicBondForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_HarmonicBondForce_usesPeriodicBoundaryConditions(const OpenMM_HarmonicBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_HarmonicBondForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * VerletIntegrator<br>
+   * Original signature : <code>OpenMM_VerletIntegrator* OpenMM_VerletIntegrator_create(double)
+   * </code>
+   *
+   * @param stepSize a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_VerletIntegrator_create(double stepSize);
+  /**
+   * Original signature : <code>void OpenMM_VerletIntegrator_destroy(OpenMM_VerletIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_VerletIntegrator_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>void OpenMM_VerletIntegrator_step(OpenMM_VerletIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param steps a int.
+   */
+  public static native void OpenMM_VerletIntegrator_step(PointerByReference target, int steps);
+  /**
+   * Discrete3DFunction<br>
+   * Original signature : <code>
+   * OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_create(int, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param xsize a int.
+   * @param ysize a int.
+   * @param zsize a int.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Discrete3DFunction_create(
+      int xsize, int ysize, int zsize, PointerByReference values);
+  /**
+   * Original signature : <code>void OpenMM_Discrete3DFunction_destroy(OpenMM_Discrete3DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete3DFunction_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete3DFunction_getFunctionParameters(const OpenMM_Discrete3DFunction*, int*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xsize a {@link java.nio.IntBuffer} object.
+   * @param ysize a {@link java.nio.IntBuffer} object.
+   * @param zsize a {@link java.nio.IntBuffer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete3DFunction_getFunctionParameters(
+      PointerByReference target,
+      IntBuffer xsize,
+      IntBuffer ysize,
+      IntBuffer zsize,
+      PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete3DFunction_getFunctionParameters(const OpenMM_Discrete3DFunction*, int*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xsize a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param ysize a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param zsize a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete3DFunction_getFunctionParameters(
+      PointerByReference target,
+      IntByReference xsize,
+      IntByReference ysize,
+      IntByReference zsize,
+      PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete3DFunction_setFunctionParameters(OpenMM_Discrete3DFunction*, int, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xsize a int.
+   * @param ysize a int.
+   * @param zsize a int.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete3DFunction_setFunctionParameters(
+      PointerByReference target, int xsize, int ysize, int zsize, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * OpenMM_Discrete3DFunction* OpenMM_Discrete3DFunction_Copy(const OpenMM_Discrete3DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Discrete3DFunction_Copy(PointerByReference target);
+  /**
+   * Discrete2DFunction<br>
+   * Original signature : <code>
+   * OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_create(int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param xsize a int.
+   * @param ysize a int.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Discrete2DFunction_create(
+      int xsize, int ysize, PointerByReference values);
+  /**
+   * Original signature : <code>void OpenMM_Discrete2DFunction_destroy(OpenMM_Discrete2DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete2DFunction_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete2DFunction_getFunctionParameters(const OpenMM_Discrete2DFunction*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xsize a {@link java.nio.IntBuffer} object.
+   * @param ysize a {@link java.nio.IntBuffer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete2DFunction_getFunctionParameters(
+      PointerByReference target, IntBuffer xsize, IntBuffer ysize, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete2DFunction_getFunctionParameters(const OpenMM_Discrete2DFunction*, int*, int*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xsize a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param ysize a {@link com.sun.jna.ptr.IntByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete2DFunction_getFunctionParameters(
+      PointerByReference target,
+      IntByReference xsize,
+      IntByReference ysize,
+      PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete2DFunction_setFunctionParameters(OpenMM_Discrete2DFunction*, int, int, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param xsize a int.
+   * @param ysize a int.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete2DFunction_setFunctionParameters(
+      PointerByReference target, int xsize, int ysize, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * OpenMM_Discrete2DFunction* OpenMM_Discrete2DFunction_Copy(const OpenMM_Discrete2DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Discrete2DFunction_Copy(PointerByReference target);
+  /**
+   * VariableLangevinIntegrator<br>
+   * Original signature : <code>
+   * OpenMM_VariableLangevinIntegrator* OpenMM_VariableLangevinIntegrator_create(double, double, double)
+   * </code>
+   *
+   * @param temperature a double.
+   * @param frictionCoeff a double.
+   * @param errorTol a double.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_VariableLangevinIntegrator_create(
+      double temperature, double frictionCoeff, double errorTol);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_destroy(OpenMM_VariableLangevinIntegrator*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_VariableLangevinIntegrator_getTemperature(const OpenMM_VariableLangevinIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_VariableLangevinIntegrator_getTemperature(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_setTemperature(OpenMM_VariableLangevinIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temp a double.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_setTemperature(
+      PointerByReference target, double temp);
+  /**
+   * Original signature : <code>
+   * double OpenMM_VariableLangevinIntegrator_getFriction(const OpenMM_VariableLangevinIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_VariableLangevinIntegrator_getFriction(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_setFriction(OpenMM_VariableLangevinIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param coeff a double.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_setFriction(
+      PointerByReference target, double coeff);
+  /**
+   * Original signature : <code>
+   * double OpenMM_VariableLangevinIntegrator_getErrorTolerance(const OpenMM_VariableLangevinIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   */
+  public static native double OpenMM_VariableLangevinIntegrator_getErrorTolerance(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_setErrorTolerance(OpenMM_VariableLangevinIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param tol a double.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_setErrorTolerance(
+      PointerByReference target, double tol);
+  /**
+   * Original signature : <code>
+   * double OpenMM_VariableLangevinIntegrator_getMaximumStepSize(const OpenMM_VariableLangevinIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_VariableLangevinIntegrator_getMaximumStepSize(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_setMaximumStepSize(OpenMM_VariableLangevinIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param size a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_setMaximumStepSize(
+      PointerByReference target, double size);
+  /**
+   * Original signature : <code>
+   * int OpenMM_VariableLangevinIntegrator_getRandomNumberSeed(const OpenMM_VariableLangevinIntegrator*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_VariableLangevinIntegrator_getRandomNumberSeed(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_setRandomNumberSeed(OpenMM_VariableLangevinIntegrator*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param seed a int.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_setRandomNumberSeed(
+      PointerByReference target, int seed);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_step(OpenMM_VariableLangevinIntegrator*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param steps a int.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_step(
+      PointerByReference target, int steps);
+  /**
+   * Original signature : <code>
+   * void OpenMM_VariableLangevinIntegrator_stepTo(OpenMM_VariableLangevinIntegrator*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param time a double.
+   */
+  public static native void OpenMM_VariableLangevinIntegrator_stepTo(
+      PointerByReference target, double time);
+  /**
    * RMSDForce<br>
    * Original signature : <code>
    * OpenMM_RMSDForce* OpenMM_RMSDForce_create(const OpenMM_Vec3Array*, const OpenMM_IntArray*)
@@ -11175,430 +10818,6 @@ public class OpenMMLibrary implements Library {
    * @return a int.
    */
   public static native int OpenMM_RMSDForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * CustomExternalForce<br>
-   * Original signature : <code>
-   * OpenMM_CustomExternalForce* OpenMM_CustomExternalForce_create(const char*)</code>
-   *
-   * @param energy a {@link java.lang.String} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CustomExternalForce_create(String energy);
-  /**
-   * Original signature : <code>void OpenMM_CustomExternalForce_destroy(OpenMM_CustomExternalForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomExternalForce_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_getNumParticles(const OpenMM_CustomExternalForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_getNumParticles(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_getNumPerParticleParameters(const OpenMM_CustomExternalForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_getNumPerParticleParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_getNumGlobalParameters(const OpenMM_CustomExternalForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_getNumGlobalParameters(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomExternalForce_getEnergyFunction(const OpenMM_CustomExternalForce*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomExternalForce_getEnergyFunction(
-      PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setEnergyFunction(OpenMM_CustomExternalForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setEnergyFunction(
-      PointerByReference target, String energy);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setEnergyFunction(OpenMM_CustomExternalForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param energy a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setEnergyFunction(
-      PointerByReference target, Pointer energy);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_addPerParticleParameter(OpenMM_CustomExternalForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_addPerParticleParameter(
-      PointerByReference target, String name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_addPerParticleParameter(OpenMM_CustomExternalForce*, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_addPerParticleParameter(
-      PointerByReference target, Pointer name);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomExternalForce_getPerParticleParameterName(const OpenMM_CustomExternalForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomExternalForce_getPerParticleParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setPerParticleParameterName(OpenMM_CustomExternalForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setPerParticleParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setPerParticleParameterName(OpenMM_CustomExternalForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setPerParticleParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_addGlobalParameter(OpenMM_CustomExternalForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link java.lang.String} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_addGlobalParameter(
-      PointerByReference target, String name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_addGlobalParameter(OpenMM_CustomExternalForce*, const char*, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   * @param defaultValue a double.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_addGlobalParameter(
-      PointerByReference target, Pointer name, double defaultValue);
-  /**
-   * Original signature : <code>
-   * char* OpenMM_CustomExternalForce_getGlobalParameterName(const OpenMM_CustomExternalForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a {@link com.sun.jna.Pointer} object.
-   */
-  public static native Pointer OpenMM_CustomExternalForce_getGlobalParameterName(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setGlobalParameterName(OpenMM_CustomExternalForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link java.lang.String} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setGlobalParameterName(
-      PointerByReference target, int index, String name);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setGlobalParameterName(OpenMM_CustomExternalForce*, int, const char*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param name a {@link com.sun.jna.Pointer} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setGlobalParameterName(
-      PointerByReference target, int index, Pointer name);
-  /**
-   * Original signature : <code>
-   * double OpenMM_CustomExternalForce_getGlobalParameterDefaultValue(const OpenMM_CustomExternalForce*, int)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @return a double.
-   */
-  public static native double OpenMM_CustomExternalForce_getGlobalParameterDefaultValue(
-      PointerByReference target, int index);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setGlobalParameterDefaultValue(OpenMM_CustomExternalForce*, int, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param defaultValue a double.
-   */
-  public static native void OpenMM_CustomExternalForce_setGlobalParameterDefaultValue(
-      PointerByReference target, int index, double defaultValue);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CustomExternalForce_addParticle(OpenMM_CustomExternalForce*, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param particle a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_addParticle(
-      PointerByReference target, int particle, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_getParticleParameters(const OpenMM_CustomExternalForce*, int, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle a {@link java.nio.IntBuffer} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomExternalForce_getParticleParameters(
-      PointerByReference target, int index, IntBuffer particle, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_getParticleParameters(const OpenMM_CustomExternalForce*, int, int*, OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomExternalForce_getParticleParameters(
-      PointerByReference target, int index, IntByReference particle, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_setParticleParameters(OpenMM_CustomExternalForce*, int, int, const OpenMM_DoubleArray*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param index a int.
-   * @param particle a int.
-   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomExternalForce_setParticleParameters(
-      PointerByReference target, int index, int particle, PointerByReference parameters);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CustomExternalForce_updateParametersInContext(OpenMM_CustomExternalForce*, OpenMM_Context*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CustomExternalForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CustomExternalForce_usesPeriodicBoundaryConditions(const OpenMM_CustomExternalForce*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CustomExternalForce_usesPeriodicBoundaryConditions(
-      PointerByReference target);
-  /**
-   * Continuous2DFunction<br>
-   * Original signature : <code>
-   * OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_create(int, int, const OpenMM_DoubleArray*, double, double, double, double)
-   * </code>
-   *
-   * @param xsize a int.
-   * @param ysize a int.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a double.
-   * @param xmax a double.
-   * @param ymin a double.
-   * @param ymax a double.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Continuous2DFunction_create(
-      int xsize,
-      int ysize,
-      PointerByReference values,
-      double xmin,
-      double xmax,
-      double ymin,
-      double ymax);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous2DFunction_destroy(OpenMM_Continuous2DFunction*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_Continuous2DFunction_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous2DFunction_getFunctionParameters(const OpenMM_Continuous2DFunction*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xsize a {@link java.nio.IntBuffer} object.
-   * @param ysize a {@link java.nio.IntBuffer} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a {@link java.nio.DoubleBuffer} object.
-   * @param xmax a {@link java.nio.DoubleBuffer} object.
-   * @param ymin a {@link java.nio.DoubleBuffer} object.
-   * @param ymax a {@link java.nio.DoubleBuffer} object.
-   */
-  public static native void OpenMM_Continuous2DFunction_getFunctionParameters(
-      PointerByReference target,
-      IntBuffer xsize,
-      IntBuffer ysize,
-      PointerByReference values,
-      DoubleBuffer xmin,
-      DoubleBuffer xmax,
-      DoubleBuffer ymin,
-      DoubleBuffer ymax);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous2DFunction_getFunctionParameters(const OpenMM_Continuous2DFunction*, int*, int*, OpenMM_DoubleArray*, double*, double*, double*, double*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xsize a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param ysize a {@link com.sun.jna.ptr.IntByReference} object.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param xmax a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ymin a {@link com.sun.jna.ptr.DoubleByReference} object.
-   * @param ymax a {@link com.sun.jna.ptr.DoubleByReference} object.
-   */
-  public static native void OpenMM_Continuous2DFunction_getFunctionParameters(
-      PointerByReference target,
-      IntByReference xsize,
-      IntByReference ysize,
-      PointerByReference values,
-      DoubleByReference xmin,
-      DoubleByReference xmax,
-      DoubleByReference ymin,
-      DoubleByReference ymax);
-  /**
-   * Original signature : <code>
-   * void OpenMM_Continuous2DFunction_setFunctionParameters(OpenMM_Continuous2DFunction*, int, int, const OpenMM_DoubleArray*, double, double, double, double)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xsize a int.
-   * @param ysize a int.
-   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param xmin a double.
-   * @param xmax a double.
-   * @param ymin a double.
-   * @param ymax a double.
-   */
-  public static native void OpenMM_Continuous2DFunction_setFunctionParameters(
-      PointerByReference target,
-      int xsize,
-      int ysize,
-      PointerByReference values,
-      double xmin,
-      double xmax,
-      double ymin,
-      double ymax);
-  /**
-   * Original signature : <code>
-   * OpenMM_Continuous2DFunction* OpenMM_Continuous2DFunction_Copy(const OpenMM_Continuous2DFunction*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_Continuous2DFunction_Copy(
-      PointerByReference target);
-  /**
-   * CMMotionRemover<br>
-   * Original signature : <code>OpenMM_CMMotionRemover* OpenMM_CMMotionRemover_create(int)</code>
-   *
-   * @param frequency a int.
-   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native PointerByReference OpenMM_CMMotionRemover_create(int frequency);
-  /**
-   * Original signature : <code>void OpenMM_CMMotionRemover_destroy(OpenMM_CMMotionRemover*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   */
-  public static native void OpenMM_CMMotionRemover_destroy(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * int OpenMM_CMMotionRemover_getFrequency(const OpenMM_CMMotionRemover*)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CMMotionRemover_getFrequency(PointerByReference target);
-  /**
-   * Original signature : <code>
-   * void OpenMM_CMMotionRemover_setFrequency(OpenMM_CMMotionRemover*, int)</code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @param freq a int.
-   */
-  public static native void OpenMM_CMMotionRemover_setFrequency(
-      PointerByReference target, int freq);
-  /**
-   * Original signature : <code>
-   * OpenMM_Boolean OpenMM_CMMotionRemover_usesPeriodicBoundaryConditions(const OpenMM_CMMotionRemover*)
-   * </code>
-   *
-   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
-   * @return a int.
-   */
-  public static native int OpenMM_CMMotionRemover_usesPeriodicBoundaryConditions(
       PointerByReference target);
   /**
    * Platform<br>
@@ -11795,6 +11014,786 @@ public class OpenMMLibrary implements Library {
    */
   public static native int OpenMM_Platform_supportsKernels(
       PointerByReference target, PointerByReference kernelNames);
+  /**
+   * CustomCompoundBondForce<br>
+   * Original signature : <code>
+   * OpenMM_CustomCompoundBondForce* OpenMM_CustomCompoundBondForce_create(int, const char*)</code>
+   *
+   * @param numParticles a int.
+   * @param energy a {@link java.lang.String} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomCompoundBondForce_create(
+      int numParticles, String energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_destroy(OpenMM_CustomCompoundBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumParticlesPerBond(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumParticlesPerBond(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumBonds(const OpenMM_CustomCompoundBondForce*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumBonds(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumPerBondParameters(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumPerBondParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumGlobalParameters(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumGlobalParameters(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumEnergyParameterDerivatives(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumEnergyParameterDerivatives(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumTabulatedFunctions(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumTabulatedFunctions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_getNumFunctions(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_getNumFunctions(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCompoundBondForce_getEnergyFunction(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCompoundBondForce_getEnergyFunction(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setEnergyFunction(OpenMM_CustomCompoundBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setEnergyFunction(
+      PointerByReference target, String energy);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setEnergyFunction(OpenMM_CustomCompoundBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param energy a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setEnergyFunction(
+      PointerByReference target, Pointer energy);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addPerBondParameter(OpenMM_CustomCompoundBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addPerBondParameter(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addPerBondParameter(OpenMM_CustomCompoundBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addPerBondParameter(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCompoundBondForce_getPerBondParameterName(const OpenMM_CustomCompoundBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCompoundBondForce_getPerBondParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setPerBondParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setPerBondParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setPerBondParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setPerBondParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addGlobalParameter(OpenMM_CustomCompoundBondForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addGlobalParameter(
+      PointerByReference target, String name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addGlobalParameter(OpenMM_CustomCompoundBondForce*, const char*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param defaultValue a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addGlobalParameter(
+      PointerByReference target, Pointer name, double defaultValue);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCompoundBondForce_getGlobalParameterName(const OpenMM_CustomCompoundBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCompoundBondForce_getGlobalParameterName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setGlobalParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setGlobalParameterName(
+      PointerByReference target, int index, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setGlobalParameterName(OpenMM_CustomCompoundBondForce*, int, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setGlobalParameterName(
+      PointerByReference target, int index, Pointer name);
+  /**
+   * Original signature : <code>
+   * double OpenMM_CustomCompoundBondForce_getGlobalParameterDefaultValue(const OpenMM_CustomCompoundBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a double.
+   */
+  public static native double OpenMM_CustomCompoundBondForce_getGlobalParameterDefaultValue(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setGlobalParameterDefaultValue(OpenMM_CustomCompoundBondForce*, int, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param defaultValue a double.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setGlobalParameterDefaultValue(
+      PointerByReference target, int index, double defaultValue);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(OpenMM_CustomCompoundBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(
+      PointerByReference target, String name);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(OpenMM_CustomCompoundBondForce*, const char*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_addEnergyParameterDerivative(
+      PointerByReference target, Pointer name);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCompoundBondForce_getEnergyParameterDerivativeName(const OpenMM_CustomCompoundBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCompoundBondForce_getEnergyParameterDerivativeName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addBond(OpenMM_CustomCompoundBondForce*, const OpenMM_IntArray*, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addBond(
+      PointerByReference target, PointerByReference particles, PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_getBondParameters(const OpenMM_CustomCompoundBondForce*, int, OpenMM_IntArray*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_getBondParameters(
+      PointerByReference target,
+      int index,
+      PointerByReference particles,
+      PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setBondParameters(OpenMM_CustomCompoundBondForce*, int, const OpenMM_IntArray*, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param particles a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param parameters a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setBondParameters(
+      PointerByReference target,
+      int index,
+      PointerByReference particles,
+      PointerByReference parameters);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addTabulatedFunction(OpenMM_CustomCompoundBondForce*, const char*, OpenMM_TabulatedFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addTabulatedFunction(
+      PointerByReference target, String name, PointerByReference function);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addTabulatedFunction(OpenMM_CustomCompoundBondForce*, const char*, OpenMM_TabulatedFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param function a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addTabulatedFunction(
+      PointerByReference target, Pointer name, PointerByReference function);
+  /**
+   * Original signature : <code>
+   * OpenMM_TabulatedFunction* OpenMM_CustomCompoundBondForce_getTabulatedFunction(OpenMM_CustomCompoundBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_CustomCompoundBondForce_getTabulatedFunction(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * char* OpenMM_CustomCompoundBondForce_getTabulatedFunctionName(const OpenMM_CustomCompoundBondForce*, int)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @return a {@link com.sun.jna.Pointer} object.
+   */
+  public static native Pointer OpenMM_CustomCompoundBondForce_getTabulatedFunctionName(
+      PointerByReference target, int index);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addFunction(OpenMM_CustomCompoundBondForce*, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addFunction(
+      PointerByReference target, String name, PointerByReference values, double min, double max);
+  /**
+   * Original signature : <code>
+   * int OpenMM_CustomCompoundBondForce_addFunction(OpenMM_CustomCompoundBondForce*, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_addFunction(
+      PointerByReference target, Pointer name, PointerByReference values, double min, double max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_getFunctionParameters(const OpenMM_CustomCompoundBondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link java.nio.DoubleBuffer} object.
+   * @param max a {@link java.nio.DoubleBuffer} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_getFunctionParameters(
+      PointerByReference target,
+      int index,
+      PointerByReference name,
+      PointerByReference values,
+      DoubleBuffer min,
+      DoubleBuffer max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_getFunctionParameters(const OpenMM_CustomCompoundBondForce*, int, char**, OpenMM_DoubleArray*, double*, double*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a {@link com.sun.jna.ptr.DoubleByReference} object.
+   * @param max a {@link com.sun.jna.ptr.DoubleByReference} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_getFunctionParameters(
+      PointerByReference target,
+      int index,
+      PointerByReference name,
+      PointerByReference values,
+      DoubleByReference min,
+      DoubleByReference max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setFunctionParameters(OpenMM_CustomCompoundBondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link java.lang.String} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setFunctionParameters(
+      PointerByReference target,
+      int index,
+      String name,
+      PointerByReference values,
+      double min,
+      double max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setFunctionParameters(OpenMM_CustomCompoundBondForce*, int, const char*, const OpenMM_DoubleArray*, double, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param index a int.
+   * @param name a {@link com.sun.jna.Pointer} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param min a double.
+   * @param max a double.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setFunctionParameters(
+      PointerByReference target,
+      int index,
+      Pointer name,
+      PointerByReference values,
+      double min,
+      double max);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_updateParametersInContext(OpenMM_CustomCompoundBondForce*, OpenMM_Context*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param context a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_updateParametersInContext(
+      PointerByReference target, PointerByReference context);
+  /**
+   * Original signature : <code>
+   * void OpenMM_CustomCompoundBondForce_setUsesPeriodicBoundaryConditions(OpenMM_CustomCompoundBondForce*, OpenMM_Boolean)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param periodic a int.
+   */
+  public static native void OpenMM_CustomCompoundBondForce_setUsesPeriodicBoundaryConditions(
+      PointerByReference target, int periodic);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_CustomCompoundBondForce_usesPeriodicBoundaryConditions(const OpenMM_CustomCompoundBondForce*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   */
+  public static native int OpenMM_CustomCompoundBondForce_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * NoseHooverChain<br>
+   * Original signature : <code>
+   * OpenMM_NoseHooverChain* OpenMM_NoseHooverChain_create(double, double, double, double, int, int, int, int, int, const OpenMM_IntArray*, const OpenMM_BondArray*)
+   * </code>
+   *
+   * @param temperature a double.
+   * @param relativeTemperature a double.
+   * @param collisionFrequency a double.
+   * @param relativeCollisionFrequency a double.
+   * @param numDOFs a int.
+   * @param chainLength a int.
+   * @param numMTS a int.
+   * @param numYoshidaSuzuki a int.
+   * @param chainID a int.
+   * @param thermostatedAtoms a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param thermostatedPairs a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native PointerByReference OpenMM_NoseHooverChain_create(
+      double temperature,
+      double relativeTemperature,
+      double collisionFrequency,
+      double relativeCollisionFrequency,
+      int numDOFs,
+      int chainLength,
+      int numMTS,
+      int numYoshidaSuzuki,
+      int chainID,
+      PointerByReference thermostatedAtoms,
+      PointerByReference thermostatedPairs);
+  /**
+   * Original signature : <code>void OpenMM_NoseHooverChain_destroy(OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverChain_getTemperature(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverChain_getTemperature(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setTemperature(OpenMM_NoseHooverChain*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setTemperature(
+      PointerByReference target, double temperature);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverChain_getRelativeTemperature(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverChain_getRelativeTemperature(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setRelativeTemperature(OpenMM_NoseHooverChain*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param temperature a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setRelativeTemperature(
+      PointerByReference target, double temperature);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverChain_getCollisionFrequency(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverChain_getCollisionFrequency(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setCollisionFrequency(OpenMM_NoseHooverChain*, double)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param frequency a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setCollisionFrequency(
+      PointerByReference target, double frequency);
+  /**
+   * Original signature : <code>
+   * double OpenMM_NoseHooverChain_getRelativeCollisionFrequency(const OpenMM_NoseHooverChain*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native double OpenMM_NoseHooverChain_getRelativeCollisionFrequency(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setRelativeCollisionFrequency(OpenMM_NoseHooverChain*, double)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param frequency a double.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setRelativeCollisionFrequency(
+      PointerByReference target, double frequency);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverChain_getNumDegreesOfFreedom(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverChain_getNumDegreesOfFreedom(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setNumDegreesOfFreedom(OpenMM_NoseHooverChain*, int)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param numDOF a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setNumDegreesOfFreedom(
+      PointerByReference target, int numDOF);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverChain_getChainLength(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverChain_getChainLength(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverChain_getNumMultiTimeSteps(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverChain_getNumMultiTimeSteps(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * int OpenMM_NoseHooverChain_getNumYoshidaSuzukiTimeSteps(const OpenMM_NoseHooverChain*)</code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverChain_getNumYoshidaSuzukiTimeSteps(
+      PointerByReference target);
+  /**
+   * Original signature : <code>int OpenMM_NoseHooverChain_getChainID(const OpenMM_NoseHooverChain*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverChain_getChainID(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * OpenMM_IntArray* OpenMM_NoseHooverChain_getThermostatedAtoms(const OpenMM_NoseHooverChain*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native PointerByReference OpenMM_NoseHooverChain_getThermostatedAtoms(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setThermostatedAtoms(OpenMM_NoseHooverChain*, const OpenMM_IntArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param atomIDs a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setThermostatedAtoms(
+      PointerByReference target, PointerByReference atomIDs);
+  /**
+   * Original signature : <code>
+   * OpenMM_BondArray* OpenMM_NoseHooverChain_getThermostatedPairs(const OpenMM_NoseHooverChain*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native PointerByReference OpenMM_NoseHooverChain_getThermostatedPairs(
+      PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_NoseHooverChain_setThermostatedPairs(OpenMM_NoseHooverChain*, const OpenMM_BondArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param pairIDs a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @since 7.5.0-Tinker
+   */
+  public static native void OpenMM_NoseHooverChain_setThermostatedPairs(
+      PointerByReference target, PointerByReference pairIDs);
+  /**
+   * Original signature : <code>
+   * OpenMM_Boolean OpenMM_NoseHooverChain_usesPeriodicBoundaryConditions(const OpenMM_NoseHooverChain*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a int.
+   * @since 7.5.0-Tinker
+   */
+  public static native int OpenMM_NoseHooverChain_usesPeriodicBoundaryConditions(
+      PointerByReference target);
+  /**
+   * Discrete1DFunction<br>
+   * Original signature : <code>
+   * OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_create(const OpenMM_DoubleArray*)</code>
+   *
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Discrete1DFunction_create(
+      PointerByReference values);
+  /**
+   * Original signature : <code>void OpenMM_Discrete1DFunction_destroy(OpenMM_Discrete1DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete1DFunction_destroy(PointerByReference target);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete1DFunction_getFunctionParameters(const OpenMM_Discrete1DFunction*, OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete1DFunction_getFunctionParameters(
+      PointerByReference target, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * void OpenMM_Discrete1DFunction_setFunctionParameters(OpenMM_Discrete1DFunction*, const OpenMM_DoubleArray*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @param values a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native void OpenMM_Discrete1DFunction_setFunctionParameters(
+      PointerByReference target, PointerByReference values);
+  /**
+   * Original signature : <code>
+   * OpenMM_Discrete1DFunction* OpenMM_Discrete1DFunction_Copy(const OpenMM_Discrete1DFunction*)
+   * </code>
+   *
+   * @param target a {@link com.sun.jna.ptr.PointerByReference} object.
+   * @return a {@link com.sun.jna.ptr.PointerByReference} object.
+   */
+  public static native PointerByReference OpenMM_Discrete1DFunction_Copy(PointerByReference target);
 
   public static class OpenMM_StringArray extends PointerType {
     public OpenMM_StringArray(Pointer address) {
@@ -12226,22 +12225,22 @@ public class OpenMMLibrary implements Library {
     }
   };
 
-  public static class OpenMM_GayBerneForce extends PointerType {
-    public OpenMM_GayBerneForce(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_GayBerneForce() {
-      super();
-    }
-  };
-
   public static class OpenMM_CustomTorsionForce extends PointerType {
     public OpenMM_CustomTorsionForce(Pointer address) {
       super(address);
     }
 
     public OpenMM_CustomTorsionForce() {
+      super();
+    }
+  };
+
+  public static class OpenMM_GayBerneForce extends PointerType {
+    public OpenMM_GayBerneForce(Pointer address) {
+      super(address);
+    }
+
+    public OpenMM_GayBerneForce() {
       super();
     }
   };
@@ -12316,16 +12315,6 @@ public class OpenMMLibrary implements Library {
     }
   };
 
-  public static class OpenMM_OpenMMException extends PointerType {
-    public OpenMM_OpenMMException(Pointer address) {
-      super(address);
-    }
-
-    public OpenMM_OpenMMException() {
-      super();
-    }
-  };
-
   public static class OpenMM_NoseHooverIntegrator extends PointerType {
     public OpenMM_NoseHooverIntegrator(Pointer address) {
       super(address);
@@ -12342,6 +12331,16 @@ public class OpenMMLibrary implements Library {
     }
 
     public OpenMM_CustomCentroidBondForce() {
+      super();
+    }
+  };
+
+  public static class OpenMM_OpenMMException extends PointerType {
+    public OpenMM_OpenMMException(Pointer address) {
+      super(address);
+    }
+
+    public OpenMM_OpenMMException() {
       super();
     }
   };
