@@ -19,7 +19,7 @@ import edu.uiowa.jopenmm.OpenMMAmoebaLibrary.OpenMM_IntArray;
  * href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  */
 public class MeldOpenMMLibrary implements Library {
-  public static final String JNA_LIBRARY_NAME = "MeldOpenMM";
+  public static final String JNA_LIBRARY_NAME = "MeldPlugin";
   public static final NativeLibrary JNA_NATIVE_LIB =
       NativeLibrary.getInstance(MeldOpenMMLibrary.JNA_LIBRARY_NAME);
 
