@@ -6,6 +6,8 @@ import com.sun.jna.NativeLibrary;
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.ptr.PointerByReference;
+import edu.uiowa.jopenmm.OpenMMAmoebaLibrary.OpenMM_Context;
+import edu.uiowa.jopenmm.OpenMMAmoebaLibrary.OpenMM_IntArray;
 
 /**
  * JNA Wrapper for library <b>MeldOpenMM</b><br>
@@ -17,7 +19,7 @@ import com.sun.jna.ptr.PointerByReference;
  * href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  */
 public class MeldOpenMMLibrary implements Library {
-  public static final String JNA_LIBRARY_NAME = "MeldPlugin";
+  public static final String JNA_LIBRARY_NAME = "MeldOpenMM";
   public static final NativeLibrary JNA_NATIVE_LIB =
       NativeLibrary.getInstance(MeldOpenMMLibrary.JNA_LIBRARY_NAME);
 
@@ -125,19 +127,19 @@ public class MeldOpenMMLibrary implements Library {
    * int OpenMM_MeldForce_addGroup(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code>
    */
   public static native int OpenMM_MeldForce_addGroup(
-      PointerByReference target, PointerByReference restraint_indices, int n_active);
+      PointerByReference target, OpenMM_IntArray restraint_indices, int n_active);
   /**
    * Original signature : <code>
    * int OpenMM_MeldForce_addCollection(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code>
    */
   public static native int OpenMM_MeldForce_addCollection(
-      PointerByReference target, PointerByReference group_indices, int n_active);
+      PointerByReference target, OpenMM_IntArray group_indices, int n_active);
   /**
    * Original signature : <code>
    * void OpenMM_MeldForce_updateParametersInContext(OpenMM_MeldForce*, OpenMM_Context*)</code>
    */
   public static native void OpenMM_MeldForce_updateParametersInContext(
-      PointerByReference target, PointerByReference context);
+      PointerByReference target, OpenMM_Context context);
 
   public static class OpenMM_MeldForce extends PointerType {
     public OpenMM_MeldForce(Pointer address) {
