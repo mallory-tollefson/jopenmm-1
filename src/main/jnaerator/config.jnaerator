@@ -17,7 +17,7 @@
 
 ../include/OpenMMCWrapper.h
 
--library AmoebaOpenMM
+-library OpenMMAmoeba
 
 ../include/AmoebaOpenMMCWrapper.h
 
