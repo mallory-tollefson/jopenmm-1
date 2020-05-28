@@ -25,6 +25,3 @@
 
 ../include/MeldOpenMMCWrapper.h
 
--library GKNPOpenMM
-
-../include/GKNPOpenMMCWrapper.h
