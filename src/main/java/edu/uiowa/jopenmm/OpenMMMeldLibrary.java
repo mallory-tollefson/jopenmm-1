@@ -17,7 +17,7 @@ import com.sun.jna.ptr.PointerByReference;
  * href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  */
 public class OpenMMMeldLibrary implements Library {
-  public static final String JNA_LIBRARY_NAME = "OpenMMMeld";
+  public static final String JNA_LIBRARY_NAME = "MeldPlugin";
   public static final NativeLibrary JNA_NATIVE_LIB =
       NativeLibrary.getInstance(OpenMMMeldLibrary.JNA_LIBRARY_NAME);
 
