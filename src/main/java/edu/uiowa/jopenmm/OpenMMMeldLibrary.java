@@ -6,8 +6,6 @@ import com.sun.jna.NativeLibrary;
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.ptr.PointerByReference;
-import edu.uiowa.jopenmm.OpenMMAmoebaLibrary.OpenMM_Context;
-import edu.uiowa.jopenmm.OpenMMAmoebaLibrary.OpenMM_IntArray;
 
 /**
  * JNA Wrapper for library <b>OpenMMMeld</b><br>
@@ -127,19 +125,19 @@ public class OpenMMMeldLibrary implements Library {
    * int OpenMM_MeldForce_addGroup(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code>
    */
   public static native int OpenMM_MeldForce_addGroup(
-      PointerByReference target, OpenMM_IntArray restraint_indices, int n_active);
+      PointerByReference target, PointerByReference restraint_indices, int n_active);
   /**
    * Original signature : <code>
    * int OpenMM_MeldForce_addCollection(OpenMM_MeldForce*, OpenMM_IntArray*, int)</code>
    */
   public static native int OpenMM_MeldForce_addCollection(
-      PointerByReference target, OpenMM_IntArray group_indices, int n_active);
+      PointerByReference target, PointerByReference group_indices, int n_active);
   /**
    * Original signature : <code>
    * void OpenMM_MeldForce_updateParametersInContext(OpenMM_MeldForce*, OpenMM_Context*)</code>
    */
   public static native void OpenMM_MeldForce_updateParametersInContext(
-      PointerByReference target, OpenMM_Context context);
+      PointerByReference target, PointerByReference context);
 
   public static class OpenMM_MeldForce extends PointerType {
     public OpenMM_MeldForce(Pointer address) {
