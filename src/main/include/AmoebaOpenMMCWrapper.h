@@ -10,21 +10,21 @@
 
 /* Type Declarations */
 
+typedef struct OpenMM_AmoebaOutOfPlaneBendForce_struct OpenMM_AmoebaOutOfPlaneBendForce;
 typedef struct OpenMM_AmoebaVdwForce_struct OpenMM_AmoebaVdwForce;
+typedef struct OpenMM_AmoebaStretchTorsionForce_struct OpenMM_AmoebaStretchTorsionForce;
+typedef struct OpenMM_AmoebaBondForce_struct OpenMM_AmoebaBondForce;
+typedef struct OpenMM_AmoebaAngleForce_struct OpenMM_AmoebaAngleForce;
+typedef struct OpenMM_AmoebaWcaDispersionForce_struct OpenMM_AmoebaWcaDispersionForce;
+typedef struct OpenMM_AmoebaGKCavitationForce_struct OpenMM_AmoebaGKCavitationForce;
 typedef struct OpenMM_AmoebaPiTorsionForce_struct OpenMM_AmoebaPiTorsionForce;
 typedef struct OpenMM_HippoNonbondedForce_struct OpenMM_HippoNonbondedForce;
-typedef struct OpenMM_AmoebaInPlaneAngleForce_struct OpenMM_AmoebaInPlaneAngleForce;
-typedef struct OpenMM_AmoebaAngleForce_struct OpenMM_AmoebaAngleForce;
-typedef struct OpenMM_AmoebaAngleTorsionForce_struct OpenMM_AmoebaAngleTorsionForce;
-typedef struct OpenMM_AmoebaBondForce_struct OpenMM_AmoebaBondForce;
-typedef struct OpenMM_AmoebaGeneralizedKirkwoodForce_struct OpenMM_AmoebaGeneralizedKirkwoodForce;
-typedef struct OpenMM_AmoebaMultipoleForce_struct OpenMM_AmoebaMultipoleForce;
-typedef struct OpenMM_AmoebaWcaDispersionForce_struct OpenMM_AmoebaWcaDispersionForce;
 typedef struct OpenMM_AmoebaStretchBendForce_struct OpenMM_AmoebaStretchBendForce;
-typedef struct OpenMM_AmoebaGKCavitationForce_struct OpenMM_AmoebaGKCavitationForce;
+typedef struct OpenMM_AmoebaGeneralizedKirkwoodForce_struct OpenMM_AmoebaGeneralizedKirkwoodForce;
+typedef struct OpenMM_AmoebaInPlaneAngleForce_struct OpenMM_AmoebaInPlaneAngleForce;
+typedef struct OpenMM_AmoebaMultipoleForce_struct OpenMM_AmoebaMultipoleForce;
 typedef struct OpenMM_AmoebaTorsionTorsionForce_struct OpenMM_AmoebaTorsionTorsionForce;
-typedef struct OpenMM_AmoebaStretchTorsionForce_struct OpenMM_AmoebaStretchTorsionForce;
-typedef struct OpenMM_AmoebaOutOfPlaneBendForce_struct OpenMM_AmoebaOutOfPlaneBendForce;
+typedef struct OpenMM_AmoebaAngleTorsionForce_struct OpenMM_AmoebaAngleTorsionForce;
 
 typedef struct OpenMM_2D_IntArray_struct OpenMM_2D_IntArray;
 typedef struct OpenMM_3D_DoubleArray_struct OpenMM_3D_DoubleArray;
@@ -37,6 +37,25 @@ extern "C" {
 OPENMM_EXPORT_AMOEBA OpenMM_3D_DoubleArray* OpenMM_3D_DoubleArray_create(int size1, int size2, int size3);
 OPENMM_EXPORT_AMOEBA void OpenMM_3D_DoubleArray_set(OpenMM_3D_DoubleArray* array, int index1, int index2, OpenMM_DoubleArray* values);
 OPENMM_EXPORT_AMOEBA void OpenMM_3D_DoubleArray_destroy(OpenMM_3D_DoubleArray* array);
+
+/* AmoebaOutOfPlaneBendForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaOutOfPlaneBendForce* OpenMM_AmoebaOutOfPlaneBendForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_destroy(OpenMM_AmoebaOutOfPlaneBendForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(const OpenMM_AmoebaOutOfPlaneBendForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(OpenMM_AmoebaOutOfPlaneBendForce* target, double cubicK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(OpenMM_AmoebaOutOfPlaneBendForce* target, double quarticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(OpenMM_AmoebaOutOfPlaneBendForce* target, double penticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(OpenMM_AmoebaOutOfPlaneBendForce* target, double sexticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(OpenMM_AmoebaOutOfPlaneBendForce* target, int particle1, int particle2, int particle3, int particle4, double k);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* k);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(OpenMM_AmoebaOutOfPlaneBendForce* target, int index, int particle1, int particle2, int particle3, int particle4, double k);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(OpenMM_AmoebaOutOfPlaneBendForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaOutOfPlaneBendForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaOutOfPlaneBendForce* target);
 
 /* AmoebaVdwForce */
 typedef enum {
@@ -75,6 +94,93 @@ extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaVdwForce_AlchemicalMethod OpenMM_Amoeba
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_setAlchemicalMethod(OpenMM_AmoebaVdwForce* target, OpenMM_AmoebaVdwForce_AlchemicalMethod method);
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaVdwForce_updateParametersInContext(OpenMM_AmoebaVdwForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaVdwForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaVdwForce* target);
+
+/* AmoebaStretchTorsionForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaStretchTorsionForce* OpenMM_AmoebaStretchTorsionForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_destroy(OpenMM_AmoebaStretchTorsionForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchTorsionForce_getNumStretchTorsions(const OpenMM_AmoebaStretchTorsionForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchTorsionForce_addStretchTorsion(OpenMM_AmoebaStretchTorsionForce* target, int particle1, int particle2, int particle3, int particle4, double lengthBA, double lengthCB, double lengthDC, double k1, double k2, double k3, double k4, double k5, double k6, double k7, double k8, double k9);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(const OpenMM_AmoebaStretchTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* lengthBA, double* lengthCB, double* lengthDC, double* k1, double* k2, double* k3, double* k4, double* k5, double* k6, double* k7, double* k8, double* k9);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_setStretchTorsionParameters(OpenMM_AmoebaStretchTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, double lengthBA, double lengthCB, double lengthDC, double k1, double k2, double k3, double k4, double k5, double k6, double k7, double k8, double k9);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_updateParametersInContext(OpenMM_AmoebaStretchTorsionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaStretchTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchTorsionForce* target);
+
+/* AmoebaBondForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaBondForce* OpenMM_AmoebaBondForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_destroy(OpenMM_AmoebaBondForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaBondForce_getNumBonds(const OpenMM_AmoebaBondForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(OpenMM_AmoebaBondForce* target, double cubicK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(const OpenMM_AmoebaBondForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(OpenMM_AmoebaBondForce* target, double quarticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(const OpenMM_AmoebaBondForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaBondForce_addBond(OpenMM_AmoebaBondForce* target, int particle1, int particle2, double length, double quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce* target, int index, int* particle1, int* particle2, double* length, double* quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setBondParameters(OpenMM_AmoebaBondForce* target, int index, int particle1, int particle2, double length, double quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_updateParametersInContext(OpenMM_AmoebaBondForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaBondForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaBondForce* target);
+
+/* AmoebaAngleForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaAngleForce* OpenMM_AmoebaAngleForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_destroy(OpenMM_AmoebaAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleForce_getNumAngles(const OpenMM_AmoebaAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(OpenMM_AmoebaAngleForce* target, double cubicK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(const OpenMM_AmoebaAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(OpenMM_AmoebaAngleForce* target, double quarticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(const OpenMM_AmoebaAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(OpenMM_AmoebaAngleForce* target, double penticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(const OpenMM_AmoebaAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(OpenMM_AmoebaAngleForce* target, double sexticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(const OpenMM_AmoebaAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleForce_addAngle(OpenMM_AmoebaAngleForce* target, int particle1, int particle2, int particle3, double length, double quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce* target, int index, int* particle1, int* particle2, int* particle3, double* length, double* quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAngleParameters(OpenMM_AmoebaAngleForce* target, int index, int particle1, int particle2, int particle3, double length, double quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_updateParametersInContext(OpenMM_AmoebaAngleForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaAngleForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleForce* target);
+
+/* AmoebaWcaDispersionForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaWcaDispersionForce* OpenMM_AmoebaWcaDispersionForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_destroy(OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaWcaDispersionForce_getNumParticles(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(OpenMM_AmoebaWcaDispersionForce* target, int particleIndex, double radius, double epsilon);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce* target, int particleIndex, double* radius, double* epsilon);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaWcaDispersionForce_addParticle(OpenMM_AmoebaWcaDispersionForce* target, double radius, double epsilon);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(OpenMM_AmoebaWcaDispersionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getEpso(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getEpsh(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getRmino(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getRminh(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getAwater(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getShctd(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getDispoff(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getSlevy(const OpenMM_AmoebaWcaDispersionForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setEpso(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setEpsh(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setRmino(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setRminh(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setAwater(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setShctd(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setDispoff(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setSlevy(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaWcaDispersionForce* target);
+
+/* AmoebaGKCavitationForce */
+typedef enum {
+  OpenMM_AmoebaGKCavitationForce_NoCutoff = 0, OpenMM_AmoebaGKCavitationForce_CutoffNonPeriodic = 1, OpenMM_AmoebaGKCavitationForce_CutoffPeriodic = 2
+} OpenMM_AmoebaGKCavitationForce_NonbondedMethod;
+
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaGKCavitationForce* OpenMM_AmoebaGKCavitationForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_destroy(OpenMM_AmoebaGKCavitationForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaGKCavitationForce_addParticle(OpenMM_AmoebaGKCavitationForce* target, double radius, double gamma, OpenMM_Boolean ishydrogen);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_setParticleParameters(OpenMM_AmoebaGKCavitationForce* target, int index, double radius, double gamma, OpenMM_Boolean ishydrogen);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce* target, int index, double* radius, double* gamma, OpenMM_Boolean* ishydrogen);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaGKCavitationForce_getNumParticles(const OpenMM_AmoebaGKCavitationForce* target);
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaGKCavitationForce_NonbondedMethod OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(const OpenMM_AmoebaGKCavitationForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(OpenMM_AmoebaGKCavitationForce* target, OpenMM_AmoebaGKCavitationForce_NonbondedMethod method);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(const OpenMM_AmoebaGKCavitationForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(OpenMM_AmoebaGKCavitationForce* target, double distance);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(OpenMM_AmoebaGKCavitationForce* target, OpenMM_Context* context);
 
 /* AmoebaPiTorsionForce */
 extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaPiTorsionForce* OpenMM_AmoebaPiTorsionForce_create();
@@ -126,68 +232,16 @@ extern OPENMM_EXPORT_AMOEBA void OpenMM_HippoNonbondedForce_getInducedDipoles(Op
 extern OPENMM_EXPORT_AMOEBA void OpenMM_HippoNonbondedForce_updateParametersInContext(OpenMM_HippoNonbondedForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_HippoNonbondedForce_usesPeriodicBoundaryConditions(const OpenMM_HippoNonbondedForce* target);
 
-/* AmoebaInPlaneAngleForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaInPlaneAngleForce* OpenMM_AmoebaInPlaneAngleForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_destroy(OpenMM_AmoebaInPlaneAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaInPlaneAngleForce_getNumAngles(const OpenMM_AmoebaInPlaneAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleCubic(OpenMM_AmoebaInPlaneAngleForce* target, double cubicK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleCubic(const OpenMM_AmoebaInPlaneAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleQuartic(OpenMM_AmoebaInPlaneAngleForce* target, double quarticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleQuartic(const OpenMM_AmoebaInPlaneAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAnglePentic(OpenMM_AmoebaInPlaneAngleForce* target, double penticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAnglePentic(const OpenMM_AmoebaInPlaneAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleSextic(OpenMM_AmoebaInPlaneAngleForce* target, double sexticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleSextic(const OpenMM_AmoebaInPlaneAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaInPlaneAngleForce_addAngle(OpenMM_AmoebaInPlaneAngleForce* target, int particle1, int particle2, int particle3, int particle4, double length, double quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_getAngleParameters(const OpenMM_AmoebaInPlaneAngleForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* length, double* quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAngleParameters(OpenMM_AmoebaInPlaneAngleForce* target, int index, int particle1, int particle2, int particle3, int particle4, double length, double quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_updateParametersInContext(OpenMM_AmoebaInPlaneAngleForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaInPlaneAngleForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaInPlaneAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaInPlaneAngleForce* target);
-
-/* AmoebaAngleForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaAngleForce* OpenMM_AmoebaAngleForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_destroy(OpenMM_AmoebaAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleForce_getNumAngles(const OpenMM_AmoebaAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleCubic(OpenMM_AmoebaAngleForce* target, double cubicK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleCubic(const OpenMM_AmoebaAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleQuartic(OpenMM_AmoebaAngleForce* target, double quarticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleQuartic(const OpenMM_AmoebaAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAnglePentic(OpenMM_AmoebaAngleForce* target, double penticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAnglePentic(const OpenMM_AmoebaAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAmoebaGlobalAngleSextic(OpenMM_AmoebaAngleForce* target, double sexticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaAngleForce_getAmoebaGlobalAngleSextic(const OpenMM_AmoebaAngleForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleForce_addAngle(OpenMM_AmoebaAngleForce* target, int particle1, int particle2, int particle3, double length, double quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_getAngleParameters(const OpenMM_AmoebaAngleForce* target, int index, int* particle1, int* particle2, int* particle3, double* length, double* quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setAngleParameters(OpenMM_AmoebaAngleForce* target, int index, int particle1, int particle2, int particle3, double length, double quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_updateParametersInContext(OpenMM_AmoebaAngleForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaAngleForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleForce* target);
-
-/* AmoebaAngleTorsionForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaAngleTorsionForce* OpenMM_AmoebaAngleTorsionForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_destroy(OpenMM_AmoebaAngleTorsionForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleTorsionForce_getNumAngleTorsions(const OpenMM_AmoebaAngleTorsionForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleTorsionForce_addAngleTorsion(OpenMM_AmoebaAngleTorsionForce* target, int particle1, int particle2, int particle3, int particle4, double angleCBA, double angleDCB, double k1, double k2, double k3, double k4, double k5, double k6);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(const OpenMM_AmoebaAngleTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* angleCBA, double* angleDCB, double* k1, double* k2, double* k3, double* k4, double* k5, double* k6);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_setAngleTorsionParameters(OpenMM_AmoebaAngleTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, double angleCBA, double angleDCB, double k1, double k2, double k3, double k4, double k5, double k6);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_updateParametersInContext(OpenMM_AmoebaAngleTorsionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaAngleTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleTorsionForce* target);
-
-/* AmoebaBondForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaBondForce* OpenMM_AmoebaBondForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_destroy(OpenMM_AmoebaBondForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaBondForce_getNumBonds(const OpenMM_AmoebaBondForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setAmoebaGlobalBondCubic(OpenMM_AmoebaBondForce* target, double cubicK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaBondForce_getAmoebaGlobalBondCubic(const OpenMM_AmoebaBondForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setAmoebaGlobalBondQuartic(OpenMM_AmoebaBondForce* target, double quarticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaBondForce_getAmoebaGlobalBondQuartic(const OpenMM_AmoebaBondForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaBondForce_addBond(OpenMM_AmoebaBondForce* target, int particle1, int particle2, double length, double quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_getBondParameters(const OpenMM_AmoebaBondForce* target, int index, int* particle1, int* particle2, double* length, double* quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setBondParameters(OpenMM_AmoebaBondForce* target, int index, int particle1, int particle2, double length, double quadraticK);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_updateParametersInContext(OpenMM_AmoebaBondForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaBondForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaBondForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaBondForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaBondForce* target);
+/* AmoebaStretchBendForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaStretchBendForce* OpenMM_AmoebaStretchBendForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_destroy(OpenMM_AmoebaStretchBendForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchBendForce_getNumStretchBends(const OpenMM_AmoebaStretchBendForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchBendForce_addStretchBend(OpenMM_AmoebaStretchBendForce* target, int particle1, int particle2, int particle3, double lengthAB, double lengthCB, double angle, double k1, double k2);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce* target, int index, int* particle1, int* particle2, int* particle3, double* lengthAB, double* lengthCB, double* angle, double* k1, double* k2);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(OpenMM_AmoebaStretchBendForce* target, int index, int particle1, int particle2, int particle3, double lengthAB, double lengthCB, double angle, double k1, double k2);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_updateParametersInContext(OpenMM_AmoebaStretchBendForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaStretchBendForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchBendForce* target);
 
 /* AmoebaGeneralizedKirkwoodForce */
 extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaGeneralizedKirkwoodForce* OpenMM_AmoebaGeneralizedKirkwoodForce_create();
@@ -208,6 +262,25 @@ extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaGeneralizedKirkwoodForce_getSurf
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGeneralizedKirkwoodForce_setSurfaceAreaFactor(OpenMM_AmoebaGeneralizedKirkwoodForce* target, double surfaceAreaFactor);
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGeneralizedKirkwoodForce_updateParametersInContext(OpenMM_AmoebaGeneralizedKirkwoodForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaGeneralizedKirkwoodForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaGeneralizedKirkwoodForce* target);
+
+/* AmoebaInPlaneAngleForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaInPlaneAngleForce* OpenMM_AmoebaInPlaneAngleForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_destroy(OpenMM_AmoebaInPlaneAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaInPlaneAngleForce_getNumAngles(const OpenMM_AmoebaInPlaneAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleCubic(OpenMM_AmoebaInPlaneAngleForce* target, double cubicK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleCubic(const OpenMM_AmoebaInPlaneAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleQuartic(OpenMM_AmoebaInPlaneAngleForce* target, double quarticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleQuartic(const OpenMM_AmoebaInPlaneAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAnglePentic(OpenMM_AmoebaInPlaneAngleForce* target, double penticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAnglePentic(const OpenMM_AmoebaInPlaneAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAmoebaGlobalInPlaneAngleSextic(OpenMM_AmoebaInPlaneAngleForce* target, double sexticK);
+extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaInPlaneAngleForce_getAmoebaGlobalInPlaneAngleSextic(const OpenMM_AmoebaInPlaneAngleForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaInPlaneAngleForce_addAngle(OpenMM_AmoebaInPlaneAngleForce* target, int particle1, int particle2, int particle3, int particle4, double length, double quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_getAngleParameters(const OpenMM_AmoebaInPlaneAngleForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* length, double* quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setAngleParameters(OpenMM_AmoebaInPlaneAngleForce* target, int index, int particle1, int particle2, int particle3, int particle4, double length, double quadraticK);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_updateParametersInContext(OpenMM_AmoebaInPlaneAngleForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaInPlaneAngleForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaInPlaneAngleForce* target, OpenMM_Boolean periodic);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaInPlaneAngleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaInPlaneAngleForce* target);
 
 /* AmoebaMultipoleForce */
 typedef enum {
@@ -262,60 +335,6 @@ extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaMultipoleForce_getSystemMultipoleM
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaMultipoleForce_updateParametersInContext(OpenMM_AmoebaMultipoleForce* target, OpenMM_Context* context);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaMultipoleForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaMultipoleForce* target);
 
-/* AmoebaWcaDispersionForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaWcaDispersionForce* OpenMM_AmoebaWcaDispersionForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_destroy(OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaWcaDispersionForce_getNumParticles(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setParticleParameters(OpenMM_AmoebaWcaDispersionForce* target, int particleIndex, double radius, double epsilon);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_getParticleParameters(const OpenMM_AmoebaWcaDispersionForce* target, int particleIndex, double* radius, double* epsilon);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaWcaDispersionForce_addParticle(OpenMM_AmoebaWcaDispersionForce* target, double radius, double epsilon);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_updateParametersInContext(OpenMM_AmoebaWcaDispersionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getEpso(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getEpsh(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getRmino(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getRminh(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getAwater(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getShctd(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getDispoff(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaWcaDispersionForce_getSlevy(const OpenMM_AmoebaWcaDispersionForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setEpso(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setEpsh(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setRmino(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setRminh(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setAwater(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setShctd(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setDispoff(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaWcaDispersionForce_setSlevy(OpenMM_AmoebaWcaDispersionForce* target, double inputValue);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaWcaDispersionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaWcaDispersionForce* target);
-
-/* AmoebaStretchBendForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaStretchBendForce* OpenMM_AmoebaStretchBendForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_destroy(OpenMM_AmoebaStretchBendForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchBendForce_getNumStretchBends(const OpenMM_AmoebaStretchBendForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchBendForce_addStretchBend(OpenMM_AmoebaStretchBendForce* target, int particle1, int particle2, int particle3, double lengthAB, double lengthCB, double angle, double k1, double k2);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_getStretchBendParameters(const OpenMM_AmoebaStretchBendForce* target, int index, int* particle1, int* particle2, int* particle3, double* lengthAB, double* lengthCB, double* angle, double* k1, double* k2);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_setStretchBendParameters(OpenMM_AmoebaStretchBendForce* target, int index, int particle1, int particle2, int particle3, double lengthAB, double lengthCB, double angle, double k1, double k2);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_updateParametersInContext(OpenMM_AmoebaStretchBendForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaStretchBendForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaStretchBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchBendForce* target);
-
-/* AmoebaGKCavitationForce */
-typedef enum {
-  OpenMM_AmoebaGKCavitationForce_NoCutoff = 0, OpenMM_AmoebaGKCavitationForce_CutoffNonPeriodic = 1, OpenMM_AmoebaGKCavitationForce_CutoffPeriodic = 2
-} OpenMM_AmoebaGKCavitationForce_NonbondedMethod;
-
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaGKCavitationForce* OpenMM_AmoebaGKCavitationForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_destroy(OpenMM_AmoebaGKCavitationForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaGKCavitationForce_addParticle(OpenMM_AmoebaGKCavitationForce* target, double radius, double gamma, double vdw_alpha, double charge, OpenMM_Boolean ishydrogen);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_setParticleParameters(OpenMM_AmoebaGKCavitationForce* target, int index, double radius, double gamma, double vdw_alpha, double charge, OpenMM_Boolean ishydrogen);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_getParticleParameters(const OpenMM_AmoebaGKCavitationForce* target, int index, double* radius, double* gamma, double* vdw_alpha, double* charge, OpenMM_Boolean* ishydrogen);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaGKCavitationForce_getNumParticles(const OpenMM_AmoebaGKCavitationForce* target);
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaGKCavitationForce_NonbondedMethod OpenMM_AmoebaGKCavitationForce_getNonbondedMethod(const OpenMM_AmoebaGKCavitationForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_setNonbondedMethod(OpenMM_AmoebaGKCavitationForce* target, OpenMM_AmoebaGKCavitationForce_NonbondedMethod method);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaGKCavitationForce_getCutoffDistance(const OpenMM_AmoebaGKCavitationForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_setCutoffDistance(OpenMM_AmoebaGKCavitationForce* target, double distance);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaGKCavitationForce_updateParametersInContext(OpenMM_AmoebaGKCavitationForce* target, OpenMM_Context* context);
-
 /* AmoebaTorsionTorsionForce */
 extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaTorsionTorsionForce* OpenMM_AmoebaTorsionTorsionForce_create();
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaTorsionTorsionForce_destroy(OpenMM_AmoebaTorsionTorsionForce* target);
@@ -329,34 +348,15 @@ extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaTorsionTorsionForce_setTorsionTors
 extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaTorsionTorsionForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaTorsionTorsionForce* target, OpenMM_Boolean periodic);
 extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaTorsionTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaTorsionTorsionForce* target);
 
-/* AmoebaStretchTorsionForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaStretchTorsionForce* OpenMM_AmoebaStretchTorsionForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_destroy(OpenMM_AmoebaStretchTorsionForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchTorsionForce_getNumStretchTorsions(const OpenMM_AmoebaStretchTorsionForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaStretchTorsionForce_addStretchTorsion(OpenMM_AmoebaStretchTorsionForce* target, int particle1, int particle2, int particle3, int particle4, double lengthBA, double lengthCB, double lengthDC, double k1, double k2, double k3, double k4, double k5, double k6, double k7, double k8, double k9);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_getStretchTorsionParameters(const OpenMM_AmoebaStretchTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* lengthBA, double* lengthCB, double* lengthDC, double* k1, double* k2, double* k3, double* k4, double* k5, double* k6, double* k7, double* k8, double* k9);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_setStretchTorsionParameters(OpenMM_AmoebaStretchTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, double lengthBA, double lengthCB, double lengthDC, double k1, double k2, double k3, double k4, double k5, double k6, double k7, double k8, double k9);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaStretchTorsionForce_updateParametersInContext(OpenMM_AmoebaStretchTorsionForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaStretchTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaStretchTorsionForce* target);
-
-/* AmoebaOutOfPlaneBendForce */
-extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaOutOfPlaneBendForce* OpenMM_AmoebaOutOfPlaneBendForce_create();
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_destroy(OpenMM_AmoebaOutOfPlaneBendForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaOutOfPlaneBendForce_getNumOutOfPlaneBends(const OpenMM_AmoebaOutOfPlaneBendForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendCubic(OpenMM_AmoebaOutOfPlaneBendForce* target, double cubicK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendCubic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendQuartic(OpenMM_AmoebaOutOfPlaneBendForce* target, double quarticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendQuartic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendPentic(OpenMM_AmoebaOutOfPlaneBendForce* target, double penticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendPentic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setAmoebaGlobalOutOfPlaneBendSextic(OpenMM_AmoebaOutOfPlaneBendForce* target, double sexticK);
-extern OPENMM_EXPORT_AMOEBA double OpenMM_AmoebaOutOfPlaneBendForce_getAmoebaGlobalOutOfPlaneBendSextic(const OpenMM_AmoebaOutOfPlaneBendForce* target);
-extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaOutOfPlaneBendForce_addOutOfPlaneBend(OpenMM_AmoebaOutOfPlaneBendForce* target, int particle1, int particle2, int particle3, int particle4, double k);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_getOutOfPlaneBendParameters(const OpenMM_AmoebaOutOfPlaneBendForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* k);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setOutOfPlaneBendParameters(OpenMM_AmoebaOutOfPlaneBendForce* target, int index, int particle1, int particle2, int particle3, int particle4, double k);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_updateParametersInContext(OpenMM_AmoebaOutOfPlaneBendForce* target, OpenMM_Context* context);
-extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaOutOfPlaneBendForce_setUsesPeriodicBoundaryConditions(OpenMM_AmoebaOutOfPlaneBendForce* target, OpenMM_Boolean periodic);
-extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaOutOfPlaneBendForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaOutOfPlaneBendForce* target);
+/* AmoebaAngleTorsionForce */
+extern OPENMM_EXPORT_AMOEBA OpenMM_AmoebaAngleTorsionForce* OpenMM_AmoebaAngleTorsionForce_create();
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_destroy(OpenMM_AmoebaAngleTorsionForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleTorsionForce_getNumAngleTorsions(const OpenMM_AmoebaAngleTorsionForce* target);
+extern OPENMM_EXPORT_AMOEBA int OpenMM_AmoebaAngleTorsionForce_addAngleTorsion(OpenMM_AmoebaAngleTorsionForce* target, int particle1, int particle2, int particle3, int particle4, double angleCBA, double angleDCB, double k1, double k2, double k3, double k4, double k5, double k6);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_getAngleTorsionParameters(const OpenMM_AmoebaAngleTorsionForce* target, int index, int* particle1, int* particle2, int* particle3, int* particle4, double* angleCBA, double* angleDCB, double* k1, double* k2, double* k3, double* k4, double* k5, double* k6);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_setAngleTorsionParameters(OpenMM_AmoebaAngleTorsionForce* target, int index, int particle1, int particle2, int particle3, int particle4, double angleCBA, double angleDCB, double k1, double k2, double k3, double k4, double k5, double k6);
+extern OPENMM_EXPORT_AMOEBA void OpenMM_AmoebaAngleTorsionForce_updateParametersInContext(OpenMM_AmoebaAngleTorsionForce* target, OpenMM_Context* context);
+extern OPENMM_EXPORT_AMOEBA OpenMM_Boolean OpenMM_AmoebaAngleTorsionForce_usesPeriodicBoundaryConditions(const OpenMM_AmoebaAngleTorsionForce* target);
 
 
 #if defined(__cplusplus)
