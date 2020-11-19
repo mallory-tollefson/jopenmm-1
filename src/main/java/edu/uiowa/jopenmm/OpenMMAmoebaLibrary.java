@@ -26,6 +26,11 @@ public class OpenMMAmoebaLibrary implements Library {
       NativeLibrary.getInstance(OpenMMAmoebaLibrary.JNA_LIBRARY_NAME);
 
   static {
+    //    System.out.println(
+    //        " Register OpenMMAmoebaLibrary:\n "
+    //            + JNA_NATIVE_LIB.toString()
+    //            + "\n Is already registered: "
+    //            + Native.registered(OpenMMAmoebaLibrary.class));
     Native.register(OpenMMAmoebaLibrary.class, OpenMMAmoebaLibrary.JNA_NATIVE_LIB);
   }
   /** enum values */
