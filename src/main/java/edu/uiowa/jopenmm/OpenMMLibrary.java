@@ -25,14 +25,7 @@ public class OpenMMLibrary implements Library {
   public static final NativeLibrary JNA_NATIVE_LIB =
       NativeLibrary.getInstance(OpenMMLibrary.JNA_LIBRARY_NAME);
 
-  // Native.load(JNA_LIBRARY_NAME, OpenMMLibrary.class);
-
   static {
-    //    System.out.println(
-    //        " Register OpenMMLibrary:\n "
-    //            + JNA_NATIVE_LIB.toString()
-    //            + "\n Is already registered: "
-    //            + Native.registered(OpenMMLibrary.class));
     Native.register(OpenMMLibrary.class, OpenMMLibrary.JNA_NATIVE_LIB);
   }
 
