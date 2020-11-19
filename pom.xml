@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.uiowa.jopenmm</groupId>
   <artifactId>jopenmm-fat</artifactId>
-  <version>7.5.0-v2</version>
+  <version>7.5.0-cuda10.2</version>
   <packaging>jar</packaging>
   <name>Java Wrappers for OpenMM</name>
   <description>Java wrappers for the OpenMM API.</description>
@@ -18,7 +18,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <jna.version>4.1.0</jna.version>
+    <jna.version>5.6.0</jna.version>
     <jar.version>3.1.0</jar.version>
     <source.version>3.2.1</source.version>
     <javadoc.version>3.2.0</javadoc.version>
